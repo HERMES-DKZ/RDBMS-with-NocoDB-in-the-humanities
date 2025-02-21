@@ -24,6 +24,7 @@ exercises: 2
 
 ### First exploration of features
 
+
 For a first impression of what is possible with NocoDB, [add a review of a painting](https://nocodb.adwmainz.net/dashboard/#/nc/form/d656e550-a93d-4ec7-94d8-27a7ebd1d5bc).
 
 1. Look for your favorite painting and put all the metadata and the painting into the form
