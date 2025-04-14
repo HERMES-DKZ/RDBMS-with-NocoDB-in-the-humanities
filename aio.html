@@ -404,7 +404,7 @@
         
 <section id="aio-01_introduction"><p>Content from <a href="01_introduction.html">Introduction</a></p>
 <hr>
-<p>Last updated on 2025-03-18 |
+<p>Last updated on 2025-04-14 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/01_introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -438,74 +438,29 @@ spreadsheet</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="starting-point">Starting Point<a class="anchor" aria-label="anchor" href="#starting-point"></a>
+<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<div id="first-exploration-of-features" class="callout discussion">
+<div id="discussion-do-you-use-tables-and-if-so-for-which-tasks" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="first-exploration-of-features" class="callout-inner">
-<h3 class="callout-title">First exploration of features</h3>
+<div id="discussion-do-you-use-tables-and-if-so-for-which-tasks" class="callout-inner">
+<h3 class="callout-title">Discussion: Do you use tables and if so, for
+which tasks?</h3>
 <div class="callout-content">
-<p>For a first impression of what is possible with NocoDB, <a href="https://nocodb.adwmainz.net/dashboard/#/nc/form/d656e550-a93d-4ec7-94d8-27a7ebd1d5bc" class="external-link">add
-a review of a painting</a>.</p>
-<ol style="list-style-type: decimal">
-<li>Look for your favorite painting and put all the metadata and the
-painting into the form</li>
-<li>Open the <a href="https://nocodb.adwmainz.net/dashboard/#/nc/view/bd933a32-50af-47c7-a99a-1ca46af450aa" class="external-link">tabular
-results view</a>, enter the password “NocoDB_Carpentry” and watch the
-database grow</li>
-<li>Open the <a href="https://nocodb.adwmainz.net/dashboard/#/base/8b791733-2258-45b4-94c7-b954f7b21528" class="external-link">database
-management interface</a> and change records, if you made any
-mistake</li>
-<li>Finally, you can now view a <a href="https://nocodb.adwmainz.net/dashboard/#/nc/gallery/a3094f97-80f6-491a-86d4-fc6613b41a01" class="external-link">gallery
-of all the images with metadata in the database</a>
-</li>
-</ol>
-<p>If everything went right, we filled a database with different
-paintings from different artists with a form in NocoDB without even
-creating accounts for everyone.</p>
+<p>Spreadsheets, like Microsoft Excel, are used in many areas of
+application, but they have their limits in many places. Have you noticed
+any limitations or problems in your work?</p>
 </div>
 </div>
 </div>
-<div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
-<div class="callout-content">
-<p>Notice that I used different links for different tasks you did. We
-had a link for a form, for viewing the database, for changing the
-database and for viewing the gallery. All this is pretty simple to
-create in NocoDB and how you can do this and even more for you own
-project, is what we will learn in this carpentry.</p>
-</div>
-</div>
-</div>
-<p>But before we create a new database and fill it with information and
+<p>Before we create a new database and fill it with information and
 data, we should learn the basic concept behind all this. What is a
 relational database or a spreadsheet, why should i use these and how do
-I organize my data to get the best use out of all these concepts.</p>
-</section><section><h2 class="section-heading" id="relational-database">Relational Database<a class="anchor" aria-label="anchor" href="#relational-database"></a>
-</h2>
-<hr class="half-width">
-<p>Relational databases form the foundation for storing and managing
-structured data in many modern projects. They are based on a model where
-data is organized in a tabular form, each table consisting of rows and
-columns. This structure allows efficient data storage, querying, and
-manipulation. A key feature of relational databases is the use of
-primary and foreign keys that define strong relationships between
-different tables. These keys support data integrity and facilitate
-complex data queries involving multiple tables. SQL (Structured Query
-Language) is the dominant language used for creating, managing, and
-querying relational databases. Its powerful commands like SELECT,
-INSERT, UPDATE, and DELETE enable users to interact with data and
-extract valuable insights from large datasets. Overall, relational
-databases offer a robust and reliable solution for enterprise data
-management, ensuring high data quality and security through their
-structured and rule-based setup.</p>
+I organize my data to get the best use out of all these concepts. To
+understand the starting point where we are coming from, we want to
+understand the basic idea behind the concepts.</p>
 </section><section><h2 class="section-heading" id="spreadsheets">Spreadsheets<a class="anchor" aria-label="anchor" href="#spreadsheets"></a>
 </h2>
 <hr class="half-width">
@@ -525,18 +480,51 @@ Google App Script, which allow for task automation and the creation of
 custom functions. Spreadsheets are therefore indispensable in many
 business, academic, and private applications, where they are used for
 data storage, financial analysis, planning, and much more.</p>
+<div id="discussion-do-you-use-databases-and-if-so-for-which-tasks" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="discussion-do-you-use-databases-and-if-so-for-which-tasks" class="callout-inner">
+<h3 class="callout-title">Discussion: Do you use databases and if so,
+for which tasks?</h3>
+<div class="callout-content">
+<p>You may have heard of databases and maybe even use them, but do you
+know how they work and why they are used? Do you know advantages or
+disadvantages?</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="relational-database">Relational Database<a class="anchor" aria-label="anchor" href="#relational-database"></a>
+</h2>
+<hr class="half-width">
+<p>Relational databases form the foundation for storing and managing
+structured data in many modern projects. They are based on a model where
+data is organized in a tabular form, each table consisting of rows and
+columns. This structure allows efficient data storage, querying, and
+manipulation. A key feature of relational databases is the use of
+primary and foreign keys that define strong relationships between
+different tables. These keys support data integrity and facilitate
+complex data queries involving multiple tables. SQL (Structured Query
+Language) is the dominant language used for creating, managing, and
+querying relational databases. Its powerful commands like SELECT,
+INSERT, UPDATE, and DELETE enable users to interact with data and
+extract valuable insights from large datasets. Overall, relational
+databases offer a robust and reliable solution for enterprise data
+management, ensuring high data quality and security through their
+structured and rule-based setup.</p>
 </section><section><h2 class="section-heading" id="what-is-nocodb">What is NocoDB?<a class="anchor" aria-label="anchor" href="#what-is-nocodb"></a>
 </h2>
 <hr class="half-width">
-<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-est Lorem ipsum dolor sit amet.</p>
+<p>NocoDB combines exactly these two concepts and allows us to create
+databases with the clear interface of a spreadsheet. It is a so-called
+‘no code database’, which makes it possible to set up and use a
+relational database without any coding experience. NocoDB also allows us
+to work collaboratively in a team and even enter and use data without a
+special account. NocoDB is also open source. This means that we could
+theoretically set up our own instance and thus create and use our data
+completely independently of others. It also offers many other options
+for connecting and utilising our data on the Internet, which we will not
+go into in this course.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -941,8 +929,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2025-04-08",
-  "datePublished": "2025-04-08"
+  "dateModified": "2025-04-14",
+  "datePublished": "2025-04-14"
 }
 
   </script><script>
