@@ -444,6 +444,15 @@ spreadsheet</li>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
+<p>Before we create a new database and fill it with information and
+data, we should learn the basic concept behind all this. What is a
+relational database or a spreadsheet, why should i use these and how do
+I organize my data to get the best use out of all these concepts. To
+understand the starting point where we are coming from, we want to
+understand the basic idea behind the concepts.</p>
+</section><section><h2 class="section-heading" id="spreadsheets">Spreadsheets<a class="anchor" aria-label="anchor" href="#spreadsheets"></a>
+</h2>
+<hr class="half-width">
 <div id="discussion-do-you-use-tables-and-if-so-for-which-tasks" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -458,15 +467,6 @@ any limitations or problems in your work?</p>
 </div>
 </div>
 </div>
-<p>Before we create a new database and fill it with information and
-data, we should learn the basic concept behind all this. What is a
-relational database or a spreadsheet, why should i use these and how do
-I organize my data to get the best use out of all these concepts. To
-understand the starting point where we are coming from, we want to
-understand the basic idea behind the concepts.</p>
-</section><section><h2 class="section-heading" id="spreadsheets">Spreadsheets<a class="anchor" aria-label="anchor" href="#spreadsheets"></a>
-</h2>
-<hr class="half-width">
 <p>Spreadsheets are one of the most versatile and widely used tools for
 data analysis and management. They allow users to organize data in a
 flexible format that supports simple to complex calculations and
@@ -483,6 +483,9 @@ Google App Script, which allow for task automation and the creation of
 custom functions. Spreadsheets are therefore indispensable in many
 business, academic, and private applications, where they are used for
 data storage, financial analysis, planning, and much more.</p>
+</section><section><h2 class="section-heading" id="relational-database">Relational Database<a class="anchor" aria-label="anchor" href="#relational-database"></a>
+</h2>
+<hr class="half-width">
 <div id="discussion-do-you-use-databases-and-if-so-for-which-tasks" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -497,9 +500,6 @@ disadvantages?</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="relational-database">Relational Database<a class="anchor" aria-label="anchor" href="#relational-database"></a>
-</h2>
-<hr class="half-width">
 <p>Relational databases form the foundation for storing and managing
 structured data in many modern projects. They are based on a model where
 data is organized in a tabular form, each table consisting of rows and
@@ -534,7 +534,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02_relational-database"><p>Content from <a href="02_relational-database.html">Relational Databases</a></p>
 <hr>
-<p>Last updated on 2025-03-18 |
+<p>Last updated on 2025-04-14 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/02_relational-database.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -569,13 +569,83 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="tables">Tables<a class="anchor" aria-label="anchor" href="#tables"></a>
+<p>In order to approach the topic as a whole, we first want to look at
+and understand the individual components in detail. As already
+mentioned, so-called keys are used to link tables in relational
+databases and thus make data storage and analysis more efficient. What
+exactly this means is explained below.</p>
+<section><h2 class="section-heading" id="tables-relations">Tables (Relations)<a class="anchor" aria-label="anchor" href="#tables-relations"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="primary-key">Primary Key<a class="anchor" aria-label="anchor" href="#primary-key"></a>
+<hr class="half-width">
+<p>Tables are a fundamental tool for organizing and processing data in a
+structured way. They consist of rows and columns, much like what you’re
+used to seeing in spreadsheet programs like Excel. Each column
+represents a specific attribute or characteristic—such as “Name,” “Date
+of Birth,” or “Email Address.” Each row represents a single data entry,
+showing the actual values for those attributes. More precisely, each
+column would represent a person and contain information about that
+person. This concept is transferable to all types of objects.</p>
+<p>Tables provide a clear and easy-to-understand structure that works
+well for both humans and computers. They allow large amounts of
+information to be stored in an organized way, making it easy to search,
+sort, and analyze the data.</p>
+<p>The widespread success of tables comes from their simplicity,
+clarity, and versatility. They can be adapted to many different types of
+data and serve as an ideal starting point for everything from simple
+lists to complex data analysis.</p>
+</section><section><h2 class="section-heading" id="primary-key-and-foreign-key">Primary Key and Foreign Key<a class="anchor" aria-label="anchor" href="#primary-key-and-foreign-key"></a>
 </h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="foreign-key">Foreign Key<a class="anchor" aria-label="anchor" href="#foreign-key"></a>
-</h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="first-normal-form">First normal form<a class="anchor" aria-label="anchor" href="#first-normal-form"></a>
+<hr class="half-width">
+<p>To structure and tidy up tables a little better, so-called keys are
+used in relational data modelling. What exactly this is used for will be
+explained in the next step. First of all, we want to understand what
+this concept actually means, as it is essential for the entire modelling
+process. These keys are used to create relationships between tables in
+the database and guarantee that each entry in a table can be uniquely
+referenced. If we think back to the tables for a moment, each column
+represents a data record, in our example a person. If we want to make
+this person uniquely referenceable, we can assign an ID. If this ID is
+unique and only exists once in the entire data record, it is referred to
+as the primary key.</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>The primary Key must never be empty</li>
+<li>The primary Key must be unique</li>
+</ul>
+</div>
+</div>
+</div>
+<p>If we now want to collect more information about that some person,
+that we do not want to store in the same table, we can create a new
+table and refer to the person with the Primary Key. If we use this key
+in the new table we talk about a foreign key. This key is therefore used
+to create a relationship between the two tables, or between two entries
+in the tables. This allows information to be split into different tables
+in order to structure them better and more clearly without losing
+information. The advantages of this and how it is used in relational
+data modelling need to be clarified next.</p>
+<div id="keypoints2" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul>
+<li>A <strong>foreign key</strong> must link to an existing
+<strong>Primary Key</strong>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="first-normal-form">First normal form<a class="anchor" aria-label="anchor" href="#first-normal-form"></a>
 </h2>
 <hr class="half-width"></section><section><h2 class="section-heading" id="second-normal-form">Second normal form<a class="anchor" aria-label="anchor" href="#second-normal-form"></a>
 </h2>
