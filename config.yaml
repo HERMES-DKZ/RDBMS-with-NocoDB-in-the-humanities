@@ -61,7 +61,6 @@ contact: 'robert.zwick@hs-mainz.de' # FIXME
 episodes: 
 - 01_introduction.Rmd
 - 02_relational-database.Rmd
-- 03_spreadsheets.Rmd
 - 04_nocodb-introduction.Rmd
 - 05_nocodb-dataimport.Rmd
 - 06_nocodb-collaborative-work.Rmd
