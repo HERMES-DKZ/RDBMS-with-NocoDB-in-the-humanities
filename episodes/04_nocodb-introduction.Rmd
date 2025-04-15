@@ -20,7 +20,7 @@ exercises: 3
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-![Test](episodes/img/nocodb.png)
+![Image from https://nocodb.com/](img/nocodb.png)
 
 As already mentioned, NocoDB, as a so-called no-code database, combines the ease of use of a spreadsheet 
 with the flexibility of a relational database. It does this by providing an interface, the website, 
