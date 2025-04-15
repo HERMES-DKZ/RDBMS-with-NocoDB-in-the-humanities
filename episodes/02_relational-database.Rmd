@@ -118,7 +118,6 @@ The result is a model that is both **logically sound** and **technically efficie
 
 ### First normal form
 
-# First Normal Form (1NF) – Structuring the MET Dog Collection
 
 To introduce the concept of the First Normal Form, we want to start by exploring the public collection of the [Metropolitan 
 Museum of Art (The MET)](https://www.metmuseum.org/art/collection/search) in New York. Our goal is to create a curated dataset of artworks that include dogs, 
@@ -133,12 +132,7 @@ We began by extracting a selection of entries that were tagged with "dog". Here 
 | A Gorge in the Mountains (Kauterskill Clove)                                            | Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY)         | 15.30.62         | The American Wing, 761                                        |
 | Marie Emilie Coignet de Courson (1716–1806) with a Dog                                  | Jean Honoré Fragonard (French, Grasse 1732–1806 Paris)         | 37.118           | European Paintings, 631                                       |
 | Blue Construction, Orange Figures                                                       | Bill Traylor                                                  | 2015.756         | The Met Fifth Avenue in Gallery 773                           |
-| Christ Carrying the Cross, with...                                                     | Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)   | 1975.1.119A-B    | Robert Lehman Collection, 953                                 |
-| Untitled (Studio)                                                                       | Kerry James Marshall                                          | 2015.366         | The Met Fifth Avenue in Gallery 638                           |
-| Blue Construction, Orange Figures                                                       | Bill Traylor (American, Benton, AL 1853/54–1949 Montgomery, AL)| 2015.756         | The American Wing, 773                                        |
-| Wheat Field with Cypresses                                                              | Vincent van Gogh (Dutch, Zundert 1853–1890 Auvers-sur-Oise)   | 1993.132         | The Annenberg Collection: 19th–20th Century Masters, 822     |
-| Manuel Osorio Manrique de Zuñiga (1784–1792)                                            | Goya (Francisco de Goya y Lucientes)                          | 49.7.41          | European Paintings, 641                                       |
-| A Hunting Scene                                                                          | Piero di Cosimo                                               | 75.7.2           | European Paintings; Gallery 613                               |
+| Christ Carrying the Cross, with the Crucifixion                                         | Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)   | 1975.1.119A-B    | Robert Lehman Collection, 953                                 |
 
 At first glance, this table seems to contain the basic information we need: title, artist, museum reference number, 
 and viewing location. But let’s take a closer look. What happens if we want to search for all works by the same artist? 
@@ -165,11 +159,7 @@ name, and making sure there are no duplicate records. After applying these chang
 | A Gorge in the Mountains                      | Sanford R. Gifford       | 15.30.62         | The American Wing      | 761            |
 | Marie Emilie Coignet de Courson with a Dog    | Jean H. Fragonard        | 37.118           | European Paintings     | 631            |
 | Blue Construction, Orange Figures             | Bill Traylor             | 2015.756         | The American Wing      | 773            |
-| Christ Carrying the Cross...                  | Gerard David             | 1975.1.119A-B    | Robert Lehman Collection| 953            |
-| Untitled (Studio)                              | Kerry James Marshall     | 2015.366         | The Met Fifth Avenue   | 638            |
-| Wheat Field with Cypresses                    | Vincent van Gogh         | 1993.132         | The Annenberg Collection| 822            |
-| Manuel Osorio Manrique de Zuñiga              | Francisco de Goya        | 49.7.41          | European Paintings     | 641            |
-| A Hunting Scene                                | Piero di Cosimo          | 75.7.2           | European Paintings     | 613            |
+| Christ Carrying the Cross, with the Crucifixion               | Gerard David             | 1975.1.119A-B    | Robert Lehman Collection| 953            |
 
 This version is now in First Normal Form. Each field contains just one value, and combined information has been clearly 
 separated. This not only makes the table easier to understand, but also opens the door to further normalization in the 
