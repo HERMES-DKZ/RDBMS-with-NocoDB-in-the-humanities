@@ -216,9 +216,8 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#introduction">Introduction</a></li>
-<li><a href="#spreadsheets">Spreadsheets</a></li>
-<li><a href="#relational-database">Relational Database</a></li>
+        <ul><li><a href="#spreadsheets">Spreadsheets</a></li>
+<li><a href="#relational-databases">Relational Databases</a></li>
 <li><a href="#what-is-nocodb">What is NocoDB?</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -238,7 +237,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03_spreadsheets.html">3. Spreadsheets</a>
+        <a href="04_nocodb-introduction.html">3. NocoDB Introduction</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -247,7 +246,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04_nocodb-introduction.html">4. NocoDB Introduction</a>
+        <a href="05_nocodb-dataimport.html">4. Dataimport</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -256,7 +255,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="05_nocodb-dataimport.html">5. Dataimport</a>
+        <a href="06_nocodb-collaborative-work.html">5. Collaborative Work with NocoDB</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -265,7 +264,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06_nocodb-collaborative-work.html">6. Collaborative Work with NocoDB</a>
+        <a href="07_tables-in-nocodb.html">6. Tables in NocoDB</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -274,7 +273,7 @@
 <div class="accordion accordion-flush" id="accordionFlush8">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading8">
-        <a href="07_tables-in-nocodb.html">7. Tables in NocoDB</a>
+        <a href="08_views-in-nocodb.html">7. Views</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -283,16 +282,7 @@
 <div class="accordion accordion-flush" id="accordionFlush9">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading9">
-        <a href="08_views-in-nocodb.html">8. Views</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush10">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading10">
-        <a href="09_apis.html">9. APIs</a>
+        <a href="09_apis.html">8. APIs</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -356,7 +346,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction</h1>
-        <p>Last updated on 2025-04-14 |
+        <p>Last updated on 2025-04-15 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/01_introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -370,38 +360,7 @@
 
         
 
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul><li>What is a relational database?</li>
-<li>What is a spreadsheet?</li>
-</ul></div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul><li>Explain the difference between a relational database and a
-spreadsheet</li>
-<li>Explain the advantages and disadvantages</li>
-</ul></div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>Before we create a new database and fill it with information and
-data, we should learn the basic concept behind all this. What is a
-relational database or a spreadsheet, why should i use these and how do
-I organize my data to get the best use out of all these concepts. To
-understand the starting point where we are coming from, we want to
-understand the basic idea behind the concepts.</p>
-</section><section><h2 class="section-heading" id="spreadsheets">Spreadsheets<a class="anchor" aria-label="anchor" href="#spreadsheets"></a></h2>
+<section><h2 class="section-heading" id="spreadsheets">Spreadsheets<a class="anchor" aria-label="anchor" href="#spreadsheets"></a></h2>
 <hr class="half-width"><div id="discussion-do-you-use-tables-and-if-so-for-which-tasks" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -416,23 +375,43 @@ any limitations or problems in your work?</p>
 </div>
 </div>
 </div>
-<p>Spreadsheets are one of the most versatile and widely used tools for
-data analysis and management. They allow users to organize data in a
-flexible format that supports simple to complex calculations and
-analyses. Typically, spreadsheets consist of a grid of cells, organized
-in columns and rows, which can contain data such as text, numbers, and
-formulas. One of the strengths of spreadsheets is their ease of use,
-which enables even non-experts to effectively manipulate and analyze
-data. Formulas and functions, like SUM, AVERAGE, and VLOOKUP, provide
-powerful ways to perform automatic calculations and consolidate data.
-Moreover, modern spreadsheet programs like Microsoft Excel and Google
-Sheets support advanced features such as pivot tables, conditional
-formatting, and the integration of scripting languages like VBA and
-Google App Script, which allow for task automation and the creation of
-custom functions. Spreadsheets are therefore indispensable in many
-business, academic, and private applications, where they are used for
-data storage, financial analysis, planning, and much more.</p>
-</section><section><h2 class="section-heading" id="relational-database">Relational Database<a class="anchor" aria-label="anchor" href="#relational-database"></a></h2>
+<p>Spreadsheets are among the most versatile and widely used tools for
+organizing, analyzing, and presenting data. They offer an intuitive
+interface based on a grid of rows and columns, where users can input
+data, apply formulas, and create dynamic calculations. Tools like
+Microsoft Excel and Google Sheets are extremely accessible and powerful,
+with functions such as <code>SUM()</code>, <code>AVERAGE()</code>,
+<code>IF()</code> and <code>VLOOKUP()</code> that allow users to perform
+both simple and complex data analysis without programming
+experience.</p>
+<p>In addition to basic operations, modern spreadsheets offer advanced
+features like pivot tables, conditional formatting, data validation, and
+even scripting capabilities via VBA or Google Apps Script. These make
+spreadsheets suitable for a wide range of applications — from budgeting
+and reporting to data collection and lightweight project management.</p>
+<p>One of the major strengths of spreadsheets is their
+<strong>flexibility</strong>. Users can easily add or remove columns,
+merge cells, manually adjust content, and build structures that match
+their current needs. In many small or medium-sized projects, this
+flexibility is not just helpful, it’s essential for getting started
+quickly and without barriers.</p>
+<p>However, this flexibility can become a weakness as data grows in
+complexity. Spreadsheets are inherently <strong>flat</strong> — they’re
+designed for two-dimensional data. The more users try to represent
+relationships between different types of data (such as customers and
+orders, or artworks and artists), the more fragile and error-prone the
+spreadsheet becomes. Relationships are often created informally, using
+copy-paste, repeated values, or formulas like <code>VLOOKUP</code>,
+which are not resilient to structural changes or user mistakes.</p>
+<p>As a result, spreadsheets can suffer from: - <strong>Data
+redundancy</strong> (the same information repeated in multiple places),
+- <strong>Inconsistencies</strong> (typos, outdated copies) -
+<strong>scalability issues</strong> (hard to manage as more people work
+on the same file or as data volume increases).</p>
+<p>This is where relational databases come in — not to replace
+spreadsheets entirely, but to offer a more robust and scalable
+alternative when the limitations of spreadsheets become apparent.</p>
+<hr></section><section><h2 class="section-heading" id="relational-databases">Relational Databases<a class="anchor" aria-label="anchor" href="#relational-databases"></a></h2>
 <hr class="half-width"><div id="discussion-do-you-use-databases-and-if-so-for-which-tasks" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -447,21 +426,35 @@ disadvantages?</p>
 </div>
 </div>
 </div>
-<p>Relational databases form the foundation for storing and managing
-structured data in many modern projects. They are based on a model where
-data is organized in a tabular form, each table consisting of rows and
-columns. This structure allows efficient data storage, querying, and
-manipulation. A key feature of relational databases is the use of
-primary and foreign keys that define strong relationships between
-different tables. These keys support data integrity and facilitate
-complex data queries involving multiple tables. SQL (Structured Query
-Language) is the dominant language used for creating, managing, and
-querying relational databases. Its powerful commands like SELECT,
-INSERT, UPDATE, and DELETE enable users to interact with data and
-extract valuable insights from large datasets. Overall, relational
-databases offer a robust and reliable solution for enterprise data
-management, ensuring high data quality and security through their
-structured and rule-based setup.</p>
+<p>Relational databases offer a structured and reliable way to manage
+complex, interrelated data. Unlike spreadsheets, which are flat and
+often lack enforced structure, relational databases store data in
+<strong>multiple related tables</strong>, each focusing on one specific
+type of information (e.g., users, products, orders). These tables are
+connected using <strong>primary and foreign keys</strong>, which define
+explicit relationships between them — and ensure <strong>data
+integrity</strong>.</p>
+<p>In a relational model, information is stored once and referenced when
+needed. This minimizes redundancy, improves clarity, and makes data
+easier to update, search, and extend over time. For example, instead of
+writing an artist’s name next to every artwork, a database would store
+that artist in a dedicated <code>Artists</code> table and simply link to
+them via an <code>ArtistID</code>. This makes changes easy, avoids
+duplication, and enables rich queries like “Show all artworks by artists
+from France.”</p>
+<p>Relational databases are typically queried using <strong>SQL
+(Structured Query Language)</strong>, a powerful language designed to
+extract, modify, and manage data. SQL commands such as
+<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, and
+<code>DELETE</code> allow users to interact with even large, complex
+datasets in efficient and predictable ways.</p>
+<p>While traditional database systems like MySQL or PostgreSQL require
+more technical knowledge than spreadsheets, modern <strong>no-code tools
+like NocoDB</strong> bridge that gap. These tools allow users to
+interact with databases through spreadsheet-like interfaces, while still
+benefiting from the structure and power of relational data models. In
+other words, they combine the <strong>usability of spreadsheets</strong>
+with the <strong>robustness of relational databases</strong>.</p>
 </section><section><h2 class="section-heading" id="what-is-nocodb">What is NocoDB?<a class="anchor" aria-label="anchor" href="#what-is-nocodb"></a></h2>
 <hr class="half-width"><p>NocoDB combines exactly these two concepts and allows us to create
 databases with the clear interface of a spreadsheet. It is a so-called
@@ -535,7 +528,7 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/instructor/01_introduction.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/instructor/01_introduction.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2025-04-14",
+  "dateModified": "2025-04-15",
   "datePublished": "2025-04-15"
 }
 
