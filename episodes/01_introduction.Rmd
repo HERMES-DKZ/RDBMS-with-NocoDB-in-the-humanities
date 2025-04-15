@@ -4,7 +4,23 @@ teaching: 10
 exercises: 2
 ---
 
-## Spreadsheets
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- What is a relational database?
+- What is a spreadsheet?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain the difference between a relational database and a spreadsheet
+- Explain the advantages and disadvantages
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+## Introduction
+
 
 ::::::::::::: discussion
 
@@ -14,6 +30,15 @@ Spreadsheets, like Microsoft Excel, are used in many areas of application, but t
 Have you noticed any limitations or problems in your work?
 
 ::::::::::::::::::::
+
+
+Before we create a new database and fill it with information and data, we should learn the basic concept behind all this. 
+What is a relational database or a spreadsheet, why should i use these and how do I organize my data to get the best 
+use out of all these concepts.
+To understand the starting point where we are coming from, we want to understand the basic idea behind the concepts.
+
+
+## Spreadsheets
 
 Spreadsheets are among the most versatile and widely used tools for organizing, analyzing, and presenting data. 
 They offer an intuitive interface based on a grid of rows and columns, where users can input data, apply formulas, 
