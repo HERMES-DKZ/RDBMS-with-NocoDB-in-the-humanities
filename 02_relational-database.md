@@ -152,14 +152,19 @@ To bring our MET dog collection into First Normal Form, we first need to separat
 That means splitting up the location into department and gallery number, simplifying the artist field to only include the 
 name, and making sure there are no duplicate records. After applying these changes, our structured table looks like this:
 
-| Title                                          | Artist Name              | Accession Number | Department            | Gallery Number |
-|-----------------------------------------------|--------------------------|------------------|------------------------|----------------|
-| The Artist's Wife and His Setter Dog          | Thomas Eakins            | 23.139           | The American Wing      | 764            |
-| The Champion Single Sculls                    | Thomas Eakins            | 34.92            | The American Wing      | 763            |
-| A Gorge in the Mountains                      | Sanford R. Gifford       | 15.30.62         | The American Wing      | 761            |
-| Marie Emilie Coignet de Courson with a Dog    | Jean H. Fragonard        | 37.118           | European Paintings     | 631            |
-| Blue Construction, Orange Figures             | Bill Traylor             | 2015.756         | The American Wing      | 773            |
-| Christ Carrying the Cross, with the Crucifixion               | Gerard David             | 1975.1.119A-B    | Robert Lehman Collection| 953            |
+| Title                                                                                   | Artist Name                   | Artist Nationality | Artist Birthplace        | Artist Birth–Death Years     | Accession Number | Department                         | Room Number |
+|-----------------------------------------------------------------------------------------|-------------------------------|--------------------|---------------------------|-------------------------------|------------------|--------------------------------------------------|----------------|
+| The Artist's Wife and His Setter Dog                                                    | Thomas Eakins                 | American           | Philadelphia, Pennsylvania| 1844–1916                     | 23.139           | The American Wing                               | 764            |
+| The Champion Single Sculls (Max Schmitt in a Single Scull)                              | Thomas Eakins                 | American           | Philadelphia, Pennsylvania| 1844–1916                     | 34.92            | The American Wing                               | 763            |
+| A Gorge in the Mountains (Kauterskill Clove)                                            | Sanford Robinson Gifford      | American           | Greenfield, New York      | 1823–1880                     | 15.30.62         | The American Wing                               | 761            |
+| Marie Emilie Coignet de Courson (1716–1806) with a Dog                                  | Jean Honoré Fragonard         | French             | Grasse                    | 1732–1806                     | 37.118           | European Paintings                              | 631            |
+| Blue Construction, Orange Figures                                                       | Bill Traylor                  | American           | Benton, Alabama           | 1853/54–1949                  | 2015.756         | The Met Fifth Avenue / The American Wing        | 773            |
+| Christ Carrying the Cross, with the Crucifixion                                         | Gerard David                  | Netherlandish      | Oudewater                 | ca. 1455–1523                 | 1975.1.119A-B    | Robert Lehman Collection                        | 953            |
+| Untitled (Studio)                                                                       | Kerry James Marshall          | American           | [Not Specified]           | [Not Specified]               | 2015.366         | The Met Fifth Avenue                            | 638            |
+| Wheat Field with Cypresses                                                              | Vincent van Gogh              | Dutch              | Zundert                   | 1853–1890                     | 1993.132         | The Annenberg Collection                        | 822            |
+| Manuel Osorio Manrique de Zuñiga (1784–1792)                                            | Francisco de Goya             | Spanish            | [Not Specified]           | 1746–1828                     | 49.7.41          | European Paintings                              | 641            |
+| A Hunting Scene                                                                          | Piero di Cosimo               | Italian            | Florence                  | 1462–1522                     | 75.7.2           | European Paintings                              | 613            |
+
 
 This version is now in First Normal Form. Each field contains just one value, and combined information has been clearly 
 separated. This not only makes the table easier to understand, but also opens the door to further normalization in the 
