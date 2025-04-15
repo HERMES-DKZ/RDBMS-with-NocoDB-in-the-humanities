@@ -464,7 +464,7 @@ in order to structure them better and more clearly without losing
 information. The advantages of this and how it is used in relational
 data modelling need to be clarified next.</p>
 <table class="table"><thead><tr class="header"><th>Titel</th>
-<th>Artist <strong>Artist (Foreign Key)</strong>
+<th>Artist <strong>(Foreign Key)</strong>
 </th>
 </tr></thead><tbody><tr class="odd"><td>The Artists Wife and His Setter Dof</td>
 <td>1</td>
@@ -484,7 +484,52 @@ data modelling need to be clarified next.</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="normal-form">Normal Form<a class="anchor" aria-label="anchor" href="#normal-form"></a></h2>
-<hr class="half-width"><div class="section level3">
+<hr class="half-width"></section><div class="section level1">
+<h1 id="introduction-to-normal-forms-bringing-order-to-your-data">Introduction to Normal Forms – Bringing Order to Your Data<a class="anchor" aria-label="anchor" href="#introduction-to-normal-forms-bringing-order-to-your-data"></a></h1>
+<p>As the amount of information in a table grows, it’s important to keep
+the data <strong>well-structured and manageable</strong>. This is where
+the concept of <strong>normal forms</strong> comes in - a systematic
+approach to organizing data so that it remains <strong>clear,
+consistent</strong>, and <strong>easy to extend</strong>.</p>
+<p>Normal forms build upon concepts you already know: <strong>tables
+(relations)</strong>, <strong>primary keys</strong>, and <strong>foreign
+keys</strong>. They help avoid common issues in database design, such
+as:</p>
+<ul><li>
+<strong>Data redundancy</strong>: storing the same information
+multiple times<br></li>
+<li>
+<strong>Anomalies</strong>: unwanted side effects when inserting,
+updating, or deleting data<br></li>
+<li>
+<strong>Lack of clarity</strong>: tables that are hard to maintain
+or expand</li>
+</ul><p>Imagine you want to add new features in the future — new fields,
+relationships, or more advanced queries. If your tables are
+well-structured, you can do that with minimal effort. In a simple “all
+in one table” it can be very difficult to apply changes. Normal forms
+help create a <strong>clean and flexible foundation</strong> for your
+data.</p>
+<p>Another key advantage: normalized data makes it easier to work with
+<strong>relationships between tables</strong>. The result is a model
+that is both <strong>logically sound</strong> and <strong>technically
+efficient</strong>.</p>
+<div id="keypoints3" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points</h3>
+<div class="callout-content">
+<ul><li>Avoid duplication of data<br></li>
+<li>Clear separation of responsibilities (each table has a specific
+role)<br></li>
+<li>Fewer errors and inconsistencies<br></li>
+<li>Easier to maintain and extend the database</li>
+</ul></div>
+</div>
+</div>
+<div class="section level3">
 <h3 id="first-normal-form">First normal form<a class="anchor" aria-label="anchor" href="#first-normal-form"></a></h3>
 </div>
 <div class="section level3">
@@ -497,7 +542,11 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></div> <!-- / div.lesson-content -->
+</div>
+
+
+
+      </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/01_introduction.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/03_spreadsheets.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
