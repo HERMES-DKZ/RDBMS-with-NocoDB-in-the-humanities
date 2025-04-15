@@ -68,7 +68,7 @@ As a result, spreadsheets can suffer from:
 This is where relational databases come in — not to replace spreadsheets entirely, but to offer a more robust 
 and scalable alternative when the limitations of spreadsheets become apparent.
 
----
+
 
 ## Relational Databases
 
