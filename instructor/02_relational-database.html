@@ -357,7 +357,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Relational Databases</h1>
-        <p>Last updated on 2025-04-14 |
+        <p>Last updated on 2025-04-15 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/02_relational-database.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -409,7 +409,13 @@ of Birth,” or “Email Address.” Each row represents a single data entry,
 showing the actual values for those attributes. More precisely, each
 column would represent a person and contain information about that
 person. This concept is transferable to all types of objects.</p>
-<p>Tables provide a clear and easy-to-understand structure that works
+<table class="table"><thead><tr class="header"><th>Name</th>
+<th>Date of Birth</th>
+</tr></thead><tbody><tr class="odd"><td>Thomas Eakins</td>
+<td>25.7.1844</td>
+</tr><tr class="even"><td>Bill Traylor</td>
+<td>1.4.1854</td>
+</tr></tbody></table><p>Tables provide a clear and easy-to-understand structure that works
 well for both humans and computers. They allow large amounts of
 information to be stored in an organized way, making it easy to search,
 sort, and analyze the data.</p>
@@ -429,7 +435,13 @@ represents a data record, in our example a person. If we want to make
 this person uniquely referenceable, we can assign an ID. If this ID is
 unique and only exists once in the entire data record, it is referred to
 as the primary key.</p>
-<div id="keypoints1" class="callout keypoints">
+<table class="table"><thead><tr class="header"><th>Name</th>
+<th>Date of Birth</th>
+</tr></thead><tbody><tr class="odd"><td>Thomas Eakins</td>
+<td>25.7.1844</td>
+</tr><tr class="even"><td>Bill Traylor</td>
+<td>1.4.1854</td>
+</tr></tbody></table><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -450,7 +462,14 @@ in the tables. This allows information to be split into different tables
 in order to structure them better and more clearly without losing
 information. The advantages of this and how it is used in relational
 data modelling need to be clarified next.</p>
-<div id="keypoints2" class="callout keypoints">
+<table class="table"><thead><tr class="header"><th>Titel</th>
+<th>Artist <strong>Artist (Foreign Key)</strong>
+</th>
+</tr></thead><tbody><tr class="odd"><td>The Artists Wife and His Setter Dof</td>
+<td>1</td>
+</tr><tr class="even"><td>Blue Construction, Organge Figures</td>
+<td>2</td>
+</tr></tbody></table><div id="keypoints2" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -527,7 +546,7 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/instructor/02_relational-database.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/instructor/02_relational-database.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2025-04-14",
+  "dateModified": "2025-04-15",
   "datePublished": "2025-04-15"
 }
 
