@@ -638,20 +638,6 @@ as the primary key.</p>
 </tr>
 </tbody>
 </table>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul>
-<li>The primary Key must never be empty</li>
-<li>The primary Key must be unique</li>
-</ul>
-</div>
-</div>
-</div>
 <p>If we now want to collect more information about that some person,
 that we do not want to store in the same table, we can create a new
 table and refer to the person with the Primary Key. If we use this key
@@ -678,7 +664,7 @@ data modelling need to be clarified next.</p>
 </tr>
 </tbody>
 </table>
-<div id="keypoints2" class="callout keypoints">
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -686,6 +672,8 @@ data modelling need to be clarified next.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
+<li>The <strong>primary Key</strong> must never be empty</li>
+<li>The <strong>primary Key</strong> must be unique</li>
 <li>A <strong>foreign key</strong> must link to an existing
 <strong>Primary Key</strong>
 </li>
@@ -693,11 +681,9 @@ data modelling need to be clarified next.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="normal-form">Normal Form<a class="anchor" aria-label="anchor" href="#normal-form"></a>
+</section><section><h2 class="section-heading" id="normal-forms">Normal Forms<a class="anchor" aria-label="anchor" href="#normal-forms"></a>
 </h2>
-<hr class="half-width"></section><div class="section level1">
-<h1 id="introduction-to-normal-forms-bringing-order-to-your-data">Introduction to Normal Forms – Bringing Order to Your Data<a class="anchor" aria-label="anchor" href="#introduction-to-normal-forms-bringing-order-to-your-data"></a>
-</h1>
+<hr class="half-width">
 <p>As the amount of information in a table grows, it’s important to keep
 the data <strong>well-structured and manageable</strong>. This is where
 the concept of <strong>normal forms</strong> comes in - a systematic
@@ -730,7 +716,7 @@ data.</p>
 <strong>relationships between tables</strong>. The result is a model
 that is both <strong>logically sound</strong> and <strong>technically
 efficient</strong>.</p>
-<div id="keypoints3" class="callout keypoints">
+<div id="keypoints2" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -754,6 +740,217 @@ role)<br>
 <h3 id="first-normal-form">First normal form<a class="anchor" aria-label="anchor" href="#first-normal-form"></a>
 </h3>
 </div>
+</section><div class="section level1">
+<h1 id="first-normal-form-1nf-structuring-the-met-dog-collection">First Normal Form (1NF) – Structuring the MET Dog Collection<a class="anchor" aria-label="anchor" href="#first-normal-form-1nf-structuring-the-met-dog-collection"></a>
+</h1>
+<p>To introduce the concept of the First Normal Form, we want to start
+by exploring the public collection of the <a href="https://www.metmuseum.org/art/collection/search" class="external-link">Metropolitan
+Museum of Art (The MET)</a> in New York. Our goal is to create a curated
+dataset of artworks that include dogs, forming the foundation of a
+small, themed collection.</p>
+<p>We began by extracting a selection of entries that were tagged with
+“dog”. Here is a part of the raw table we compiled:</p>
+<table class="table">
+<colgroup>
+<col width="37%">
+<col width="27%">
+<col width="7%">
+<col width="27%">
+</colgroup>
+<thead><tr class="header">
+<th>Title</th>
+<th>Artist</th>
+<th>Accession Number</th>
+<th>On View Location</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>The Artist’s Wife and His Setter Dog</td>
+<td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
+<td>23.139</td>
+<td>The American Wing, 764</td>
+</tr>
+<tr class="even">
+<td>The Champion Single Sculls (Max Schmitt in a Single Scull)</td>
+<td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
+<td>34.92</td>
+<td>The American Wing, 763</td>
+</tr>
+<tr class="odd">
+<td>A Gorge in the Mountains (Kauterskill Clove)</td>
+<td>Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY)</td>
+<td>15.30.62</td>
+<td>The American Wing, 761</td>
+</tr>
+<tr class="even">
+<td>Marie Emilie Coignet de Courson (1716–1806) with a Dog</td>
+<td>Jean Honoré Fragonard (French, Grasse 1732–1806 Paris)</td>
+<td>37.118</td>
+<td>European Paintings, 631</td>
+</tr>
+<tr class="odd">
+<td>Blue Construction, Orange Figures</td>
+<td>Bill Traylor</td>
+<td>2015.756</td>
+<td>The Met Fifth Avenue in Gallery 773</td>
+</tr>
+<tr class="even">
+<td>Christ Carrying the Cross, with…</td>
+<td>Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)</td>
+<td>1975.1.119A-B</td>
+<td>Robert Lehman Collection, 953</td>
+</tr>
+<tr class="odd">
+<td>Untitled (Studio)</td>
+<td>Kerry James Marshall</td>
+<td>2015.366</td>
+<td>The Met Fifth Avenue in Gallery 638</td>
+</tr>
+<tr class="even">
+<td>Blue Construction, Orange Figures</td>
+<td>Bill Traylor (American, Benton, AL 1853/54–1949 Montgomery, AL)</td>
+<td>2015.756</td>
+<td>The American Wing, 773</td>
+</tr>
+<tr class="odd">
+<td>Wheat Field with Cypresses</td>
+<td>Vincent van Gogh (Dutch, Zundert 1853–1890 Auvers-sur-Oise)</td>
+<td>1993.132</td>
+<td>The Annenberg Collection: 19th–20th Century Masters, 822</td>
+</tr>
+<tr class="even">
+<td>Manuel Osorio Manrique de Zuñiga (1784–1792)</td>
+<td>Goya (Francisco de Goya y Lucientes)</td>
+<td>49.7.41</td>
+<td>European Paintings, 641</td>
+</tr>
+<tr class="odd">
+<td>A Hunting Scene</td>
+<td>Piero di Cosimo</td>
+<td>75.7.2</td>
+<td>European Paintings; Gallery 613</td>
+</tr>
+</tbody>
+</table>
+<p>At first glance, this table seems to contain the basic information we
+need: title, artist, museum reference number, and viewing location. But
+let’s take a closer look. What happens if we want to search for all
+works by the same artist? How do we deal with artworks that appear to be
+listed more than once? What exactly is stored in the “On View Location”
+column — is it a department, a gallery number, or both? And what if we
+wanted to sort or filter artworks by gallery alone?</p>
+<p>These questions reveal some issues with the structure of the table.
+The artist information includes names along with dates and places of
+birth and death, all mixed in a single field. Some entries are repeated,
+and the viewing location combines multiple details in a single cell. In
+this form, the data may be good enough for reading — but it’s far from
+ideal if we want to work with it programmatically, search through it
+efficiently, or extend it later.</p>
+<p>This is where the concept of <strong>First Normal Form (1NF)</strong>
+comes into play. It provides a first step toward cleaning and
+structuring the data. The core idea is simple: each field in a table
+should hold <strong>one single, atomic value</strong>. There should be
+no lists, no combined information, no embedded structures. Each piece of
+data belongs in its own place.</p>
+<p>To bring our MET dog collection into First Normal Form, we first need
+to separate combined data into individual fields. That means splitting
+up the location into department and gallery number, simplifying the
+artist field to only include the name, and making sure there are no
+duplicate records. After applying these changes, our structured table
+looks like this:</p>
+<table style="width:100%;" class="table">
+<colgroup>
+<col width="35%">
+<col width="19%">
+<col width="13%">
+<col width="18%">
+<col width="12%">
+</colgroup>
+<thead><tr class="header">
+<th>Title</th>
+<th>Artist Name</th>
+<th>Accession Number</th>
+<th>Department</th>
+<th>Gallery Number</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>The Artist’s Wife and His Setter Dog</td>
+<td>Thomas Eakins</td>
+<td>23.139</td>
+<td>The American Wing</td>
+<td>764</td>
+</tr>
+<tr class="even">
+<td>The Champion Single Sculls</td>
+<td>Thomas Eakins</td>
+<td>34.92</td>
+<td>The American Wing</td>
+<td>763</td>
+</tr>
+<tr class="odd">
+<td>A Gorge in the Mountains</td>
+<td>Sanford R. Gifford</td>
+<td>15.30.62</td>
+<td>The American Wing</td>
+<td>761</td>
+</tr>
+<tr class="even">
+<td>Marie Emilie Coignet de Courson with a Dog</td>
+<td>Jean H. Fragonard</td>
+<td>37.118</td>
+<td>European Paintings</td>
+<td>631</td>
+</tr>
+<tr class="odd">
+<td>Blue Construction, Orange Figures</td>
+<td>Bill Traylor</td>
+<td>2015.756</td>
+<td>The American Wing</td>
+<td>773</td>
+</tr>
+<tr class="even">
+<td>Christ Carrying the Cross…</td>
+<td>Gerard David</td>
+<td>1975.1.119A-B</td>
+<td>Robert Lehman Collection</td>
+<td>953</td>
+</tr>
+<tr class="odd">
+<td>Untitled (Studio)</td>
+<td>Kerry James Marshall</td>
+<td>2015.366</td>
+<td>The Met Fifth Avenue</td>
+<td>638</td>
+</tr>
+<tr class="even">
+<td>Wheat Field with Cypresses</td>
+<td>Vincent van Gogh</td>
+<td>1993.132</td>
+<td>The Annenberg Collection</td>
+<td>822</td>
+</tr>
+<tr class="odd">
+<td>Manuel Osorio Manrique de Zuñiga</td>
+<td>Francisco de Goya</td>
+<td>49.7.41</td>
+<td>European Paintings</td>
+<td>641</td>
+</tr>
+<tr class="even">
+<td>A Hunting Scene</td>
+<td>Piero di Cosimo</td>
+<td>75.7.2</td>
+<td>European Paintings</td>
+<td>613</td>
+</tr>
+</tbody>
+</table>
+<p>This version is now in First Normal Form. Each field contains just
+one value, and combined information has been clearly separated. This not
+only makes the table easier to understand, but also opens the door to
+further normalization in the next steps — where we’ll learn how to
+reduce redundancy and connect related data across multiple tables.</p>
 <div class="section level3">
 <h3 id="second-normal-form">Second normal form<a class="anchor" aria-label="anchor" href="#second-normal-form"></a>
 </h3>
