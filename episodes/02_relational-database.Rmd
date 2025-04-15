@@ -74,7 +74,7 @@ two entries in the tables. This allows information to be split into different ta
 them better and more clearly without losing information. 
 The advantages of this and how it is used in relational data modelling need to be clarified next.
 
-Titel | Artist **Artist (Foreign Key)**
+Titel | Artist **(Foreign Key)**
 ----- | ----- 
 The Artists Wife and His Setter Dof | 1
 Blue Construction, Organge Figures | 2
@@ -85,7 +85,44 @@ Blue Construction, Organge Figures | 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
 ## Normal Form
+
+# Introduction to Normal Forms – Bringing Order to Your Data
+
+As the amount of information in a table grows, it's important to keep the data **well-structured and manageable**. 
+This is where the concept of **normal forms** comes in - a systematic approach to organizing data so that it remains **clear, 
+consistent**, and **easy to extend**.
+
+Normal forms build upon concepts you already know: **tables (relations)**, **primary keys**, and **foreign keys**. 
+They help avoid common issues in database design, such as:
+
+- **Data redundancy**: storing the same information multiple times  
+- **Anomalies**: unwanted side effects when inserting, updating, or deleting data  
+- **Lack of clarity**: tables that are hard to maintain or expand
+
+Imagine you want to add new features in the future — new fields, relationships, or more advanced queries. 
+If your tables are well-structured, you can do that with minimal effort. In a simple "all in one table" it can be very difficult
+to apply changes. Normal forms help create a **clean and flexible foundation** for your data.
+
+Another key advantage: normalized data makes it easier to work with **relationships between tables**. 
+The result is a model that is both **logically sound** and **technically efficient**.
+
+
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Avoid duplication of data  
+- Clear separation of responsibilities (each table has a specific role)  
+- Fewer errors and inconsistencies  
+- Easier to maintain and extend the database  
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
 
 ### First normal form
 
