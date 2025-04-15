@@ -60,12 +60,6 @@ Name | Date of Birth | **ID (Primary Key)**
 Thomas Eakins | 25.7.1844 | 1
 Bill Traylor | 1.4.1854 | 2
 
-::::::::::::::::::::::::::::::::::::: keypoints
-
-- The primary Key must never be empty
-- The primary Key must be unique
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 If we now want to collect more information about that some person, that we do not want to store in the same table, we 
 can create a new table and refer to the person with the Primary Key. If we use this key in the new table
@@ -81,15 +75,15 @@ Blue Construction, Organge Figures | 2
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
+- The **primary Key** must never be empty
+- The **primary Key** must be unique
 - A **foreign key** must link to an existing **Primary Key**
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
-## Normal Form
-
-# Introduction to Normal Forms – Bringing Order to Your Data
+## Normal Forms
 
 As the amount of information in a table grows, it's important to keep the data **well-structured and manageable**. 
 This is where the concept of **normal forms** comes in - a systematic approach to organizing data so that it remains **clear, 
@@ -122,9 +116,64 @@ The result is a model that is both **logically sound** and **technically efficie
 
 
 
-
-
 ### First normal form
+
+# First Normal Form (1NF) – Structuring the MET Dog Collection
+
+To introduce the concept of the First Normal Form, we want to start by exploring the public collection of the [Metropolitan 
+Museum of Art (The MET)](https://www.metmuseum.org/art/collection/search) in New York. Our goal is to create a curated dataset of artworks that include dogs, 
+forming the foundation of a small, themed collection.
+
+We began by extracting a selection of entries that were tagged with "dog". Here is a part of the raw table we compiled:
+
+| Title                                                                                   | Artist                                                        | Accession Number | On View Location                                             |
+|-----------------------------------------------------------------------------------------|----------------------------------------------------------------|------------------|----------------------------------------------------------------|
+| The Artist's Wife and His Setter Dog                                                    | Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916) | 23.139           | The American Wing, 764                                        |
+| The Champion Single Sculls (Max Schmitt in a Single Scull)                              | Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916) | 34.92            | The American Wing, 763                                        |
+| A Gorge in the Mountains (Kauterskill Clove)                                            | Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY)         | 15.30.62         | The American Wing, 761                                        |
+| Marie Emilie Coignet de Courson (1716–1806) with a Dog                                  | Jean Honoré Fragonard (French, Grasse 1732–1806 Paris)         | 37.118           | European Paintings, 631                                       |
+| Blue Construction, Orange Figures                                                       | Bill Traylor                                                  | 2015.756         | The Met Fifth Avenue in Gallery 773                           |
+| Christ Carrying the Cross, with...                                                     | Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)   | 1975.1.119A-B    | Robert Lehman Collection, 953                                 |
+| Untitled (Studio)                                                                       | Kerry James Marshall                                          | 2015.366         | The Met Fifth Avenue in Gallery 638                           |
+| Blue Construction, Orange Figures                                                       | Bill Traylor (American, Benton, AL 1853/54–1949 Montgomery, AL)| 2015.756         | The American Wing, 773                                        |
+| Wheat Field with Cypresses                                                              | Vincent van Gogh (Dutch, Zundert 1853–1890 Auvers-sur-Oise)   | 1993.132         | The Annenberg Collection: 19th–20th Century Masters, 822     |
+| Manuel Osorio Manrique de Zuñiga (1784–1792)                                            | Goya (Francisco de Goya y Lucientes)                          | 49.7.41          | European Paintings, 641                                       |
+| A Hunting Scene                                                                          | Piero di Cosimo                                               | 75.7.2           | European Paintings; Gallery 613                               |
+
+At first glance, this table seems to contain the basic information we need: title, artist, museum reference number, 
+and viewing location. But let’s take a closer look. What happens if we want to search for all works by the same artist? 
+How do we deal with artworks that appear to be listed more than once? What exactly is stored in the “On View Location” 
+column — is it a department, a gallery number, or both? And what if we wanted to sort or filter artworks by gallery alone?
+
+These questions reveal some issues with the structure of the table. The artist information includes names along with 
+dates and places of birth and death, all mixed in a single field. Some entries are repeated, and the viewing location 
+combines multiple details in a single cell. In this form, the data may be good enough for reading — but it’s far from 
+ideal if we want to work with it programmatically, search through it efficiently, or extend it later.
+
+This is where the concept of **First Normal Form (1NF)** comes into play. It provides a first step toward cleaning and 
+structuring the data. The core idea is simple: each field in a table should hold **one single, atomic value**. 
+There should be no lists, no combined information, no embedded structures. Each piece of data belongs in its own place.
+
+To bring our MET dog collection into First Normal Form, we first need to separate combined data into individual fields. 
+That means splitting up the location into department and gallery number, simplifying the artist field to only include the 
+name, and making sure there are no duplicate records. After applying these changes, our structured table looks like this:
+
+| Title                                          | Artist Name              | Accession Number | Department            | Gallery Number |
+|-----------------------------------------------|--------------------------|------------------|------------------------|----------------|
+| The Artist's Wife and His Setter Dog          | Thomas Eakins            | 23.139           | The American Wing      | 764            |
+| The Champion Single Sculls                    | Thomas Eakins            | 34.92            | The American Wing      | 763            |
+| A Gorge in the Mountains                      | Sanford R. Gifford       | 15.30.62         | The American Wing      | 761            |
+| Marie Emilie Coignet de Courson with a Dog    | Jean H. Fragonard        | 37.118           | European Paintings     | 631            |
+| Blue Construction, Orange Figures             | Bill Traylor             | 2015.756         | The American Wing      | 773            |
+| Christ Carrying the Cross...                  | Gerard David             | 1975.1.119A-B    | Robert Lehman Collection| 953            |
+| Untitled (Studio)                              | Kerry James Marshall     | 2015.366         | The Met Fifth Avenue   | 638            |
+| Wheat Field with Cypresses                    | Vincent van Gogh         | 1993.132         | The Annenberg Collection| 822            |
+| Manuel Osorio Manrique de Zuñiga              | Francisco de Goya        | 49.7.41          | European Paintings     | 641            |
+| A Hunting Scene                                | Piero di Cosimo          | 75.7.2           | European Paintings     | 613            |
+
+This version is now in First Normal Form. Each field contains just one value, and combined information has been clearly 
+separated. This not only makes the table easier to understand, but also opens the door to further normalization in the 
+next steps — where we’ll learn how to reduce redundancy and connect related data across multiple tables.
 
 
 ### Second normal form
