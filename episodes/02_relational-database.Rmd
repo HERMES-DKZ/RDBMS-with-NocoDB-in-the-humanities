@@ -56,7 +56,7 @@ If we want to make this person uniquely referenceable, we can assign an ID. If t
 in the entire data record, it is referred to as the primary key.
 
 Name | Date of Birth | **ID (Primary Key)**
------ | -----
+----- | ----- | -----
 Thomas Eakins | 25.7.1844 | 1
 Bill Traylor | 1.4.1854 | 2
 
@@ -75,7 +75,7 @@ them better and more clearly without losing information.
 The advantages of this and how it is used in relational data modelling need to be clarified next.
 
 Titel | Artist **Artist (Foreign Key)**
------ | -----
+----- | ----- | -----
 The Artists Wife and His Setter Dof | 1
 Blue Construction, Organge Figures | 2
 
