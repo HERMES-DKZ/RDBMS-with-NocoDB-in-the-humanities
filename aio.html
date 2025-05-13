@@ -279,7 +279,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="05_nocodb-dataimport.html">4. Dataimport</a>
+        <a href="05_nocodb-dataimport.html">4. Working with data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -1156,7 +1156,7 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
 </div>
-</section></section><section id="aio-05_nocodb-dataimport"><p>Content from <a href="05_nocodb-dataimport.html">Dataimport</a></p>
+</section></section><section id="aio-05_nocodb-dataimport"><p>Content from <a href="05_nocodb-dataimport.html">Working with data</a></p>
 <hr>
 <p>Last updated on 2025-05-13 |
 
@@ -1173,7 +1173,8 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>How do I import data in NocoDB?</li>
-<li>What possibilities are given?</li>
+<li>How do I filter data?</li>
+<li>What kinds of analysis are supported in NocoDB?</li>
 </ul>
 </div>
 </div>
@@ -1184,22 +1185,189 @@ any links that you are not going to use.
 <h3 class="card-title">Objectives</h3>
 <ul>
 <li>import data from csv</li>
-<li>import data from an existing database</li>
+<li>explore foreign data with filter and sort functions</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="import-from-existing-database">Import from existing database<a class="anchor" aria-label="anchor" href="#import-from-existing-database"></a>
-</h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="via-form">Via form<a class="anchor" aria-label="anchor" href="#via-form"></a>
+<p>In this episode, we’ll take the first steps toward exploring and
+analyzing data in NocoDB using two tools: <strong>Filters</strong> and
+<strong>Sorting</strong>. Before we do that, we need to import some data
+to work with.</p>
+<section><h2 class="section-heading" id="importing-a-csv-file">Importing a CSV File<a class="anchor" aria-label="anchor" href="#importing-a-csv-file"></a>
 </h2>
 <hr class="half-width">
+<p>We’ll begin by importing a dataset in CSV format. CSV
+(Comma-Separated Values) is a common file format used to store tabular
+data. If not already done, please download the data <a href="">here</a>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open the Base where you want to import the data, in our case it
+can be the <em>Sample_base</em>.</p></li>
+<li><p>Inside the Base, click on <strong>Import Data</strong>.</p></li>
+<li><p>In the dialog that appears, select the <strong>CSV</strong>
+option.</p></li>
+<li>
+<p>Choose your CSV file by either:</p>
+<ul>
+<li>Clicking <strong>Upload File</strong> and selecting the file from
+your computer, or</li>
+<li>Dragging and dropping the file into the upload area.</li>
+<li>The Field of The Dropdown Menu should be <strong>UTF-8</strong>, if
+not, open the dropdown and select it.</li>
+</ul>
+</li>
+<li><p>Click <strong>Import files</strong></p></li>
+<li><p>Now you can choose which columns you want to import. Leave
+everything checked and click <strong>Import</strong></p></li>
+</ol>
+<p>Your CSV file is now imported into NocoDB and appears as a new table.
+You should see your data in a spreadsheet-like view, ready to be cleaned
+and explored.</p>
+</section><section><h2 class="section-heading" id="adjust-field-types">Adjust Field Types<a class="anchor" aria-label="anchor" href="#adjust-field-types"></a>
+</h2>
+<hr class="half-width">
+<p>After importing data, it’s a good idea to review the <strong>field
+types</strong> for each column. NocoDB gives the Field Type “Single line
+text” after importing data, but this can lead to different problems and
+limitations. Choosing the right field type helps NocoDB understand how
+to handle your data, and unlocks useful features for filtering, sorting,
+and analysis.</p>
+<div id="exercise-changing-field-types" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="exercise-changing-field-types" class="callout-inner">
+<h3 class="callout-title">Exercise: Changing field types</h3>
+<div class="callout-content">
+<p>Change the field types of our table according to the data in each
+column. Which field types but single line text could be useful for the
+<strong>Department</strong> or <strong>Medium</strong> column, where the
+number of different entries are limited?</p>
+</div>
+</div>
+</div>
+<p>Taking time to set this up now will make exploring and further
+collecting of data much easier.</p>
+</section><section><h2 class="section-heading" id="filtering-data">Filtering Data<a class="anchor" aria-label="anchor" href="#filtering-data"></a>
+</h2>
+<hr class="half-width">
+<p>Filters allow you to narrow down the data in your table so that you
+only see rows that match certain conditions. This is especially helpful
+when working with large datasets or when you want to focus on a specific
+subset of records. It also gives you the opportunity to get a first
+impression of the data you have.</p>
+<div class="section level4">
+<h4 id="to-apply-a-filter">To apply a filter:<a class="anchor" aria-label="anchor" href="#to-apply-a-filter"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>Click on the <strong>Filter</strong> icon (funnel symbol) at the
+toolbar.</li>
+<li>A filter menu will appear. Here you can create only one filter or a
+filter group. For the beginning we want to create a single filter. Click
+on <strong>Add filter</strong>
+</li>
+<li>First, you will see a field where you select a column to filter by,
+an operator to apply and a value to use for the filter. (Different field
+types will give you different operatos you can choose)</li>
+</ol>
+<p><strong>Example:</strong><br>
+Filter by <code>Year</code> → <em>greater than</em> →
+<code>1950</code><br>
+Filter by <code>Object Name</code> → <em>is equal</em> →
+<code>Print</code></p>
+</div>
+</section><section><h2 class="section-heading" id="grouping-data">Grouping Data<a class="anchor" aria-label="anchor" href="#grouping-data"></a>
+</h2>
+<hr class="half-width">
+<p>Another useful feature for exploring data in NocoDB is
+<strong>Grouping</strong>. This allows you to organize your table into
+logical sections based on the values of a specific field. Grouping helps
+you quickly spot patterns, compare categories, and get a better overview
+of how your data is structured.</p>
+<div class="section level4">
+<h4 id="to-group-your-data">To group your data:<a class="anchor" aria-label="anchor" href="#to-group-your-data"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>In the toolbar at the top, click on the <strong>Group</strong>
+icon.</li>
+<li>Choose the <strong>field</strong> you want to group by, for example:
+<ul>
+<li><code>Department</code></li>
+<li><code>Culture</code></li>
+<li><code>Medium</code></li>
+<li><code>Accession Year</code></li>
+</ul>
+</li>
+<li>NocoDB will automatically reorganize the view and display your
+records grouped by the selected field.</li>
+</ol>
+<p>Each group can be Collapsed or expanded to hide or show its rows and
+to se the related entries. In a next step you can create a subgroup by
+doing the steps again. With this you can get an even better expression
+of your data and explore for example.</p>
+<div id="callout-field-types-and-grouping" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="callout-field-types-and-grouping" class="callout-inner">
+<h3 class="callout-title">Callout: Field Types and grouping</h3>
+<div class="callout-content">
+<p>Grouping works especially well when your field is a <strong>Single
+Select</strong>, because the values are already clean and consistent. If
+you group by a free-text field, make sure the entries are standardized
+to avoid duplicate or inconsistent group names (e.g., “oil painting”
+vs. “Oil Painting”).</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="sorting-data">Sorting Data<a class="anchor" aria-label="anchor" href="#sorting-data"></a>
+</h2>
+<hr class="half-width">
+<p>Sorting lets you change the order in which records appear, for
+example, to view the oldest items first or group similar values
+together.</p>
+<div class="section level4">
+<h4 id="to-sort-your-data">To sort your data:<a class="anchor" aria-label="anchor" href="#to-sort-your-data"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>Click on the <strong>Sort</strong> icon from the toolbar.</li>
+<li>Choose the <strong>field</strong> to sort by and select:
+<ul>
+<li>
+<strong>Ascending</strong> (A–Z or 0–9), or</li>
+<li>
+<strong>Descending</strong> (Z–A or 9–0)</li>
+</ul>
+</li>
+<li>Add multiple sort levels if needed (e.g., by <code>Year</code> and
+then by <code>Artist</code>).</li>
+</ol>
+<div id="exercise-exploring-data" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="exercise-exploring-data" class="callout-inner">
+<h3 class="callout-title">Exercise: Exploring data</h3>
+<div class="callout-content">
+<p>Use the Filter, Sort and Group functionality in NocoDB to answer the
+following questions:</p>
+<p>How many different departments are there and how many works of art
+are in each department? How many works of art were added to the
+Metropolitan Museum’s collection after 1950? Do objects exist that
+contain one of the tags Women, Battles, Cats or Ships and are attributed
+to the ObjectName Print?</p>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-06_nocodb-collaborative-work"><p>Content from <a href="06_nocodb-collaborative-work.html">Collaborative Work with NocoDB</a></p>
+ -->
+</div>
+</section></section><section id="aio-06_nocodb-collaborative-work"><p>Content from <a href="06_nocodb-collaborative-work.html">Collaborative Work with NocoDB</a></p>
 <hr>
 <p>Last updated on 2025-05-13 |
 
