@@ -49,7 +49,6 @@ The central area of the screen is where you’ll do most of your work. NocoDB fo
 
 The left-hand menu shows you an overview of all your Bases, while the central window displays the content or settings for whatever you’re currently working on.
 
-
 ## Creating a Base
 
 Instead of working with the sample Base, let’s create our own so we can explore NocoDB’s features from scratch.
