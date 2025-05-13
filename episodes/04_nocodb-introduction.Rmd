@@ -23,48 +23,51 @@ exercises: 3
 
 ![Image from https://nocodb.com/](fig/nocodb.png)
 
-As already mentioned, NocoDB, as a so-called no-code database, combines the ease of use of a spreadsheet 
-with the flexibility of a relational database. It does this by providing an interface, the website, 
-which is based on a ‘classic’ relational database such as Postgreql or MySQL. Fortunately, it is not necessary 
-to understand exactly what this means in order to use it, an advantage of no-code databases. Put simply, 
-a database is created and all the complicated and difficult commands that previously had to be carried out by 
-programmers can be used via the website interface, including the creation of these. At the same time, 
-it is also possible to use your own database and place NocoDB on top of this existing database to make 
-further work with it easier. We will now take a look at exactly how this works. 
-To make it as easy as possible to get started, we will use the online version of NocoDB in this lesson, 
-which can be found [here](https://app.nocodb.com/). However, it is also possible to host your own version 
-of NocoDB, either locally on your own computer or on a server. 
 
-To be able to use NocoDB, you must first create an account and then log in with it. Once this is done, 
-we land on the NocoDB homepage.
+As mentioned earlier, NocoDB is a **no-code database** platform that combines the ease of use of a spreadsheet with the power of a relational database. In simple terms, NocoDB provides a web-based interface built on top of a traditional relational database like PostgreSQL or MySQL. The great thing about NocoDB is that you don’t need to understand the underlying database technology to use it—this is one of the key benefits of no-code tools.
+
+With NocoDB, you can create and manage databases through a simple, user-friendly interface, bypassing the need for complex programming. This means that tasks like organizing data, creating tables, and running queries, which would normally require coding, can now be done directly through the web interface. Whether you're building a database from scratch or working with an existing one, NocoDB makes it easy to interact with your data.
+
+In this tutorial, we'll focus on using the online version of NocoDB, which you can access [here](https://app.nocodb.com/). However, you also have the option to host your own version of NocoDB, either on your local machine or on a server.
 
 
 ## Layout
 
-To begin using NocoDB, the first step is to create an account. Once you've completed the registration and logged in, you’ll be taken to the NocoDB home page, where you can start exploring its features.
+The first step to getting started with NocoDB is to create an account. Once you’ve registered and logged in, you’ll be taken to the **NocoDB homepage**, where you can begin exploring its features.
 
-On the left-hand side of the interface, you’ll find the main navigation menu. This menu gives you access to general and team settings, integration options for connecting external databases, and the ability to create a new Base. In NocoDB, a Base is similar to what you might know as a database — it serves as a container for your tables, but also includes additional tools for organizing and interacting with your data.
+On the left side of the interface, you’ll find the **main navigation menu**, which gives you access to several important options:
+- **General settings** to manage your NocoDB account
+- **Team settings** for collaborating with others
+- **Integrations** to connect external databases
+- The option to **create a new Base**
 
-If you're starting with a brand-new account, NocoDB will automatically include a sample Base called Getting Started. This example Base is opened by default and offers a brief introduction to some of the core features available in the platform.
+In NocoDB, a **Base** is like a database, it’s a container that holds your tables and provides additional features for organizing and managing your data. 
 
-The main work area is located in the center of the screen. NocoDB follows a clear structure: at the highest level, you create a Base, and within that Base, you can add one or more tables. These tables can then be further customized and organized using Views, which allow you to display and filter data in different ways — something we’ll explore in more detail later.
+When you first sign up, NocoDB will automatically create a sample Base called **Getting Started**. This Base opens by default and helps you get familiar with the platform’s core features.
 
-While the left-hand menu gives you an overview of all your Bases and access to general settings, the central window always shows the content or configuration options for whatever element you’re currently working with.
+The central area of the screen is where you’ll do most of your work. NocoDB follows a simple structure: at the top level, you create a **Base**, and within that Base, you can add one or more **tables**. Tables are where your actual data lives, and you can customize them with **Views** to display and filter your data in different ways. We’ll dive into Views in more detail later.
+
+The left-hand menu shows you an overview of all your Bases, while the central window displays the content or settings for whatever you’re currently working on.
 
 
 ## Creating a Base
 
-Instead of using the sample Base, let’s now create our own, so we can explore the features independently and build something from scratch.
+Instead of working with the sample Base, let’s create our own so we can explore NocoDB’s features from scratch.
 
-To do this, click on Create Base, enter a name — for example, training_base — and then confirm by clicking create_base. You’ve now created your own Base, which is currently empty and ready to be filled with data.
+To get started, click on **Create Base**, give your new Base a name (e.g., `training_base`), and click **create_base** to confirm. You’ve now created an empty Base, ready to be filled with data.
 
-NocoDB offers several ways to populate a Base: you can create a new table manually, import data from a file, or connect your Base to an external data source. For the purpose of this exercise, we’ll create a new table by hand.
+There are several ways to populate a Base in NocoDB:
+- **Create a new table manually**
+- **Import data from a file** (such as CSV or Excel)
+- **Connect to an external data source**
 
-Click on Create New Table, and give your table a name — let’s call it Art_Collection. This will open up an empty spreadsheet-like interface, where you can define the structure of your table. At the same time, you’ll notice that your new table has also appeared under your Base in the left-hand menu, giving you a quick way to navigate between tables.
+For this exercise, let’s manually create a new table. Click on **Create New Table**, give the table a name (e.g., `Art_Collection`), and you’ll be taken to an empty, spreadsheet-like interface where you can define the structure of your table.
 
-If you’d like to add more tables to the same Base later on, you can simply hover over the Base name in the sidebar and click on the plus symbol that appears.
+At the same time, you’ll notice that your newly created table now appears under your Base in the left-hand menu. This gives you an easy way to navigate between your tables.
 
-Now that we have an empty table, we need to define its fields before we can start entering data. Fields represent the different types of information you want to store — for instance, you might include fields for the name of the artist, the title of the artwork, the year it was created, and so on.
+If you want to add more tables later on, simply hover over the Base name in the left sidebar, and a **plus symbol** will appear, click it to add another table.
+
+
 
 
 ## Data Fields
