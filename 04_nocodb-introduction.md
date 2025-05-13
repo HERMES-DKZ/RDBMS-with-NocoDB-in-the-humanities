@@ -14,8 +14,9 @@ exercises: 3
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- create a databse with NocoDB
-- understand the basic concept ideas
+- Create a new Base and a table within it
+- Add, rename, and configure fields (columns) in a table.
+- Choose appropriate data types for different kinds of information.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -112,5 +113,24 @@ Here are some of the most commonly used field types:
 + Email / Phone / URL: Special text types that validate the input (e.g., only valid email addresses can be entered).
 + Formula: Calculates values based on other fields, similar to formulas in spreadsheet software.
 + Relation: Links this table to another table in your Base — useful when working with relational data.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Exercise: Creating your own table
+
+Now that you’ve learned how to create a Base and add tables and fields, it’s time to apply what you’ve learned.
+
+1. Look at the example from the previous episode.
+2. Create a new, empty table for it, either in your existing Base or in a new one.
+3. Choose at least 5 informations and create fields using different field types (e.g. Text, Number, Date, Dropdown, Checkbox).
+4. Name your fields based on what kind of data you expect (e.g. Title, Author, Year, etc.).
+5. Try editing a field type or renaming a field.
+6. Explore freely: test options, click around, and get familiar with the interface.
+
+You don’t need to enter data yet — just focus on setting up the table structure.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
