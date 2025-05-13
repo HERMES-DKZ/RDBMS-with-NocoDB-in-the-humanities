@@ -126,8 +126,8 @@ Sorting lets you change the order in which records appear, for example, to view 
 
 Use the Filter, Sort and Group functionality in NocoDB to answer the following questions:
 
-How many different departments are there and how many works of art are in each department?
-How many works of art were added to the Metropolitan Museum's collection after 1950?
-Do objects exist that contain one of the tags Women, Battles, Cats or Ships and are attributed to the ObjectName Print?
+- How many different departments are there and how many works of art are in each department?
+- How many works of art were added to the Metropolitan Museum's collection after 1950?
+- Do objects exist that contain one of the tags Women, Battles, Cats or Ships and are attributed to the ObjectName Print?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
