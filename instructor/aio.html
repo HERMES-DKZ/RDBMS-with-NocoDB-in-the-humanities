@@ -1013,30 +1013,126 @@ log in with it. Once this is done, we land on the NocoDB homepage.</p>
 <section><h2 class="section-heading" id="layout">Layout<a class="anchor" aria-label="anchor" href="#layout"></a>
 </h2>
 <hr class="half-width">
-<p>To use NocoDB, you must first create an account, which you will then
-use to log in. Once this is done, you’ll land on the NocoDB home
-page.</p>
-<p>On the left-hand side, you’ll see general settings, team settings,
-integrations (which include settings for connected databases), and the
-option to create a new Base. In NocoDB, a Base essentially represents a
-database, but it also offers more options than just creating tables.</p>
-<p>If you’re using a brand-new account, you’ll already see a sample Base
-called Getting Started, which is also open by default and introduces
-some of NocoDB’s features.</p>
-<p>All work and configuration is done in the main window. NocoDB is
-generally structured in such a way that at the top level, you always
-create a Base, in which tables can then be created. These tables can
-also be further subdivided, and you can create so-called Views. We’ll
-take a closer look at how these work later. The left column always
-provides an overview of the existing Bases and general settings, while
-the main window to the right offers more specific information and
-options.</p>
-<p>For now, we’ll ignore the sample Base and create our own Base to
-explore the features independently.</p>
+<p>To begin using NocoDB, the first step is to create an account. Once
+you’ve completed the registration and logged in, you’ll be taken to the
+NocoDB home page, where you can start exploring its features.</p>
+<p>On the left-hand side of the interface, you’ll find the main
+navigation menu. This menu gives you access to general and team
+settings, integration options for connecting external databases, and the
+ability to create a new Base. In NocoDB, a Base is similar to what you
+might know as a database — it serves as a container for your tables, but
+also includes additional tools for organizing and interacting with your
+data.</p>
+<p>If you’re starting with a brand-new account, NocoDB will
+automatically include a sample Base called Getting Started. This example
+Base is opened by default and offers a brief introduction to some of the
+core features available in the platform.</p>
+<p>The main work area is located in the center of the screen. NocoDB
+follows a clear structure: at the highest level, you create a Base, and
+within that Base, you can add one or more tables. These tables can then
+be further customized and organized using Views, which allow you to
+display and filter data in different ways — something we’ll explore in
+more detail later.</p>
+<p>While the left-hand menu gives you an overview of all your Bases and
+access to general settings, the central window always shows the content
+or configuration options for whatever element you’re currently working
+with.</p>
+</section><section><h2 class="section-heading" id="creating-a-base">Creating a Base<a class="anchor" aria-label="anchor" href="#creating-a-base"></a>
+</h2>
+<hr class="half-width">
+<p>Instead of using the sample Base, let’s now create our own, so we can
+explore the features independently and build something from scratch.</p>
+<p>To do this, click on Create Base, enter a name — for example,
+training_base — and then confirm by clicking create_base. You’ve now
+created your own Base, which is currently empty and ready to be filled
+with data.</p>
+<p>NocoDB offers several ways to populate a Base: you can create a new
+table manually, import data from a file, or connect your Base to an
+external data source. For the purpose of this exercise, we’ll create a
+new table by hand.</p>
+<p>Click on Create New Table, and give your table a name — let’s call it
+Art_Collection. This will open up an empty spreadsheet-like interface,
+where you can define the structure of your table. At the same time,
+you’ll notice that your new table has also appeared under your Base in
+the left-hand menu, giving you a quick way to navigate between
+tables.</p>
+<p>If you’d like to add more tables to the same Base later on, you can
+simply hover over the Base name in the sidebar and click on the plus
+symbol that appears.</p>
+<p>Now that we have an empty table, we need to define its fields before
+we can start entering data. Fields represent the different types of
+information you want to store — for instance, you might include fields
+for the name of the artist, the title of the artwork, the year it was
+created, and so on.</p>
+</section><section><h2 class="section-heading" id="data-fields">Data Fields<a class="anchor" aria-label="anchor" href="#data-fields"></a>
+</h2>
+<hr class="half-width">
+<p>Now that we’ve created our table, we need to define its structure by
+adding fields. Fields are the columns of your table. Each one represents
+a specific kind of information you want to store for every row (or
+record) in the table. When you first create a table, NocoDB
+automatically adds a field called Title. This is a default field and
+cannot be deleted, but you can rename it and choose a different data
+type to make it fit your needs:</p>
+<ol style="list-style-type: decimal">
+<li>Locate the Title column in your table.</li>
+<li>Click on the small arrow next to the field name Title.</li>
+<li>From the dropdown menu, select Edit column.</li>
+</ol>
+<p>In the dialog box that opens, you can: + Change the Field Name (for
+example, rename it to Artwork Title) + Select a Field Type from the list
+(e.g., Single line text, Number, etc.) + Optionally, add a Description
+to explain what this field is for — this is helpful when collaborating
+with others. + Click Save to apply your changes.</p>
+<div class="section level4">
+<h4 id="adding-a-new-field">Adding a New Field<a class="anchor" aria-label="anchor" href="#adding-a-new-field"></a>
+</h4>
+<p>To add more fields:</p>
+<ol style="list-style-type: decimal">
+<li>Hover your mouse over the header row in the table, to the right of
+your existing fields.</li>
+<li>Click on the plus icon (+) that appears.</li>
+<li>In the dialog that opens, enter the Field Name (e.g., Artist).</li>
+<li>Choose the appropriate Field Type.</li>
+<li>Click Create Column to add the field to your table.</li>
+</ol>
+<p>You can repeat this process to add as many fields as you need.</p>
+<div id="callout-data-field-types" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="callout-data-field-types" class="callout-inner">
+<h3 class="callout-title">Callout: Data Field Types</h3>
+<div class="callout-content">
+<p>When creating or editing a field, NocoDB offers a range of data types
+to choose from. Selecting the right type helps keep your data
+consistent, makes it easier to sort or filter, and ensures others know
+what kind of input is expected.</p>
+<p>Here are some of the most commonly used field types:</p>
+<ul>
+<li>Single line text: For short text entries like names or titles.</li>
+<li>Long text: For longer descriptions or notes.</li>
+<li>Number: For any numerical values. You can define decimal places and
+minimum/maximum ranges.</li>
+<li>Date: For calendar dates. You can also include time if needed.</li>
+<li>Dropdown: Lets you define a fixed set of options from which users
+can choose. Useful for categories like Genre, Location, or Status.</li>
+<li>Checkbox: A simple yes/no or true/false value.</li>
+<li>Email / Phone / URL: Special text types that validate the input
+(e.g., only valid email addresses can be entered).</li>
+<li>Formula: Calculates values based on other fields, similar to
+formulas in spreadsheet software.</li>
+<li>Relation: Links this table to another table in your Base — useful
+when working with relational data.</li>
+</ul>
+</div>
+</div>
+</div>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section><section id="aio-05_nocodb-dataimport"><p>Content from <a href="05_nocodb-dataimport.html">Dataimport</a></p>
 <hr>
 <p>Last updated on 2025-05-13 |
