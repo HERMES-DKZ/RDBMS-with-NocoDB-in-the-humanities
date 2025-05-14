@@ -252,8 +252,9 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#roles-and-permissions">Roles and permissions</a></li>
-<li><a href="#public-access">Public access</a></li>
+        <ul><li><a href="#sharing-a-project-base">Sharing a Project (Base)</a></li>
+<li><a href="#managing-permissions">Managing Permissions</a></li>
+<li><a href="#collecting-data-via-forms">Collecting Data via Forms</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -345,7 +346,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Collaborative Work with NocoDB</h1>
-        <p>Last updated on 2025-05-13 |
+        <p>Last updated on 2025-05-14 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/06_nocodb-collaborative-work.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -382,12 +383,124 @@
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="roles-and-permissions">Roles and permissions<a class="anchor" aria-label="anchor" href="#roles-and-permissions"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="public-access">Public access<a class="anchor" aria-label="anchor" href="#public-access"></a></h2>
-<hr class="half-width"><!--
+<p>NocoDB is not just a tool for individual work — it is also built to
+support teams and collaborative projects. Whether you’re managing a
+shared research dataset, working on a team-based digital humanities
+project, or simply co-organizing information with colleagues, NocoDB
+provides powerful, yet easy-to-use features for collaborating directly
+within the database environment.</p>
+<p>In this section, you will learn how to share access to your projects,
+manage permissions effectively, and create user-friendly forms to
+collect data from others — even from those who don’t have access to the
+database itself.</p>
+<section><h2 class="section-heading" id="sharing-a-project-base">Sharing a Project (Base)<a class="anchor" aria-label="anchor" href="#sharing-a-project-base"></a></h2>
+<hr class="half-width"><p>In NocoDB, each project or collection of data is organized in what’s
+called a <strong>Base</strong> — similar to a standalone database. When
+working with others, you can choose to share an entire Base with your
+team members, collaborators, or external partners.</p>
+<p>To begin sharing:</p>
+<ol style="list-style-type: decimal"><li>Go to your main NocoDB dashboard, where all your Bases are
+listed.</li>
+<li>Hover over the Base you’d like to share.</li>
+<li>Click the <strong>three-dot menu</strong> (⋮) next to the Base
+name.</li>
+<li>Select <strong>“Manage Access”</strong> or <strong>“Share”</strong>
+from the menu.</li>
+<li>You will now see options to:
+<ul><li>Invite specific users via email</li>
+<li>Generate a secure share link</li>
+<li>Adjust access levels for each user or group</li>
+</ul></li>
+</ol><p>This feature is particularly helpful in academic or institutional
+settings, where access needs to be granted to different people with
+varying responsibilities and technical backgrounds.</p>
+</section><section><h2 class="section-heading" id="managing-permissions">Managing Permissions<a class="anchor" aria-label="anchor" href="#managing-permissions"></a></h2>
+<hr class="half-width"><p>Once you’ve shared your Base, it’s essential to control who can do
+what. NocoDB allows you to assign different <strong>roles</strong> to
+each user. These roles determine how much control they have over the
+data and structure of the Base.</p>
+<div id="callout-roles" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="callout-roles" class="callout-inner">
+<h3 class="callout-title">Callout: Roles</h3>
+<div class="callout-content">
+<p>There are different roles with different rights in NocoDB:</p>
+<ul><li><p><strong>Viewer</strong>: This role allows users to only
+<em>view</em> the data. They cannot make any changes, delete records, or
+add anything new. Ideal for stakeholders who need oversight, but
+shouldn’t modify anything.</p></li>
+<li><p><strong>Editor</strong>: Editors can add new records, edit
+existing entries, and interact with the data itself. However, they
+cannot change the structure of the table (e.g., adding new fields) or
+delete the Base. Perfect for data entry or team members updating
+records.</p></li>
+<li><p><strong>Admin</strong>: Admins have full access to the data and
+the structure. They can add or delete fields and tables, set up new
+views, or configure integrations. This role is best suited for project
+leads or technically experienced collaborators.</p></li>
+<li><p><strong>Owner</strong>: The highest permission level. Owners have
+all admin rights and can also manage access and delete the entire Base.
+There can be multiple owners, depending on the setup.</p></li>
+</ul></div>
+</div>
+</div>
+<p>To assign or change a user’s role:</p>
+<ol style="list-style-type: decimal"><li>Go to <strong>“Manage Access”</strong> for your Base.</li>
+<li>Find the user in the list or add them by email.</li>
+<li>Choose the appropriate role from the dropdown menu next to their
+name.</li>
+</ol><p>Using these roles effectively helps keep your data safe, your team
+focused, and your workflow organized.</p>
+</section><section><h2 class="section-heading" id="collecting-data-via-forms">Collecting Data via Forms<a class="anchor" aria-label="anchor" href="#collecting-data-via-forms"></a></h2>
+<hr class="half-width"><p>Sometimes you don’t need collaborators to have access to the full
+database — you just want them to submit data in a structured way. For
+example, you might want colleagues to contribute new entries to your
+<code>Art_Collection</code> table, but without seeing other entries or
+changing anything.</p>
+<p>In these cases, NocoDB’s <strong>Form View</strong> is a perfect
+solution.</p>
+<p>A <strong>Form View</strong> allows you to create a web form that
+others can fill out. Their responses will go directly into the
+corresponding table in your Base — just like if you or an Editor added
+them manually.</p>
+<div class="section level4">
+<h4 id="creating-a-form-view">Creating a Form View<a class="anchor" aria-label="anchor" href="#creating-a-form-view"></a></h4>
+<ol style="list-style-type: decimal"><li>Open the table where you want to collect data.</li>
+<li>At the top-left of the table, open the <strong>View menu</strong>
+(default is usually <em>Grid</em>).</li>
+<li>Click <strong>“Create View”</strong>, then select
+<strong>“Form”</strong>.</li>
+<li>A new view will open in a clean, easy-to-fill layout.</li>
+</ol><p>You can now configure your form:</p>
+<ul><li>
+<strong>Show or hide fields</strong>: Maybe you only want people to
+enter certain values — you can hide the rest.</li>
+<li>
+<strong>Set required fields</strong>: Prevent submissions with
+missing data.</li>
+<li>
+<strong>Reorder fields</strong>: Drag and drop to make the form
+logical and easy to follow.</li>
+<li>
+<strong>Use field descriptions</strong>: Add instructions or context
+to help respondents fill it in correctly.</li>
+</ul><ol style="list-style-type: decimal"><li>Once the form looks good, click <strong>“Share Form”</strong> in the
+top right corner.</li>
+<li>Copy the generated link.</li>
+<li>Share this link with anyone — even people outside your
+organization.</li>
+</ol><p>When someone submits the form, the data will appear in your table
+instantly, as a new record.</p>
+<p>Forms are especially helpful in: - Surveys - Data collection from
+field work - Submissions from contributors or the public</p>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></div> <!-- / div.lesson-content -->
+ -->
+</div>
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/05_nocodb-dataimport.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/07_tables-in-nocodb.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -445,7 +558,7 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/instructor/06_nocodb-collaborative-work.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/instructor/06_nocodb-collaborative-work.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2025-05-13",
+  "dateModified": "2025-05-14",
   "datePublished": "2025-05-14"
 }
 
