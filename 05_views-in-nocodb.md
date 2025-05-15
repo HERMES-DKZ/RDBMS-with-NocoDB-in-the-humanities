@@ -67,7 +67,6 @@ Additional options:
 - **Restrict submissions**: Limit how often a user can submit a response — e.g., one submission per person.
 - **QR code**: NocoDB also generates a QR code automatically, which you can download and print or include in a presentation or flyer.
 
-> 🎯 Tip: Embedding the form in a website or sharing via email makes it easy for non-technical contributors to submit high-quality data without needing to understand the underlying database.
 
 #### Viewing Submissions
 
