@@ -15,13 +15,14 @@ exercises: 3
 
 - invite members with and without an account
 - assign different rights
+- create a form for inserting new data
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
 
-NocoDB is not just a tool for individual work — it is also built to support teams and collaborative projects. Whether you're managing a shared research dataset, working on a team-based digital humanities project, or simply co-organizing information with colleagues, NocoDB provides powerful, yet easy-to-use features for collaborating directly within the database environment.
+NocoDB is not just a tool for individual work, it is also built to support teams and collaborative projects. Whether you're managing a shared research dataset, working on a team-based digital humanities project, or simply co-organizing information with colleagues, NocoDB provides powerful, yet easy-to-use features for collaborating directly within the database environment.
 
 In this section, you will learn how to share access to your projects, manage permissions effectively, and create user-friendly forms to collect data from others — even from those who don’t have access to the database itself.
 
@@ -34,15 +35,13 @@ In NocoDB, each project or collection of data is organized in what’s called a 
 To begin sharing:
 
 1. Go to your main NocoDB dashboard, where all your Bases are listed.
-2. Hover over the Base you’d like to share.
-3. Click the **three-dot menu** (⋮) next to the Base name.
-4. Select **"Manage Access"** or **"Share"** from the menu.
-5. You will now see options to:
-   - Invite specific users via email
-   - Generate a secure share link
-   - Adjust access levels for each user or group
-
-This feature is particularly helpful in academic or institutional settings, where access needs to be granted to different people with varying responsibilities and technical backgrounds.
+2. Click the Base you’d like to share.
+3. In the top navigation bar click **Members**
+4. With the **Add Members** button, you are now able to invite new members with their email.
+5. You can invite as much users as you want in one step
+6. Additional to inviting you need to define a role
+7. Click **Invite to Base** to finish the process
+This role feature is particularly helpful in academic or institutional settings, where access needs to be granted to different people with varying responsibilities and technical backgrounds.
 
 
 
@@ -55,15 +54,24 @@ Once you've shared your Base, it's essential to control who can do what. NocoDB 
 
 ### Callout: Roles
 
+
 There are different roles with different rights in NocoDB:
+
+
+- **Owner**: The highest permission level. Owners have all admin rights and can also manage access and delete the entire Base. There can be multiple owners, depending on the setup.
+
+- **Creator**: Creator have full administrative rights, they got the same rights like the Owner, without deleting the base.
+
+- **Editor**: Editors can add new records, edit existing entries, and interact with the data itself. However, they cannot change the structure of the table (e.g., adding new fields) or delete the Base. Perfect for data entry or team members updating records.
+
+- **Commenter**: The Commenter cant enter data into the base and can not change anything. He can comment existing records.
 
 - **Viewer**: This role allows users to only *view* the data. They cannot make any changes, delete records, or add anything new. Ideal for stakeholders who need oversight, but shouldn’t modify anything.
   
-- **Editor**: Editors can add new records, edit existing entries, and interact with the data itself. However, they cannot change the structure of the table (e.g., adding new fields) or delete the Base. Perfect for data entry or team members updating records.
+- **No Access**: This role removes a person's previous rights, which means they no longer have access to the base.
 
-- **Admin**: Admins have full access to the data and the structure. They can add or delete fields and tables, set up new views, or configure integrations. This role is best suited for project leads or technically experienced collaborators.
+  
 
-- **Owner**: The highest permission level. Owners have all admin rights and can also manage access and delete the entire Base. There can be multiple owners, depending on the setup.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -71,47 +79,44 @@ There are different roles with different rights in NocoDB:
 
 To assign or change a user’s role:
 
-1. Go to **"Manage Access"** for your Base.
+1. Go to **"Members"** for your Base.
 2. Find the user in the list or add them by email.
 3. Choose the appropriate role from the dropdown menu next to their name.
 
 Using these roles effectively helps keep your data safe, your team focused, and your workflow organized.
 
 
-## Collecting Data via Forms
+## Sharing Your Base
 
-Sometimes you don’t need collaborators to have access to the full database — you just want them to submit data in a structured way. For example, you might want colleagues to contribute new entries to your `Art_Collection` table, but without seeing other entries or changing anything.
+In some situations, you may want to share the content of a Base with others — without giving them the ability to edit or change anything. For example, you might want to publish a dataset so that colleagues, students, or the public can explore the information, but not accidentally modify it.
 
-In these cases, NocoDB’s **Form View** is a perfect solution.
+NocoDB makes this easy by allowing you to generate a **read-only shared link** for any Base. This creates a live, web-based version of your data that anyone can view — no account required. The rights are the same as for the **Viewer**
 
-A **Form View** allows you to create a web form that others can fill out. Their responses will go directly into the corresponding table in your Base — just like if you or an Editor added them manually.
+To share your Base as a read-only view:
 
-#### Creating a Form View
+1. Navigate to the Base you want to share.
+2. Click on the **“Share”** button located in the top-right corner.
+3. Form here you have the option to **Enable Public Viewing** or **Enable Public Access**
+   1. Public Viewing will share only the specific view of one table you choose. Different Views will give you different options. We will look at these later.
+   2. You can set Custom URL or a Password if you want to control the access
+   3. Public Access shares the whole base with all tables and views
+4. A link will be generated. You can copy and share this with others.
 
-1. Open the table where you want to collect data.
-2. At the top-left of the table, open the **View menu** (default is usually *Grid*).
-3. Click **“Create View”**, then select **“Form”**.
-4. A new view will open in a clean, easy-to-fill layout.
+People who visit the link will see the Base as a web page. They can:
 
-You can now configure your form:
+- View all tables and records
+- Use filtering and sorting to explore the data
+- Switch between views, if multiple exist
+- Copy the base into the own environment
 
-- **Show or hide fields**: Maybe you only want people to enter certain values — you can hide the rest.
-- **Set required fields**: Prevent submissions with missing data.
-- **Reorder fields**: Drag and drop to make the form logical and easy to follow.
-- **Use field descriptions**: Add instructions or context to help respondents fill it in correctly.
+However, they **cannot**:
 
-
-
-1. Once the form looks good, click **“Share Form”** in the top right corner.
-2. Copy the generated link.
-3. Share this link with anyone — even people outside your organization.
-
-When someone submits the form, the data will appear in your table instantly, as a new record.
+- Add, edit, or delete any data
+- Access settings or structural elements of the Base
 
 
-Forms are especially helpful in:
-- Surveys
-- Data collection from field work
-- Submissions from contributors or the public
+This option is a great way to promote transparency, enable lightweight collaboration, or simply allow others to explore and work with your data on their own terms. Also it can be used for the publication of a database. 
+
+
 
 

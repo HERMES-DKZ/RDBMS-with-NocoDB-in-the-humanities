@@ -61,12 +61,11 @@ contact: 'robert.zwick@hs-mainz.de' # FIXME
 episodes: 
 - 01_introduction.Rmd
 - 02_relational-database.Rmd
-- 04_nocodb-introduction.Rmd
-- 05_nocodb-dataimport.Rmd
+- 03_nocodb-introduction.Rmd
+- 04_nocodb-dataimport.Rmd
+- 05_views-in-nocodb.Rmd
 - 06_nocodb-collaborative-work.Rmd
-- 07_tables-in-nocodb.Rmd
-- 08_views-in-nocodb.Rmd
-- 09_apis.Rmd
+- 07_apis.Rmd
 
 # Information for Learners
 learners: 
