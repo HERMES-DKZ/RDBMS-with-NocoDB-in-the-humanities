@@ -19,6 +19,7 @@ exercises: 3
 
 
 
+
 ## Form
 
 
@@ -30,7 +31,7 @@ This is ideal for tasks such as:
 - Enabling structured data entry
 - Letting external collaborators contribute without viewing sensitive data
 
-#### Step-by-Step: Creating a Form View
+#### Creating a Form View
 
 1. **Open the table** where you want to collect new data.
 2. In the upper-left corner of the table interface, click on the **View dropdown** (usually set to “Grid” by default).
@@ -50,7 +51,6 @@ NocoDB gives you several options to adjust how the form behaves and looks:
 - **Default values**: You can pre-fill fields with default values that will be saved unless overwritten.
 - **Customize form title and description**: Click the gear icon at the top of the form editor to rename your form and add an optional introduction or explanation.
 
-> 🔍 Example: You might only show “Artist Name”, “Title”, “Year”, and “Image Upload” in the form, while hiding internal fields such as “Reviewed by” or “Approval Status”.
 
 #### Sharing the Form
 
@@ -72,11 +72,6 @@ Additional options:
 
 All responses submitted through the form are automatically added as **new rows** in the table the form is linked to. They appear in real time and can be reviewed, edited, filtered, and sorted just like any manually entered record.
 
-To distinguish submitted data from internal entries, consider creating a field like `Submission Source` with a default value of “Form”. This makes it easier to filter for form-based submissions later on.
-
----
-
-**Summary:** Form Views provide a powerful, user-friendly way to collect structured data from external sources while keeping your database secure and organized. Combined with NocoDB’s roles and permissions, they enable flexible workflows that include both internal team members and external participants.
 
 
 ## Grid
