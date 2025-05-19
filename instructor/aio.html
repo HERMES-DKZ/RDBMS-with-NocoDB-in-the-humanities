@@ -1644,7 +1644,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-06_nocodb-collaborative-work"><p>Content from <a href="06_nocodb-collaborative-work.html">Collaborative Work with NocoDB</a></p>
 <hr>
-<p>Last updated on 2025-05-15 |
+<p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/06_nocodb-collaborative-work.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -1814,7 +1814,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07_apis"><p>Content from <a href="07_apis.html">APIs</a></p>
 <hr>
-<p>Last updated on 2025-05-15 |
+<p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/07_apis.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -1829,7 +1829,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>TODO</li>
+<li>What advanced options does NocoDB offer?</li>
+<li>What is an API?</li>
+<li>How can I use the API from NocoDB?</li>
 </ul>
 </div>
 </div>
@@ -1839,13 +1841,229 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>TODO</li>
+<li>explain the basic idea of APIs</li>
+<li>explain the basic idea of a webhook</li>
+<li>use the “Get-Method” through the Swagger-API</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div></section>
+</div>
+<p>NocoDB is not just a user-friendly no-code platform for working with
+data — it also includes powerful tools for <strong>automation</strong>
+and <strong>integration</strong>. Two of the most important features in
+this area are <strong>APIs</strong> and <strong>Webhooks</strong>.</p>
+<section><h2 class="section-heading" id="apis">APIs<a class="anchor" aria-label="anchor" href="#apis"></a>
+</h2>
+<hr class="half-width">
+<p>An <strong>API</strong> (Application Programming Interface) is a
+standardized way for different software applications to communicate with
+each other. You can think of it like a digital menu: One system can ask
+another system for certain data or tell it to perform an action.</p>
+<p>In the case of NocoDB, this means that you (or another application)
+can access your tables from outside the platform, for example, to
+retrieve data for a website, update records from a form, or
+automatically insert new entries from another tool.</p>
+<div class="section level3">
+<h3 id="why-is-the-nocodb-api-such-a-big-deal">Why is the NocoDB API such a big deal?<a class="anchor" aria-label="anchor" href="#why-is-the-nocodb-api-such-a-big-deal"></a>
+</h3>
+<p>The built-in API turns NocoDB into far more than just a
+spreadsheet-style tool. With it, you can:</p>
+<ul>
+<li>connect your tables to websites, apps, or reporting
+dashboards,<br>
+</li>
+<li>create automation workflows that respond to updates or
+triggers,<br>
+</li>
+<li>integrate NocoDB into existing IT infrastructure,<br>
+</li>
+<li>or even develop custom tools that interact with your database in
+real-time.</li>
+</ul>
+<p>This openness and flexibility make NocoDB a powerful backend for both
+small projects and professional systems. If you use a classic database
+on your server you need to create the APIs aswell and write code for
+them. NocoDB creates the APIs automatically for every table and all of
+your data.</p>
+<hr>
+</div>
+</section><section><h2 class="section-heading" id="swagger-api">Swagger API<a class="anchor" aria-label="anchor" href="#swagger-api"></a>
+</h2>
+<hr class="half-width">
+<p>Every base (database) and table in NocoDB comes with its own
+<strong>REST API</strong>. This means external systems can
+<strong>read</strong>, <strong>create</strong>, <strong>update</strong>,
+and <strong>delete</strong> records via HTTP — the same protocol that
+websites use.</p>
+<p>Even if you’ve never worked with code before, NocoDB makes it easy to
+try out these features using a built-in tool called <strong>Swagger
+UI</strong>.</p>
+<hr></section><section><h2 class="section-heading" id="what-is-swagger">What is Swagger?<a class="anchor" aria-label="anchor" href="#what-is-swagger"></a>
+</h2>
+<hr class="half-width">
+<p><strong>Swagger</strong> (also known as <strong>OpenAPI</strong>) is
+a framework for documenting and testing APIs. NocoDB includes a Swagger
+interface that shows you:</p>
+<ul>
+<li>all available API endpoints (e.g.,
+<code>GET /Art_Collection</code>),<br>
+</li>
+<li>which methods (GET, POST, PUT, DELETE) are supported,<br>
+</li>
+<li>what data you need to send or receive,<br>
+</li>
+<li>and what each request will return.</li>
+</ul>
+<p>What makes it really useful: you can <strong>interact with the API
+directly in your browser</strong> — no setup, no coding required.</p>
+<div class="section level3">
+<h3 id="step-by-step-exploring-the-nocodb-api-with-swagger">Step-by-Step: Exploring the NocoDB API with Swagger<a class="anchor" aria-label="anchor" href="#step-by-step-exploring-the-nocodb-api-with-swagger"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Open your base</strong> in NocoDB.<br>
+</li>
+<li>Click the <strong>three-dot menu (⋮)</strong> next to the base
+name.<br>
+</li>
+<li>Choose <strong>“API Docs”</strong> — this will open the Swagger
+interface.<br>
+</li>
+<li>You’ll see a list of available endpoints for your base, such as:
+<ul>
+<li>
+<code>GET /Art_Collection</code> – get all records<br>
+</li>
+<li>
+<code>POST /Art_Collection</code> – add a new record<br>
+</li>
+<li>
+<code>DELETE /Art_Collection/{id}</code> – delete a specific
+record</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>📘 This view gives you full documentation and testing access at the
+same time.</p>
+</blockquote>
+</div>
+<div class="section level3">
+<h3 id="example-viewing-data-using-the-api">Example: Viewing data using the API<a class="anchor" aria-label="anchor" href="#example-viewing-data-using-the-api"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Scroll to the <code>GET /{table}</code> endpoint (e.g.,
+<code>GET /Art_Collection</code>).<br>
+</li>
+<li>Click the section to expand it, then click <strong>“Try it
+out”</strong>.<br>
+</li>
+<li>Click <strong>“Execute”</strong>.<br>
+</li>
+<li>You’ll see the API’s <strong>response</strong> below, usually in
+JSON format, for example:</li>
+</ol>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ot">[</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="dt">"Title"</span><span class="fu">:</span> <span class="st">"Sunflowers"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="dt">"Artist"</span><span class="fu">:</span> <span class="st">"Vincent van Gogh"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="dt">"Year"</span><span class="fu">:</span> <span class="st">"1888"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    <span class="dt">"Medium"</span><span class="fu">:</span> <span class="st">"Oil on canvas"</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="ot">]</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="api-code-snippets">API Code Snippets<a class="anchor" aria-label="anchor" href="#api-code-snippets"></a>
+</h2>
+<hr class="half-width">
+<p>NocoDB also helps you generate <strong>ready-to-use code
+snippets</strong> for various programming languages. This means you
+don’t need to write any code yourself — you can just copy and paste.</p>
+<div class="section level3">
+<h3 id="how-to-copy-api-snippets">How to Copy API Snippets<a class="anchor" aria-label="anchor" href="#how-to-copy-api-snippets"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>Open the <strong>API Docs</strong> for your Base (see
+above).</p></li>
+<li><p>Select an API action (e.g., <code>POST /{table}</code> to add a
+new record).</p></li>
+<li><p>Scroll to the bottom of the endpoint description.</p></li>
+<li><p>Click on the <strong>“Code”</strong> tab.</p></li>
+<li>
+<p>Choose a language from the dropdown — options include:</p>
+<ul>
+<li><strong>cURL</strong></li>
+<li><strong>Python</strong></li>
+<li><strong>JavaScript (Fetch API)</strong></li>
+<li><strong>Node.js (Axios)</strong></li>
+<li><strong>Shell</strong></li>
+</ul>
+</li>
+<li>
+<p>Copy the generated snippet and try running it in a simple
+environment like:</p>
+<ul>
+<li>A Python file (<code>python script.py</code>)</li>
+<li>An online code sandbox like Replit or JSFiddle</li>
+<li>Your terminal, for cURL commands</li>
+</ul>
+</li>
+</ol>
+</div>
+</section><section><h2 class="section-heading" id="webhooks-intro-idea">Webhooks (Intro &amp; Idea)<a class="anchor" aria-label="anchor" href="#webhooks-intro-idea"></a>
+</h2>
+<hr class="half-width">
+<p>Webhooks are the reverse of APIs. Instead of you requesting data from
+NocoDB, NocoDB sends data <strong>to you</strong>, or to another app,
+when something happens.</p>
+<p>For example you could:</p>
+<ul>
+<li>Notify a Slack channel when a new form is submitted</li>
+<li>Trigger a script when a new record is added</li>
+<li>Send email notifications for updates</li>
+</ul>
+<div class="section level3">
+<h3 id="how-to-create-a-webhook">How to Create a Webhook<a class="anchor" aria-label="anchor" href="#how-to-create-a-webhook"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Open your Base settings.</li>
+<li>Go to the <strong>“Automations”</strong> section and choose
+<strong>“Webhooks”</strong>.</li>
+<li>Click <strong>“Create Webhook”</strong>.</li>
+<li>Define:
+<ul>
+<li>The <strong>event</strong> (e.g., “Row Created”)</li>
+<li>The <strong>table</strong> it should apply to</li>
+<li>The <strong>URL</strong> that should receive the webhook (you can
+test this with <a href="https://webhook.site" class="external-link">webhook.site</a>)</li>
+</ul>
+</li>
+<li>Save the webhook and test it by adding or updating data.</li>
+</ol>
+<p>The API and Webhooks are powerful tools that allow you to connect
+NocoDB to the wider digital ecosystem. You can:</p>
+<ul>
+<li>Automate tasks</li>
+<li>Build integrations with other tools (e.g., Google Sheets, Slack,
+Notion)</li>
+<li>Add dynamic content to websites or apps</li>
+<li>Create automated workflows based on data changes</li>
+</ul>
+<p>Even if you’re not ready to use these tools now, knowing they exist
+opens the door to new ideas. And with NocoDB’s beginner-friendly
+interfaces like Swagger and pre-generated code snippets, it’s easier
+than ever to try them out — no coding background required.</p>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section>
 </div>
     </main>
 </div>
