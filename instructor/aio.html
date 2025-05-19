@@ -942,7 +942,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-03_nocodb-introduction"><p>Content from <a href="03_nocodb-introduction.html">NocoDB Introduction</a></p>
 <hr>
-<p>Last updated on 2025-05-15 |
+<p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/03_nocodb-introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -1132,6 +1132,7 @@ fields, it’s time to apply what you’ve learned.</p>
 a new one.</li>
 <li>Choose at least 5 informations and create fields using different
 field types (e.g. Text, Number, Date, Dropdown, Checkbox).</li>
+<li>Create one field for an image of the artworks</li>
 <li>Name your fields based on what kind of data you expect (e.g. Title,
 Author, Year, etc.).</li>
 <li>Try editing a field type or renaming a field.</li>
@@ -1365,7 +1366,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-05_views-in-nocodb"><p>Content from <a href="05_views-in-nocodb.html">Views</a></p>
 <hr>
-<p>Last updated on 2025-05-15 |
+<p>Last updated on 2025-05-19 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/05_views-in-nocodb.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -1398,36 +1399,89 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="form">Form<a class="anchor" aria-label="anchor" href="#form"></a>
+<p>In NocoDB, <strong>Views</strong> are different ways to display and
+interact with the records in a table. While the underlying data stays
+the same, each view gives you a unique perspective on that data,
+optimized for specific tasks like editing, sorting, filtering,
+collecting input, or tracking progress.</p>
+<p>Using views allows you to:</p>
+<ul>
+<li>Customize how information is presented without altering the table’s
+structure<br>
+</li>
+<li>Focus on a specific subset of data using filters and sorting<br>
+</li>
+<li>Share only selected information with collaborators or the
+public<br>
+</li>
+<li>Collect structured input through web-based forms</li>
+</ul>
+<p>Each view type serves a different purpose and supports different
+workflows. For example, a <strong>Grid View</strong> is great for
+editing records directly, while a <strong>Form View</strong> is useful
+for collecting new entries from external users. A <strong>Gallery
+View</strong> emphasizes visual content, and a <strong>Kanban
+View</strong> is ideal for process tracking.</p>
+<p>By combining different views, you can adapt the same dataset to a
+wide range of use cases, from internal team collaboration to public
+engagement, from raw data entry to polished overviews. All views are
+created by clicking on the table you want to get a new view of in the
+left side-bar. There you click on the little arrow, next to ne tables
+name. If already done, you can see all views you created before. If you
+want to create a new view click <strong>Create View</strong>. This will
+open a dropdown where you choose which view type you want to create.</p>
+<section><h2 class="section-heading" id="grid">Grid<a class="anchor" aria-label="anchor" href="#grid"></a>
+</h2>
+<hr class="half-width">
+<p>The first view we want to look at, is the <strong>Grid</strong>. This
+view is the standard view in NocoDB you see every time you create a new
+table. It can be very helpful to create new views for this. Each Grid
+View can have its own filtering, sorting, and column visibility
+settings.</p>
+<p>Grid Views are also useful for customizing the table display for
+different audiences. For example, a team working on content might only
+need to see titles and publication status, while another team handling
+logistics may require technical fields and internal notes. With multiple
+views, each team can work efficiently with the same dataset in a way
+that suits their workflow.</p>
+<p>Additionally, views can help maintain focus by hiding irrelevant
+columns, making it easier to review or edit records. They can also act
+as templates for repeated processes, such as quality checks, monthly
+reviews, or report preparation, allowing users to quickly switch between
+predefined perspectives.</p>
+<p>In short, multiple Grid Views offer a powerful way to explore and
+work with your data from different angles, without cluttering your
+interface or losing time repeatedly adjusting filters or layouts.</p>
+</section><section><h2 class="section-heading" id="form">Form<a class="anchor" aria-label="anchor" href="#form"></a>
 </h2>
 <hr class="half-width">
 <p>In collaborative settings, it’s often useful to collect data from
-people who don’t have direct access to your database — or who shouldn’t
+people who don’t have direct access to your database or who shouldn’t
 have access to existing data. This is where <strong>Form Views</strong>
 in NocoDB come in. They allow you to design a custom form that others
 can fill out, and their submissions are automatically added as new
-records to a table of your choice.</p>
+records to a table of your choice. This also has the advantage that data
+entry is less vulnerable and fields can be clearly defined and
+explained.</p>
 <p>This is ideal for tasks such as:</p>
 <ul>
 <li>Collecting survey responses</li>
 <li>Enabling structured data entry</li>
 <li>Letting external collaborators contribute without viewing sensitive
-data</li>
+data or having an account</li>
 </ul>
 <div class="section level4">
 <h4 id="creating-a-form-view">Creating a Form View<a class="anchor" aria-label="anchor" href="#creating-a-form-view"></a>
 </h4>
 <ol style="list-style-type: decimal">
-<li>
-<strong>Open the table</strong> where you want to collect new
-data.</li>
-<li>In the upper-left corner of the table interface, click on the
-<strong>View dropdown</strong> (usually set to “Grid” by default).</li>
+<li>Look for the table where you want to collect new data, in our case
+it is the the METObjects table.</li>
+<li>In the left sidebar, open the dropdown with the small arrow, there
+you cann see all views you created.</li>
 <li>Click <strong>“Create View”</strong> and then select
 <strong>“Form”</strong> from the list of view types.</li>
 <li>Give the form a <strong>name</strong> (e.g.,
-<code>New_Art_Submissions_Form</code>) to help you identify it
-later.</li>
+<code>Art_Submissions_Form</code>) to help you identify it later.</li>
 </ol>
 <p>You will now see the form editor interface, which displays all fields
 of your table in a vertical, form-like layout.</p>
@@ -1436,7 +1490,8 @@ of your table in a vertical, form-like layout.</p>
 <h4 id="customizing-the-form">Customizing the Form<a class="anchor" aria-label="anchor" href="#customizing-the-form"></a>
 </h4>
 <p>NocoDB gives you several options to adjust how the form behaves and
-looks:</p>
+looks. Most of these customization options are found in the right
+side-bar:</p>
 <ul>
 <li>
 <strong>Show or hide fields</strong>: Use the toggles next to each
@@ -1445,72 +1500,149 @@ field to include only the ones relevant for form respondents.</li>
 <strong>Reorder fields</strong>: Drag and drop fields into a logical
 sequence to improve usability.</li>
 <li>
-<strong>Field descriptions</strong>: Click the gear icon next to a
-field to add a description or help text. This is helpful to explain what
-kind of input is expected.</li>
+<strong>Appearance Settings</strong>: You can change the color or
+hide the Branding.</li>
 <li>
-<strong>Mark fields as required</strong>: You can set certain fields
-as <em>mandatory</em>, preventing form submission until they’re filled
-out.</li>
-<li>
-<strong>Default values</strong>: You can pre-fill fields with
-default values that will be saved unless overwritten.</li>
-<li>
-<strong>Customize form title and description</strong>: Click the
-gear icon at the top of the form editor to rename your form and add an
-optional introduction or explanation.</li>
+<strong>Send Email</strong>: It is possible to get an Email
+notification, if someone filled out the form</li>
 </ul>
+<p>More customization can be done, if you click on the fields in the
+form directly. Here you can:</p>
+<ul>
+<li><strong>Change the field name</strong></li>
+<li><strong>Write explaining text</strong></li>
+<li><strong>Select, if the field is obligatory</strong></li>
+<li><strong>Define conditions for the field</strong></li>
+</ul>
+<p>From here you can use the form for yourself to enter new data. This
+can be helpful if you have to enter complex data and want to minimize
+the risk of doing mistakes. The other possibility is to share this view,
+like we did before, to give others the possibility to enter new
+data.</p>
 </div>
 <div class="section level4">
 <h4 id="sharing-the-form">Sharing the Form<a class="anchor" aria-label="anchor" href="#sharing-the-form"></a>
 </h4>
-<p>Once your form is ready, it’s time to share it with others. NocoDB
-offers multiple sharing options:</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Click “Share Form”</strong> in the top-right corner of the
-form editor.</li>
-<li>You’ll now see the form’s public URL, which is instantly live and
-usable.</li>
-<li>Copy this link and send it to collaborators, team members, or the
-public — no login or NocoDB account is required.</li>
-</ol>
-<p>Additional options:</p>
-<ul>
-<li>
-<strong>Password protection</strong>: You can set a password for the
-form to control access, especially useful for internal use.</li>
-<li>
-<strong>Set expiration date</strong>: Define a date after which the
-form link becomes inactive.</li>
-<li>
-<strong>Restrict submissions</strong>: Limit how often a user can
-submit a response — e.g., one submission per person.</li>
-<li>
-<strong>QR code</strong>: NocoDB also generates a QR code
-automatically, which you can download and print or include in a
-presentation or flyer.</li>
-</ul>
+<p>If you click <strong>Share</strong> at the top right corner and
+<strong>Enable Public Viewig</strong>, you will get the link to share
+your form. Like mentioned before you will get different settings for
+different views. The two new options you get are the survey-mode, where
+you will not get the form as a whole directly, but question for question
+and the option to <strong>Enable Pre-fill</strong>. All responses
+submitted through the form are automatically added as <strong>new
+rows</strong> in the table the form is linked to. They appear in real
+time and can be reviewed, edited, filtered, and sorted just like any
+manually entered record.</p>
+<div id="exercise-creating-a-form" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div class="section level4">
-<h4 id="viewing-submissions">Viewing Submissions<a class="anchor" aria-label="anchor" href="#viewing-submissions"></a>
-</h4>
-<p>All responses submitted through the form are automatically added as
-<strong>new rows</strong> in the table the form is linked to. They
-appear in real time and can be reviewed, edited, filtered, and sorted
-just like any manually entered record.</p>
+<div id="exercise-creating-a-form" class="callout-inner">
+<h3 class="callout-title">Exercise: Creating a form</h3>
+<div class="callout-content">
+<p>In this task we want to create a form for adding data into our
+example table from Lesson 3. For this, create a form-view for this table
+and use it zu submit the data from the lesson or search for new data you
+want to use in the Met-Collection. Search for a few artworks in the
+Met-Collection and safe the images on your computer, to submit these
+with the form aswell.</p>
 </div>
-</section><section><h2 class="section-heading" id="grid">Grid<a class="anchor" aria-label="anchor" href="#grid"></a>
-</h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="gallery">Gallery<a class="anchor" aria-label="anchor" href="#gallery"></a>
-</h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="kanban">Kanban<a class="anchor" aria-label="anchor" href="#kanban"></a>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="gallery">Gallery<a class="anchor" aria-label="anchor" href="#gallery"></a>
 </h2>
 <hr class="half-width">
+<p>The <strong>Gallery View</strong> displays each record as a
+card—ideal for image‑rich or visually oriented datasets. With the new
+data in our table we can display the artworks in this way. Like before,
+click <strong>Create View</strong> and <strong>Gallery</strong>. Enter a
+name for the gallery and choose the field with the image.</p>
+<div class="section level4">
+<h4 id="creating-a-gallery-view">Creating a Gallery View<a class="anchor" aria-label="anchor" href="#creating-a-gallery-view"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Open your table.</strong><br>
+</li>
+<li>Click <strong>View dropdown</strong> → <strong>Create View</strong>
+→ <strong>Gallery</strong>.<br>
+</li>
+<li>Name the view (e.g., <code>Art_Thumbnails</code>) and click
+<strong>Create</strong>.</li>
+</ol>
+</div>
+<div class="section level4">
+<h4 id="customizing-the-gallery">Customizing the Gallery<a class="anchor" aria-label="anchor" href="#customizing-the-gallery"></a>
+</h4>
+<ul>
+<li>
+<strong>Primary image field</strong>: Select an Attachment field for
+the card thumbnail.<br>
+</li>
+<li>
+<strong>Fields on cards</strong>: Toggle which fields (title,
+artist, year) appear on each card.<br>
+</li>
+<li>
+<strong>Layout style</strong>: Choose between compact or expanded
+card sizes.<br>
+</li>
+<li>
+<strong>Filter &amp; sort</strong>: Apply filters to limit which
+cards show, and sort order to control their arrangement.</li>
+</ul>
+<hr>
+</div>
+</section><section><h2 class="section-heading" id="kanban">Kanban<a class="anchor" aria-label="anchor" href="#kanban"></a>
+</h2>
+<hr class="half-width">
+<p>The <strong>Kanban View</strong> turns your data into draggable cards
+organized by a <strong>Single Select</strong> field—perfect for tracking
+status or progress.</p>
+<div class="section level4">
+<h4 id="creating-a-kanban-view">Creating a Kanban View<a class="anchor" aria-label="anchor" href="#creating-a-kanban-view"></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Open your table.</strong><br>
+</li>
+<li>Click <strong>View dropdown</strong> → <strong>Create View</strong>
+→ <strong>Kanban</strong>.<br>
+</li>
+<li>Name the view (e.g., <code>Artwork_Workflow</code>) and click
+<strong>Create</strong>.<br>
+</li>
+<li>Select a <strong>Single Select</strong> field (e.g.,
+<code>Status</code>) as the grouping column.</li>
+</ol>
+</div>
+<div class="section level4">
+<h4 id="using-kanban">Using Kanban<a class="anchor" aria-label="anchor" href="#using-kanban"></a>
+</h4>
+<ul>
+<li>
+<strong>Drag &amp; drop</strong> cards between columns to update
+their status.<br>
+</li>
+<li>
+<strong>Add new cards</strong> directly in any column via the
+<strong>+</strong> button.<br>
+</li>
+<li>
+<strong>Collapse columns</strong> to focus on specific stages.<br>
+</li>
+<li>
+<strong>Filter &amp; sort</strong> within Kanban to narrow down
+cards by artist, year, etc.</li>
+</ul>
+<hr>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></section></section><section id="aio-06_nocodb-collaborative-work"><p>Content from <a href="06_nocodb-collaborative-work.html">Collaborative Work with NocoDB</a></p>
+ -->
+</div>
+</section></section><section id="aio-06_nocodb-collaborative-work"><p>Content from <a href="06_nocodb-collaborative-work.html">Collaborative Work with NocoDB</a></p>
 <hr>
 <p>Last updated on 2025-05-15 |
 
@@ -1761,8 +1893,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/instructor/aio.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2025-05-15",
-  "datePublished": "2025-05-15"
+  "dateModified": "2025-05-19",
+  "datePublished": "2025-05-19"
 }
 
   </script><script>
