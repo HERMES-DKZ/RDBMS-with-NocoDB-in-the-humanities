@@ -129,9 +129,10 @@ Now that you’ve learned how to create a Base and add tables and fields, it’s
 1. Look at the example from the previous episode.
 2. Create a new, empty table for it, either in your existing Base or in a new one.
 3. Choose at least 5 informations and create fields using different field types (e.g. Text, Number, Date, Dropdown, Checkbox).
-4. Name your fields based on what kind of data you expect (e.g. Title, Author, Year, etc.).
-5. Try editing a field type or renaming a field.
-6. Explore freely: test options, click around, and get familiar with the interface.
+4. Create one field for an image of the artworks
+5. Name your fields based on what kind of data you expect (e.g. Title, Author, Year, etc.).
+6. Try editing a field type or renaming a field.
+7. Explore freely: test options, click around, and get familiar with the interface.
 
 You don’t need to enter data yet — just focus on setting up the table structure.
 
