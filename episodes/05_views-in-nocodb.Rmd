@@ -123,7 +123,6 @@ The **Gallery View** displays each record as a card—ideal for image‑rich or 
 - **Filter & sort**: Apply filters to limit which cards show, and sort order to control their arrangement.
 
 
----
 
 ## Kanban
 
@@ -136,13 +135,47 @@ The **Kanban View** turns your data into draggable cards organized by a **Single
 3. Name the view (e.g., `Artwork_Workflow`) and click **Create**.  
 4. Select a **Single Select** field (e.g., `Status`) as the grouping column.
 
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Callout: Kanban
+
+
+For creating a Kanban View it es obligatory to have a **Single-Select-Field**. The Kanban board is then sorted according to the categories of the single-select field and can then be moved back and forth using drag and drop.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 #### Using Kanban
 
 - **Drag & drop** cards between columns to update their status.  
-- **Add new cards** directly in any column via the **+** button.  
+- **Add new cards** directly in any column via the **+ New Record** button.  
 - **Collapse columns** to focus on specific stages.  
 - **Filter & sort** within Kanban to narrow down cards by artist, year, etc.
 
 
----
 
+## Calendar View
+
+The **Calendar View** displays your data as a calendar, ideal for scheduling or date-oriented datasets. With the new data in our table, we can, for example, display the exhibitions and events in this way. Like before, click **Create View** and **Calendar**. Enter a name for the calendar and choose the field with the date.
+
+#### Creating a Calendar View
+
+1. **Open your table.**  
+2. Click **Create View** -> **Calendar**.  
+3. Name the view (e.g., `Exhibition_Schedule`) and click **Create**.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Callout: Calendar
+
+For creating a Calendar View, it is recommended to have a **Date field**. The calendar will then be sorted according to the dates and can be used to schedule events and exhibitions. If there is no Date field you can use the system-field "created at" for the Calendar View, if you want to track when entries were created.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+#### Using the Calendar
+
+- **View events by date**: See all events for a specific date.  
+- **Drag & drop events**: Update the date or time of an event by dragging it to a new date.  
+- **Add new events**: Create new events directly on the calendar via a double-blick on one day.  
+- **Filter & sort**: Narrow down events by artist, location, or other fields.
