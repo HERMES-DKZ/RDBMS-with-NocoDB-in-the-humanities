@@ -255,7 +255,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="02_relational-database.html">2. Relational Databases</a>
+        <a href="02_relational-database.html">2. </a>
     </div>
 <!--/div.accordion-header-->
 
@@ -539,14 +539,19 @@ go into in this course.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-02_relational-database"><p>Content from <a href="02_relational-database.html">Relational Databases</a></p>
+</section></section><section id="aio-02_relational-database"><p>Content from <a href="02_relational-database.html"></a></p>
 <hr>
-<p>Last updated on 2025-05-13 |
+<p>Last updated on 2025-06-10 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/02_relational-database.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
+<hr>
+<p>title: “Relational Databases”</p>
+<p>teaching: 10</p>
+<p>exercises: 3</p>
+<hr>
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -555,9 +560,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is a relational database?</li>
-<li>How do keys work?</li>
-<li>What is a normal form?</li>
+<li><p>What is a relational database?</p></li>
+<li><p>How do keys work?</p></li>
+<li><p>What is a normal form?</p></li>
 </ul>
 </div>
 </div>
@@ -567,8 +572,8 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>understand the differences of normal forms</li>
-<li>normalize data in tables</li>
+<li><p>Understand the differences of normal forms</p></li>
+<li><p>Normalize data in tables</p></li>
 </ul>
 </div>
 </div>
@@ -588,92 +593,55 @@ structured way. They consist of rows and columns, much like what you’re
 used to seeing in spreadsheet programs like Excel. Each column
 represents a specific attribute or characteristic—such as “Name,” “Date
 of Birth,” or “Email Address.” Each row represents a single data entry,
-showing the actual values for those attributes. More precisely, each
-column would represent a person and contain information about that
-person. This concept is transferable to all types of objects.</p>
-<table class="table">
-<thead><tr class="header">
-<th>Name</th>
-<th>Date of Birth</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Thomas Eakins</td>
-<td>25.7.1844</td>
-</tr>
-<tr class="even">
-<td>Bill Traylor</td>
-<td>1.4.1854</td>
-</tr>
-</tbody>
-</table>
+showing the actual values for those attributes. More precisely, each row
+represents a person and contains information about that person. This
+concept is transferable to all types of objects.</p>
+<p><strong>Example: Artists Table</strong></p>
+<div class="line-block">Name | Date of Birth | ID (Primary Key) |</div>
+<p>|—————–|—————|——————|</p>
+<div class="line-block">Thomas Eakins | 25.7.1844 | 1 |</div>
+<div class="line-block">Bill Traylor | 1.4.1854 | 2 |</div>
 <p>Tables provide a clear and easy-to-understand structure that works
 well for both humans and computers. They allow large amounts of
 information to be stored in an organized way, making it easy to search,
-sort, and analyze the data.</p>
-<p>The widespread success of tables comes from their simplicity,
-clarity, and versatility. They can be adapted to many different types of
-data and serve as an ideal starting point for everything from simple
-lists to complex data analysis.</p>
+sort, and analyze the data. The widespread success of tables comes from
+their simplicity, clarity, and versatility. They can be adapted to many
+different types of data and serve as an ideal starting point for
+everything from simple lists to complex data analysis.</p>
 </section><section><h2 class="section-heading" id="primary-key-and-foreign-key">Primary Key and Foreign Key<a class="anchor" aria-label="anchor" href="#primary-key-and-foreign-key"></a>
 </h2>
 <hr class="half-width">
 <p>To structure and tidy up tables a little better, so-called keys are
-used in relational data modelling. What exactly this is used for will be
-explained in the next step. First of all, we want to understand what
-this concept actually means, as it is essential for the entire modelling
-process. These keys are used to create relationships between tables in
-the database and guarantee that each entry in a table can be uniquely
-referenced. If we think back to the tables for a moment, each column
-represents a data record, in our example a person. If we want to make
-this person uniquely referenceable, we can assign an ID. If this ID is
-unique and only exists once in the entire data record, it is referred to
-as the primary key.</p>
-<table class="table">
-<thead><tr class="header">
-<th>Name</th>
-<th>Date of Birth</th>
-<th><strong>ID (Primary Key)</strong></th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Thomas Eakins</td>
-<td>25.7.1844</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Bill Traylor</td>
-<td>1.4.1854</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<p>If we now want to collect more information about that some person,
-that we do not want to store in the same table, we can create a new
-table and refer to the person with the Primary Key. If we use this key
-in the new table we talk about a foreign key. This key is therefore used
-to create a relationship between the two tables, or between two entries
-in the tables. This allows information to be split into different tables
-in order to structure them better and more clearly without losing
-information. The advantages of this and how it is used in relational
-data modelling need to be clarified next.</p>
-<table class="table">
-<thead><tr class="header">
-<th>Titel</th>
-<th>Artist <strong>(Foreign Key)</strong>
-</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>The Artists Wife and His Setter Dof</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Blue Construction, Organge Figures</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
+used in relational data modelling. These keys are essential for creating
+relationships between tables and ensuring that each entry can be
+uniquely identified. A <strong>Primary Key</strong> is a column (or set
+of columns) in a table that uniquely identifies each row. It must never
+be empty and must be unique across the entire table. In the example
+above, the <code>ID</code> column serves as the primary key for the
+Artists table. It is also possible that the name is the primary key.
+However, this does not guarantee that it is unique, as names can occur
+more than once in a data record, even though they are different people.
+A combination of name and date of birth could also be selected as the
+primary key, but this is also not certain. For this reason, another
+column is used that contains no information about the actual data
+record, but makes it uniquely referencable. Now, if we want to store
+information about artworks created by these artists, we could create a
+separate table for artworks. Instead of repeating all the artist details
+in the artworks table, we can use the artist’s primary key as a
+reference. This reference, in the artwork table is called a
+<strong>Foreign Key</strong>.</p>
+<p><strong>Example: Artworks Table</strong></p>
+<div class="line-block">Title | Artist (Foreign Key) |</div>
+<p>|———————————–|———————-|</p>
+<div class="line-block">The Artist’s Wife and His Setter Dog | 1 |</div>
+<div class="line-block">Blue Construction, Orange Figures | 2 |</div>
+<p>The foreign key in the Artworks table (<code>Artist</code>) refers to
+the primary key (<code>ID</code>) in the Artists table. This establishes
+a relationship between the two tables, allowing us to link each artwork
+to its artist without duplicating artist information. This separation of
+data into related tables reduces redundancy and makes the database more
+efficient and easier to maintain. However, for this to work effectively,
+we must ensure that:</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -682,11 +650,12 @@ data modelling need to be clarified next.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>The <strong>primary Key</strong> must never be empty</li>
-<li>The <strong>primary Key</strong> must be unique</li>
-<li>A <strong>foreign key</strong> must link to an existing
-<strong>Primary Key</strong>
-</li>
+<li><p>The <strong>primary Key</strong> must never be empty and must be
+unique.</p></li>
+<li><p>A <strong>foreign key</strong> must link to an existing
+<strong>Primary Key</strong>.</p></li>
+<li><p>Keys enable relationships between tables and reduce data
+redundancy.</p></li>
 </ul>
 </div>
 </div>
@@ -696,36 +665,295 @@ data modelling need to be clarified next.</p>
 <hr class="half-width">
 <p>As the amount of information in a table grows, it’s important to keep
 the data <strong>well-structured and manageable</strong>. This is where
-the concept of <strong>normal forms</strong> comes in - a systematic
+the concept of <strong>normal forms</strong> comes in, a systematic
 approach to organizing data so that it remains <strong>clear,
-consistent</strong>, and <strong>easy to extend</strong>.</p>
-<p>Normal forms build upon concepts you already know: <strong>tables
+consistent</strong>, and <strong>easy to extend</strong>. Normal forms
+build upon concepts you already know: <strong>tables
 (relations)</strong>, <strong>primary keys</strong>, and <strong>foreign
 keys</strong>. They help avoid common issues in database design, such
 as:</p>
 <ul>
 <li>
 <strong>Data redundancy</strong>: storing the same information
-multiple times<br>
-</li>
+multiple times.</li>
 <li>
 <strong>Anomalies</strong>: unwanted side effects when inserting,
-updating, or deleting data<br>
-</li>
+updating, or deleting data.</li>
 <li>
 <strong>Lack of clarity</strong>: tables that are hard to maintain
-or expand</li>
+or expand.</li>
 </ul>
-<p>Imagine you want to add new features in the future — new fields,
+<p>Imagine you want to add new features in the future, new fields,
 relationships, or more advanced queries. If your tables are
-well-structured, you can do that with minimal effort. In a simple “all
-in one table” it can be very difficult to apply changes. Normal forms
-help create a <strong>clean and flexible foundation</strong> for your
-data.</p>
-<p>Another key advantage: normalized data makes it easier to work with
+well-structured, you can do that with minimal effort. Normal forms help
+create a <strong>clean and flexible foundation</strong> for your data.
+Another key advantage: normalized data makes it easier to work with
 <strong>relationships between tables</strong>. The result is a model
 that is both <strong>logically sound</strong> and <strong>technically
-efficient</strong>.</p>
+efficient</strong>. We will explore three normal forms: First (1NF),
+Second (2NF), and Third (3NF). Each builds on the previous one,
+addressing specific types of problems.</p>
+<div class="section level3">
+<h3 id="first-normal-form-1nf">First Normal Form (1NF)<a class="anchor" aria-label="anchor" href="#first-normal-form-1nf"></a>
+</h3>
+<p>The First Normal Form (1NF) is the most basic level of normalization.
+A table is in 1NF if:</p>
+<div id="callout-1nf" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="callout-1nf" class="callout-inner">
+<h3 class="callout-title">Callout: 1NF</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>
+<strong>Each column contains atomic values</strong>: There should be
+no repeating groups or arrays within a single cell. Each field must
+contain a single value.</li>
+<li>
+<strong>Each record is unique</strong>: There should be no duplicate
+rows.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>To illustrate, let’s consider a table of artworks from the
+Metropolitan Museum of Art (The MET) in New York. We start with the
+following unnormalized table:</p>
+<div class="line-block">Title | Artist | Accession Number | On View
+Location |</div>
+<p>|—————————————————————————————–|—————————————————————-|——————|—————————————————————-|</p>
+<div class="line-block">The Artist’s Wife and His Setter Dog | Thomas
+Eakins (American, Philadelphia, Pennsylvania 1844–1916) | 23.139 | The
+American Wing, 764 |</div>
+<div class="line-block">The Champion Single Sculls (Max Schmitt in a
+Single Scull) | Thomas Eakins (American, Philadelphia, Pennsylvania
+1844–1916) | 34.92 | The American Wing, 763 |</div>
+<div class="line-block">A Gorge in the Mountains (Kauterskill Clove) |
+Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY) | 15.30.62 | The
+American Wing, 761 |</div>
+<div class="line-block">Marie Emilie Coignet de Courson (1716–1806) with
+a Dog | Jean Honoré Fragonard (French, Grasse 1732–1806 Paris) | 37.118
+| European Paintings, 631 |</div>
+<div class="line-block">Blue Construction, Orange Figures | Bill Traylor
+| 2015.756 | The Met Fifth Avenue in Gallery 773 |</div>
+<div class="line-block">Christ Carrying the Cross, with the Crucifixion
+| Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges) |
+1975.1.119A-B | Robert Lehman Collection, 953 |</div>
+<p>This table has several issues:</p>
+<ol style="list-style-type: decimal">
+<li>The <strong>Artist</strong> column contains multiple pieces of
+information: name, nationality, birthplace, and birth-death years.</li>
+<li>The <strong>On View Location</strong> column combines the
+wing/department and the gallery number.</li>
+</ol>
+<p>These non-atomic values make it difficult to search, sort, or filter
+by individual attributes (e.g., by artist nationality or gallery
+number).</p>
+<p>To convert this table to 1NF, we split the composite fields into
+atomic values:</p>
+<div class="line-block">Title | Artist Name | Artist Nationality |
+Artist Birthplace | Artist Birth–Death Years | Accession Number |
+Department | Gallery Number |</div>
+<p>|—————————————–|——————-|——————–|————————–|————————–|——————|————————-|—————-|</p>
+<div class="line-block">The Artist’s Wife and His Setter Dog | Thomas
+Eakins | American | Philadelphia, Pennsylvania | 1844–1916 | 23.139 |
+The American Wing | 764 |</div>
+<div class="line-block">The Champion Single Sculls | Thomas Eakins |
+American | Philadelphia, Pennsylvania | 1844–1916 | 34.92 | The American
+Wing | 763 |</div>
+<div class="line-block">A Gorge in the Mountains | Sanford R. Gifford|
+American | Greenfield, NY | 1823–1880 | 15.30.62 | The American Wing |
+761 |</div>
+<div class="line-block">Marie Emilie Coignet de Courson | Jean H.
+Fragonard| French | Grasse | 1732–1806 | 37.118 | European Paintings |
+631 |</div>
+<div class="line-block">Blue Construction, Orange Figures | Bill Traylor
+| American | Benton, AL | 1854–1949 | 2015.756 | The Met Fifth Avenue |
+773 |</div>
+<div class="line-block">Christ Carrying the Cross | Gerard David |
+Netherlandish | Oudewater | 1455–1523 | 1975.1.119A-B | Robert Lehman
+Collection| 953 |</div>
+<p>Now each column holds a single piece of information. This table is in
+1NF.</p>
+<p>However, we still have problems:</p>
+<ul>
+<li><p><strong>Redundancy</strong>: The artist details (e.g., Thomas
+Eakins) are repeated for each artwork by that artist.</p></li>
+<li><p><strong>Update Anomaly</strong>: If we need to update an artist’s
+birthplace, we must update it in every row for that artist. Missing one
+row would lead to inconsistency.</p></li>
+<li><p><strong>Insertion Anomaly</strong>: We cannot add a new artist
+without adding an artwork.</p></li>
+<li><p><strong>Deletion Anomaly</strong>: Deleting an artwork might
+remove the only record of an artist.</p></li>
+</ul>
+<p>These issues are addressed by the Second Normal Form.</p>
+</div>
+<div class="section level3">
+<h3 id="second-normal-form-2nf">Second Normal Form (2NF)<a class="anchor" aria-label="anchor" href="#second-normal-form-2nf"></a>
+</h3>
+<p>A table is in Second Normal Form (2NF) if:</p>
+<div id="callout-2nf" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="callout-2nf" class="callout-inner">
+<h3 class="callout-title">Callout: 2NF</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>It is in 1NF.</li>
+<li>It has no partial dependencies; all non-key attributes must depend
+on the entire primary key.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>In our example, let’s assume we have a composite primary key for the
+artworks table: <code>(Title, Artist Name)</code>. However, note
+that:</p>
+<ul>
+<li>
+<code>Artist Nationality</code>, <code>Artist Birthplace</code>, and
+<code>Artist Birth–Death Years</code> depend only on
+<code>Artist Name</code>, not on <code>Title</code>.</li>
+<li>
+<code>Department</code> and <code>Gallery Number</code> might depend
+on the artwork (but note: the same gallery number can appear in
+different departments?).</li>
+</ul>
+<p>This partial dependency (non-key attributes depending on only part of
+the primary key) is not allowed in 2NF. To achieve 2NF, we split the
+table into two or more tables:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Artists Table</strong>: Contains artist-related
+attributes.</li>
+<li>
+<strong>Artworks Table</strong>: Contains artwork-related
+attributes, with a foreign key to the artist.</li>
+</ol>
+<p><strong>Artists Table:</strong></p>
+<div class="line-block">ArtistID | Artist Name | Nationality |
+Birthplace | Birth_Death |</div>
+<p>|———-|——————|————-|——————-|————-|</p>
+<div class="line-block">1 | Thomas Eakins | American | Philadelphia, PA
+| 1844–1916 |</div>
+<div class="line-block">2 | Sanford R. Gifford| American | Greenfield,
+NY | 1823–1880 |</div>
+<div class="line-block">3 | Jean H. Fragonard| French | Grasse |
+1732–1806 |</div>
+<div class="line-block">4 | Bill Traylor | American | Benton, AL |
+1854–1949 |</div>
+<div class="line-block">5 | Gerard David | Netherlandish| Oudewater |
+1455–1523 |</div>
+<p><strong>Artworks Table:</strong></p>
+<div class="line-block">ArtworkID | Title | Accession Number |
+Department | Gallery Number | ArtistID (FK) |</div>
+<p>|———–|—————————————–|——————|————————-|—————-|—————|</p>
+<div class="line-block">1 | The Artist’s Wife and His Setter Dog |
+23.139 | The American Wing | 764 | 1 |</div>
+<div class="line-block">2 | The Champion Single Sculls | 34.92 | The
+American Wing | 763 | 1 |</div>
+<div class="line-block">3 | A Gorge in the Mountains | 15.30.62 | The
+American Wing | 761 | 2 |</div>
+<div class="line-block">4 | Marie Emilie Coignet de Courson | 37.118 |
+European Paintings | 631 | 3 |</div>
+<div class="line-block">5 | Blue Construction, Orange Figures | 2015.756
+| The Met Fifth Avenue | 773 | 4 |</div>
+<div class="line-block">6 | Christ Carrying the Cross | 1975.1.119A-B |
+Robert Lehman Collection| 953 | 5 |</div>
+<p>Now, the Artists table has a primary key <code>ArtistID</code>, and
+the Artworks table has a primary key <code>ArtworkID</code> and a
+foreign key <code>ArtistID</code> linking to the Artists table. This
+design eliminates the redundancy of artist information. However, we
+still have an issue: The <code>Department</code> and
+<code>Gallery Number</code> in the Artworks table might not be entirely
+dependent on the artwork. In fact, the same gallery number might appear
+in multiple departments? Actually, each gallery number is unique to a
+department? But note: the gallery number 773 is in “The Met Fifth
+Avenue”, while 764 is in “The American Wing”. Moreover, if we have
+multiple artworks in the same gallery, the department-gallery pair would
+be repeated. This leads us to the Third Normal Form.</p>
+</div>
+<div class="section level3">
+<h3 id="third-normal-form-3nf">Third Normal Form (3NF)<a class="anchor" aria-label="anchor" href="#third-normal-form-3nf"></a>
+</h3>
+<p>A table is in Third Normal Form (3NF) if:</p>
+<div id="callout-3nf" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="callout-3nf" class="callout-inner">
+<h3 class="callout-title">Callout: 3NF</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>It is in 2NF.</li>
+<li>It has no transitive dependencies: non-key attributes must not
+depend on other non-key attributes.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>In the Artworks table, note that: <code>Gallery Number</code>
+determines the <code>Department</code>? Or is it the other way around?
+Actually, the department is determined by the gallery location. But in
+reality, the gallery number is unique and might already imply the
+department.</p>
+<p>However, in our table, we have both <code>Department</code> and
+<code>Gallery Number</code>. If the gallery number uniquely determines
+the department, then <code>Department</code> is transitively dependent
+on <code>Gallery Number</code> (a non-key attribute) rather than on the
+primary key (<code>ArtworkID</code>).</p>
+<p>To resolve this, we create a separate table for galleries:</p>
+<p><strong>Galleries Table:</strong></p>
+<div class="line-block">GalleryID | Gallery Number | Department |</div>
+<p>|———–|—————-|————————-|</p>
+<div class="line-block">1 | 764 | The American Wing |</div>
+<div class="line-block">2 | 763 | The American Wing |</div>
+<div class="line-block">3 | 761 | The American Wing |</div>
+<div class="line-block">4 | 631 | European Paintings |</div>
+<div class="line-block">5 | 773 | The Met Fifth Avenue |</div>
+<div class="line-block">6 | 953 | Robert Lehman Collection|</div>
+<p>Now, we can replace <code>Department</code> and
+<code>Gallery Number</code> in the Artworks table with a foreign key
+<code>GalleryID</code>:</p>
+<p><strong>Artworks Table (3NF):</strong></p>
+<div class="line-block">ArtworkID | Title | Accession Number | GalleryID
+(FK) | ArtistID (FK) |</div>
+<p>|———–|—————————————–|——————|—————-|—————|</p>
+<div class="line-block">1 | The Artist’s Wife and His Setter Dog |
+23.139 | 1 | 1 |</div>
+<div class="line-block">2 | The Champion Single Sculls | 34.92 | 2 | 1
+|</div>
+<div class="line-block">3 | A Gorge in the Mountains | 15.30.62 | 3 | 2
+|</div>
+<div class="line-block">4 | Marie Emilie Coignet de Courson | 37.118 | 4
+| 3 |</div>
+<div class="line-block">5 | Blue Construction, Orange Figures | 2015.756
+| 5 | 4 |</div>
+<div class="line-block">6 | Christ Carrying the Cross | 1975.1.119A-B |
+6 | 5 |</div>
+<p>This design:</p>
+<ul>
+<li><p>Removes transitive dependencies (Department depends on Gallery,
+which is now in its own table).</p></li>
+<li><p>Reduces redundancy: The department for gallery 764 is stored only
+once.</p></li>
+</ul>
+<p>We now have a fully normalized database in 3NF. The advantages
+are:</p>
+<ul>
+<li><p><strong>Reduced redundancy</strong>: Each piece of information is
+stored only once.</p></li>
+<li><p><strong>Improved integrity</strong>: Updates are straightforward
+(e.g., changing a gallery’s department affects all related
+artworks).</p></li>
+<li><p><strong>Flexibility</strong>: We can add new galleries, artists,
+or artworks without anomalies.</p></li>
+</ul>
+<p>In summary, normalization helps us design databases that are
+efficient, consistent, and scalable.</p>
 <div id="keypoints2" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -734,203 +962,17 @@ efficient</strong>.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>Avoid duplication of data<br>
-</li>
-<li>Clear separation of responsibilities (each table has a specific
-role)<br>
-</li>
-<li>Fewer errors and inconsistencies<br>
-</li>
-<li>Easier to maintain and extend the database</li>
+<li><p><strong>1NF</strong>: Eliminate repeating groups and ensure
+atomicity.</p></li>
+<li><p><strong>2NF</strong>: Remove partial dependencies by splitting
+tables.</p></li>
+<li><p><strong>3NF</strong>: Remove transitive dependencies by moving
+dependent attributes to new tables.</p></li>
+<li><p>Normalization reduces redundancy and prevents anomalies.</p></li>
 </ul>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="first-normal-form">First normal form<a class="anchor" aria-label="anchor" href="#first-normal-form"></a>
-</h3>
-<p>To introduce the concept of the First Normal Form, we want to start
-by exploring the public collection of the <a href="https://www.metmuseum.org/art/collection/search" class="external-link">Metropolitan
-Museum of Art (The MET)</a> in New York. Our goal is to create a curated
-dataset of artworks that include dogs, forming the foundation of a
-small, themed collection.</p>
-<p>We began by extracting a selection of entries that were tagged with
-“dog”. Here is a part of the raw table we compiled:</p>
-<table class="table">
-<colgroup>
-<col width="37%">
-<col width="27%">
-<col width="7%">
-<col width="27%">
-</colgroup>
-<thead><tr class="header">
-<th>Title</th>
-<th>Artist</th>
-<th>Accession Number</th>
-<th>On View Location</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>The Artist’s Wife and His Setter Dog</td>
-<td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
-<td>23.139</td>
-<td>The American Wing, 764</td>
-</tr>
-<tr class="even">
-<td>The Champion Single Sculls (Max Schmitt in a Single Scull)</td>
-<td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
-<td>34.92</td>
-<td>The American Wing, 763</td>
-</tr>
-<tr class="odd">
-<td>A Gorge in the Mountains (Kauterskill Clove)</td>
-<td>Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY)</td>
-<td>15.30.62</td>
-<td>The American Wing, 761</td>
-</tr>
-<tr class="even">
-<td>Marie Emilie Coignet de Courson (1716–1806) with a Dog</td>
-<td>Jean Honoré Fragonard (French, Grasse 1732–1806 Paris)</td>
-<td>37.118</td>
-<td>European Paintings, 631</td>
-</tr>
-<tr class="odd">
-<td>Blue Construction, Orange Figures</td>
-<td>Bill Traylor</td>
-<td>2015.756</td>
-<td>The Met Fifth Avenue in Gallery 773</td>
-</tr>
-<tr class="even">
-<td>Christ Carrying the Cross, with the Crucifixion</td>
-<td>Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)</td>
-<td>1975.1.119A-B</td>
-<td>Robert Lehman Collection, 953</td>
-</tr>
-</tbody>
-</table>
-<p>At first glance, this table seems to contain the basic information we
-need: title, artist, museum reference number, and viewing location. But
-let’s take a closer look. What happens if we want to search for all
-works by the same artist? How do we deal with artworks that appear to be
-listed more than once? What exactly is stored in the “On View Location”
-column — is it a department, a gallery number, or both? And what if we
-wanted to sort or filter artworks by gallery alone?</p>
-<p>These questions reveal some issues with the structure of the table.
-The artist information includes names along with dates and places of
-birth and death, all mixed in a single field. Some entries are repeated,
-and the viewing location combines multiple details in a single cell. In
-this form, the data may be good enough for reading — but it’s far from
-ideal if we want to work with it programmatically, search through it
-efficiently, or extend it later.</p>
-<p>This is where the concept of <strong>First Normal Form (1NF)</strong>
-comes into play. It provides a first step toward cleaning and
-structuring the data. The core idea is simple: each field in a table
-should hold <strong>one single, atomic value</strong>. There should be
-no lists, no combined information, no embedded structures. Each piece of
-data belongs in its own place.</p>
-<p>To bring our MET dog collection into First Normal Form, we first need
-to separate combined data into individual fields. That means splitting
-up the location into department and gallery number, simplifying the
-artist field to only include the name, and making sure there are no
-duplicate records. After applying these changes, our structured table
-looks like this:</p>
-<table class="table">
-<colgroup>
-<col width="31%">
-<col width="10%">
-<col width="7%">
-<col width="9%">
-<col width="10%">
-<col width="6%">
-<col width="17%">
-<col width="5%">
-</colgroup>
-<thead><tr class="header">
-<th>Title</th>
-<th>Artist Name</th>
-<th>Artist Nationality</th>
-<th>Artist Birthplace</th>
-<th>Artist Birth–Death Years</th>
-<th>Accession Number</th>
-<th>Department</th>
-<th>Room Number</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>The Artist’s Wife and His Setter Dog</td>
-<td>Thomas Eakins</td>
-<td>American</td>
-<td>Philadelphia, Pennsylvania</td>
-<td>1844–1916</td>
-<td>23.139</td>
-<td>The American Wing</td>
-<td>764</td>
-</tr>
-<tr class="even">
-<td>The Champion Single Sculls (Max Schmitt in a Single Scull)</td>
-<td>Thomas Eakins</td>
-<td>American</td>
-<td>Philadelphia, Pennsylvania</td>
-<td>1844–1916</td>
-<td>34.92</td>
-<td>The American Wing</td>
-<td>763</td>
-</tr>
-<tr class="odd">
-<td>A Gorge in the Mountains (Kauterskill Clove)</td>
-<td>Sanford Robinson Gifford</td>
-<td>American</td>
-<td>Greenfield, New York</td>
-<td>1823–1880</td>
-<td>15.30.62</td>
-<td>The American Wing</td>
-<td>761</td>
-</tr>
-<tr class="even">
-<td>Marie Emilie Coignet de Courson (1716–1806) with a Dog</td>
-<td>Jean Honoré Fragonard</td>
-<td>French</td>
-<td>Grasse</td>
-<td>1732–1806</td>
-<td>37.118</td>
-<td>European Paintings</td>
-<td>631</td>
-</tr>
-<tr class="odd">
-<td>Blue Construction, Orange Figures</td>
-<td>Bill Traylor</td>
-<td>American</td>
-<td>Benton, Alabama</td>
-<td>1853/54–1949</td>
-<td>2015.756</td>
-<td>The Met Fifth Avenue / The American Wing</td>
-<td>773</td>
-</tr>
-<tr class="even">
-<td>Christ Carrying the Cross, with the Crucifixion</td>
-<td>Gerard David</td>
-<td>Netherlandish</td>
-<td>Oudewater</td>
-<td>ca. 1455–1523</td>
-<td>1975.1.119A-B</td>
-<td>Robert Lehman Collection</td>
-<td>953</td>
-</tr>
-</tbody>
-</table>
-<p>This version is now in First Normal Form. Each field contains just
-one value, and combined information has been clearly separated. This not
-only makes the table easier to understand, but also opens the door to
-further normalization in the next steps — where we’ll learn how to
-reduce redundancy and connect related data across multiple tables.</p>
-</div>
-<div class="section level3">
-<h3 id="second-normal-form">Second normal form<a class="anchor" aria-label="anchor" href="#second-normal-form"></a>
-</h3>
-</div>
-<div class="section level3">
-<h3 id="third-normal-form">Third normal form<a class="anchor" aria-label="anchor" href="#third-normal-form"></a>
-</h3>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
@@ -1877,7 +1919,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07_apis"><p>Content from <a href="07_apis.html">APIs</a></p>
 <hr>
-<p>Last updated on 2025-05-19 |
+<p>Last updated on 2025-06-10 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/07_apis.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1915,7 +1957,10 @@ any links that you are not going to use.
 <p>NocoDB is not just a user-friendly no-code platform for working with
 data — it also includes powerful tools for <strong>automation</strong>
 and <strong>integration</strong>. Two of the most important features in
-this area are <strong>APIs</strong> and <strong>Webhooks</strong>.</p>
+this area are <strong>APIs</strong> and <strong>Webhooks</strong>. These
+tools make it possible to create very extensive and complex
+applications. We will therefore only briefly mention and understand how
+they work, as using them would require a separate lesson.</p>
 <section><h2 class="section-heading" id="apis">APIs<a class="anchor" aria-label="anchor" href="#apis"></a>
 </h2>
 <hr class="half-width">
@@ -1949,7 +1994,6 @@ small projects and professional systems. If you use a classic database
 on your server you need to create the APIs aswell and write code for
 them. NocoDB creates the APIs automatically for every table and all of
 your data.</p>
-<hr>
 </div>
 </section><section><h2 class="section-heading" id="swagger-api">Swagger API<a class="anchor" aria-label="anchor" href="#swagger-api"></a>
 </h2>
@@ -1962,9 +2006,9 @@ websites use.</p>
 <p>Even if you’ve never worked with code before, NocoDB makes it easy to
 try out these features using a built-in tool called <strong>Swagger
 UI</strong>.</p>
-<hr></section><section><h2 class="section-heading" id="what-is-swagger">What is Swagger?<a class="anchor" aria-label="anchor" href="#what-is-swagger"></a>
-</h2>
-<hr class="half-width">
+<div class="section level3">
+<h3 id="what-is-swagger">What is Swagger?<a class="anchor" aria-label="anchor" href="#what-is-swagger"></a>
+</h3>
 <p><strong>Swagger</strong> (also known as <strong>OpenAPI</strong>) is
 a framework for documenting and testing APIs. NocoDB includes a Swagger
 interface that shows you:</p>
@@ -1979,7 +2023,8 @@ interface that shows you:</p>
 <li>and what each request will return.</li>
 </ul>
 <p>What makes it really useful: you can <strong>interact with the API
-directly in your browser</strong> — no setup, no coding required.</p>
+directly in your browser</strong>, no setup, no coding required.</p>
+</div>
 <div class="section level3">
 <h3 id="step-by-step-exploring-the-nocodb-api-with-swagger">Step-by-Step: Exploring the NocoDB API with Swagger<a class="anchor" aria-label="anchor" href="#step-by-step-exploring-the-nocodb-api-with-swagger"></a>
 </h3>
@@ -2045,7 +2090,9 @@ JSON format, for example:</li>
 <hr class="half-width">
 <p>NocoDB also helps you generate <strong>ready-to-use code
 snippets</strong> for various programming languages. This means you
-don’t need to write any code yourself — you can just copy and paste.</p>
+don’t need to write any code yourself, you can just copy and paste. To
+use these you need an external IDE and know one of the
+Programming-Languages to use it properly.</p>
 <div class="section level3">
 <h3 id="how-to-copy-api-snippets">How to Copy API Snippets<a class="anchor" aria-label="anchor" href="#how-to-copy-api-snippets"></a>
 </h3>
