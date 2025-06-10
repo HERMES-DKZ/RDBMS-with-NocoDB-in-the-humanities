@@ -86,11 +86,12 @@ Third (3NF). Each builds on the previous one, addressing specific types of probl
 
 ### First Normal Form (1NF)
 
-The First Normal Form (1NF) is the most basic level of normalization. A table is in 1NF if:
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Callout: 1NF
+
+The First Normal Form (1NF) is the most basic level of normalization. A table is in 1NF if:
 
 1. **Each column contains atomic values**: There should be no repeating groups or arrays within a single cell. Each field must contain a single value.
 2. **Each record is unique**: There should be no duplicate rows.
@@ -152,11 +153,12 @@ These issues are addressed by the Second Normal Form.
 ### Second Normal Form (2NF)
 
 
-A table is in Second Normal Form (2NF) if:
 
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Callout: 2NF
+
+A table is in Second Normal Form (2NF) if:
 
 1. It is in 1NF.
 2. It has no partial dependencies; all non-key attributes must depend on the entire primary key.
@@ -198,9 +200,10 @@ Now, the Artists table has a primary key `ArtistID`, and the Artworks table has 
 
 ### Third Normal Form (3NF)
 
-A table is in Third Normal Form (3NF) if:
 
 ::::::::::::::::::::::::::::::::::::: callout
+
+A table is in Third Normal Form (3NF) if:
 
 ### Callout: 3NF
 
