@@ -576,10 +576,7 @@ any links that you are not going to use.
 </div>
 </div>
 <p>In order to approach the topic as a whole, we first want to look at
-and understand the individual components in detail. As already
-mentioned, so-called keys are used to link tables in relational
-databases and thus make data storage and analysis more efficient. What
-exactly this means is explained below.</p>
+and understand the individual components in detail.</p>
 <section><h2 class="section-heading" id="tables-relations">Tables (Relations)<a class="anchor" aria-label="anchor" href="#tables-relations"></a>
 </h2>
 <hr class="half-width">
@@ -592,10 +589,25 @@ showing the actual values for those attributes. More precisely, each row
 represents a person and contains information about that person. This
 concept is transferable to all types of objects.</p>
 <p><strong>Example: Artists Table</strong></p>
-<div class="line-block">Name | Date of Birth | ID (Primary Key) |</div>
-<p>|—————–|—————|——————|</p>
-<div class="line-block">Thomas Eakins | 25.7.1844 | 1 |</div>
-<div class="line-block">Bill Traylor | 1.4.1854 | 2 |</div>
+<table class="table">
+<thead><tr class="header">
+<th>Name</th>
+<th>Date of Birth</th>
+<th>ID (Primary Key)</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Thomas Eakins</td>
+<td>25.7.1844</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Bill Traylor</td>
+<td>1.4.1854</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
 <p>Tables provide a clear and easy-to-understand structure that works
 well for both humans and computers. They allow large amounts of
 information to be stored in an organized way, making it easy to search,
