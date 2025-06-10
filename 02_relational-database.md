@@ -22,7 +22,7 @@ exercises: 3
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In order to approach the topic as a whole, we first want to look at and understand the individual components in detail. As already mentioned, so-called keys are used to link tables in relational databases and thus make data storage and analysis more efficient. What exactly this means is explained below.
+In order to approach the topic as a whole, we first want to look at and understand the individual components in detail. 
 
 ## Tables (Relations)
 
@@ -31,11 +31,8 @@ Tables are a fundamental tool for organizing and processing data in a structured
 **Example: Artists Table**
 
 | Name            | Date of Birth | ID (Primary Key) |
-
-|-----------------|---------------|------------------|
-
+| -----------------|---------------|------------------|
 | Thomas Eakins   | 25.7.1844     | 1                |
-
 | Bill Traylor    | 1.4.1854      | 2                |
 
 
