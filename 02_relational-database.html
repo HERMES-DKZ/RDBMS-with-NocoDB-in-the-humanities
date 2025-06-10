@@ -422,11 +422,13 @@ in the artworks table, we can use the artist’s primary key as a
 reference. This reference, in the artwork table is called a
 <strong>Foreign Key</strong>.</p>
 <p><strong>Example: Artworks Table</strong></p>
-<div class="line-block">Title | Artist (Foreign Key) |</div>
-<p>|———————————–|———————-|</p>
-<div class="line-block">The Artist’s Wife and His Setter Dog | 1 |</div>
-<div class="line-block">Blue Construction, Orange Figures | 2 |</div>
-<p>The foreign key in the Artworks table (<code>Artist</code>) refers to
+<table class="table"><thead><tr class="header"><th>Title</th>
+<th>Artist (Foreign Key)</th>
+</tr></thead><tbody><tr class="odd"><td>The Artist’s Wife and His Setter Dog</td>
+<td>1</td>
+</tr><tr class="even"><td>Blue Construction, Orange Figures</td>
+<td>2</td>
+</tr></tbody></table><p>The foreign key in the Artworks table (<code>Artist</code>) refers to
 the primary key (<code>ID</code>) in the Artists table. This establishes
 a relationship between the two tables, allowing us to link each artwork
 to its artist without duplicating artist information. This separation of
@@ -502,27 +504,35 @@ rows.</li>
 <p>To illustrate, let’s consider a table of artworks from the
 Metropolitan Museum of Art (The MET) in New York. We start with the
 following unnormalized table:</p>
-<div class="line-block">Title | Artist | Accession Number | On View
-Location |</div>
-<p>|—————————————————————————————–|—————————————————————-|——————|—————————————————————-|</p>
-<div class="line-block">The Artist’s Wife and His Setter Dog | Thomas
-Eakins (American, Philadelphia, Pennsylvania 1844–1916) | 23.139 | The
-American Wing, 764 |</div>
-<div class="line-block">The Champion Single Sculls (Max Schmitt in a
-Single Scull) | Thomas Eakins (American, Philadelphia, Pennsylvania
-1844–1916) | 34.92 | The American Wing, 763 |</div>
-<div class="line-block">A Gorge in the Mountains (Kauterskill Clove) |
-Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY) | 15.30.62 | The
-American Wing, 761 |</div>
-<div class="line-block">Marie Emilie Coignet de Courson (1716–1806) with
-a Dog | Jean Honoré Fragonard (French, Grasse 1732–1806 Paris) | 37.118
-| European Paintings, 631 |</div>
-<div class="line-block">Blue Construction, Orange Figures | Bill Traylor
-| 2015.756 | The Met Fifth Avenue in Gallery 773 |</div>
-<div class="line-block">Christ Carrying the Cross, with the Crucifixion
-| Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges) |
-1975.1.119A-B | Robert Lehman Collection, 953 |</div>
-<p>This table has several issues:</p>
+<table class="table"><colgroup><col width="37%"><col width="27%"><col width="7%"><col width="27%"></colgroup><thead><tr class="header"><th>Title</th>
+<th>Artist</th>
+<th>Accession Number</th>
+<th>On View Location</th>
+</tr></thead><tbody><tr class="odd"><td>The Artist’s Wife and His Setter Dog</td>
+<td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
+<td>23.139</td>
+<td>The American Wing, 764</td>
+</tr><tr class="even"><td>The Champion Single Sculls (Max Schmitt in a Single Scull)</td>
+<td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
+<td>34.92</td>
+<td>The American Wing, 763</td>
+</tr><tr class="odd"><td>A Gorge in the Mountains (Kauterskill Clove)</td>
+<td>Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY)</td>
+<td>15.30.62</td>
+<td>The American Wing, 761</td>
+</tr><tr class="even"><td>Marie Emilie Coignet de Courson (1716–1806) with a Dog</td>
+<td>Jean Honoré Fragonard (French, Grasse 1732–1806 Paris)</td>
+<td>37.118</td>
+<td>European Paintings, 631</td>
+</tr><tr class="odd"><td>Blue Construction, Orange Figures</td>
+<td>Bill Traylor</td>
+<td>2015.756</td>
+<td>The Met Fifth Avenue in Gallery 773</td>
+</tr><tr class="even"><td>Christ Carrying the Cross, with the Crucifixion</td>
+<td>Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)</td>
+<td>1975.1.119A-B</td>
+<td>Robert Lehman Collection, 953</td>
+</tr></tbody></table><p>This table has several issues:</p>
 <ol style="list-style-type: decimal"><li>The <strong>Artist</strong> column contains multiple pieces of
 information: name, nationality, birthplace, and birth-death years.</li>
 <li>The <strong>On View Location</strong> column combines the
@@ -532,29 +542,63 @@ by individual attributes (e.g., by artist nationality or gallery
 number).</p>
 <p>To convert this table to 1NF, we split the composite fields into
 atomic values:</p>
-<div class="line-block">Title | Artist Name | Artist Nationality |
-Artist Birthplace | Artist Birth–Death Years | Accession Number |
-Department | Gallery Number |</div>
-<p>|—————————————–|——————-|——————–|————————–|————————–|——————|————————-|—————-|</p>
-<div class="line-block">The Artist’s Wife and His Setter Dog | Thomas
-Eakins | American | Philadelphia, Pennsylvania | 1844–1916 | 23.139 |
-The American Wing | 764 |</div>
-<div class="line-block">The Champion Single Sculls | Thomas Eakins |
-American | Philadelphia, Pennsylvania | 1844–1916 | 34.92 | The American
-Wing | 763 |</div>
-<div class="line-block">A Gorge in the Mountains | Sanford R. Gifford|
-American | Greenfield, NY | 1823–1880 | 15.30.62 | The American Wing |
-761 |</div>
-<div class="line-block">Marie Emilie Coignet de Courson | Jean H.
-Fragonard| French | Grasse | 1732–1806 | 37.118 | European Paintings |
-631 |</div>
-<div class="line-block">Blue Construction, Orange Figures | Bill Traylor
-| American | Benton, AL | 1854–1949 | 2015.756 | The Met Fifth Avenue |
-773 |</div>
-<div class="line-block">Christ Carrying the Cross | Gerard David |
-Netherlandish | Oudewater | 1455–1523 | 1975.1.119A-B | Robert Lehman
-Collection| 953 |</div>
-<p>Now each column holds a single piece of information. This table is in
+<table class="table"><colgroup><col width="21%"><col width="9%"><col width="10%"><col width="13%"><col width="13%"><col width="9%"><col width="13%"><col width="8%"></colgroup><thead><tr class="header"><th>Title</th>
+<th>Artist Name</th>
+<th>Artist Nationality</th>
+<th>Artist Birthplace</th>
+<th>Artist Birth–Death Years</th>
+<th>Accession Number</th>
+<th>Department</th>
+<th>Gallery Number</th>
+</tr></thead><tbody><tr class="odd"><td>The Artist’s Wife and His Setter Dog</td>
+<td>Thomas Eakins</td>
+<td>American</td>
+<td>Philadelphia, Pennsylvania</td>
+<td>1844–1916</td>
+<td>23.139</td>
+<td>The American Wing</td>
+<td>764</td>
+</tr><tr class="even"><td>The Champion Single Sculls</td>
+<td>Thomas Eakins</td>
+<td>American</td>
+<td>Philadelphia, Pennsylvania</td>
+<td>1844–1916</td>
+<td>34.92</td>
+<td>The American Wing</td>
+<td>763</td>
+</tr><tr class="odd"><td>A Gorge in the Mountains</td>
+<td>Sanford R. Gifford</td>
+<td>American</td>
+<td>Greenfield, NY</td>
+<td>1823–1880</td>
+<td>15.30.62</td>
+<td>The American Wing</td>
+<td>761</td>
+</tr><tr class="even"><td>Marie Emilie Coignet de Courson</td>
+<td>Jean H. Fragonard</td>
+<td>French</td>
+<td>Grasse</td>
+<td>1732–1806</td>
+<td>37.118</td>
+<td>European Paintings</td>
+<td>631</td>
+</tr><tr class="odd"><td>Blue Construction, Orange Figures</td>
+<td>Bill Traylor</td>
+<td>American</td>
+<td>Benton, AL</td>
+<td>1854–1949</td>
+<td>2015.756</td>
+<td>The Met Fifth Avenue</td>
+<td>773</td>
+</tr><tr class="even"><td>Christ Carrying the Cross</td>
+<td>Gerard David</td>
+<td>Netherlandish</td>
+<td>Oudewater</td>
+<td>1455–1523</td>
+<td>1975.1.119A-B</td>
+<td>Robert Lehman Collection</td>
+<td>953</td>
+</tr></tbody></table><p>Now each column holds a single piece of information. This table is in
 1NF.</p>
 <p>However, we still have problems:</p>
 <ul><li><p><strong>Redundancy</strong>: The artist details (e.g., Thomas
@@ -605,36 +649,80 @@ attributes.</li>
 <strong>Artworks Table</strong>: Contains artwork-related
 attributes, with a foreign key to the artist.</li>
 </ol><p><strong>Artists Table:</strong></p>
-<div class="line-block">ArtistID | Artist Name | Nationality |
-Birthplace | Birth_Death |</div>
-<p>|———-|——————|————-|——————-|————-|</p>
-<div class="line-block">1 | Thomas Eakins | American | Philadelphia, PA
-| 1844–1916 |</div>
-<div class="line-block">2 | Sanford R. Gifford| American | Greenfield,
-NY | 1823–1880 |</div>
-<div class="line-block">3 | Jean H. Fragonard| French | Grasse |
-1732–1806 |</div>
-<div class="line-block">4 | Bill Traylor | American | Benton, AL |
-1854–1949 |</div>
-<div class="line-block">5 | Gerard David | Netherlandish| Oudewater |
-1455–1523 |</div>
-<p><strong>Artworks Table:</strong></p>
-<div class="line-block">ArtworkID | Title | Accession Number |
-Department | Gallery Number | ArtistID (FK) |</div>
-<p>|———–|—————————————–|——————|————————-|—————-|—————|</p>
-<div class="line-block">1 | The Artist’s Wife and His Setter Dog |
-23.139 | The American Wing | 764 | 1 |</div>
-<div class="line-block">2 | The Champion Single Sculls | 34.92 | The
-American Wing | 763 | 1 |</div>
-<div class="line-block">3 | A Gorge in the Mountains | 15.30.62 | The
-American Wing | 761 | 2 |</div>
-<div class="line-block">4 | Marie Emilie Coignet de Courson | 37.118 |
-European Paintings | 631 | 3 |</div>
-<div class="line-block">5 | Blue Construction, Orange Figures | 2015.756
-| The Met Fifth Avenue | 773 | 4 |</div>
-<div class="line-block">6 | Christ Carrying the Cross | 1975.1.119A-B |
-Robert Lehman Collection| 953 | 5 |</div>
-<p>Now, the Artists table has a primary key <code>ArtistID</code>, and
+<table class="table"><colgroup><col width="13%"><col width="24%"><col width="17%"><col width="26%"><col width="17%"></colgroup><thead><tr class="header"><th>ArtistID</th>
+<th>Artist Name</th>
+<th>Nationality</th>
+<th>Birthplace</th>
+<th>Birth_Death</th>
+</tr></thead><tbody><tr class="odd"><td>1</td>
+<td>Thomas Eakins</td>
+<td>American</td>
+<td>Philadelphia, PA</td>
+<td>1844–1916</td>
+</tr><tr class="even"><td>2</td>
+<td>Sanford R. Gifford</td>
+<td>American</td>
+<td>Greenfield, NY</td>
+<td>1823–1880</td>
+</tr><tr class="odd"><td>3</td>
+<td>Jean H. Fragonard</td>
+<td>French</td>
+<td>Grasse</td>
+<td>1732–1806</td>
+</tr><tr class="even"><td>4</td>
+<td>Bill Traylor</td>
+<td>American</td>
+<td>Benton, AL</td>
+<td>1854–1949</td>
+</tr><tr class="odd"><td>5</td>
+<td>Gerard David</td>
+<td>Netherlandish</td>
+<td>Oudewater</td>
+<td>1455–1523</td>
+</tr></tbody></table><p><strong>Artworks Table:</strong></p>
+<table class="table"><colgroup><col width="8%"><col width="32%"><col width="14%"><col width="19%"><col width="12%"><col width="11%"></colgroup><thead><tr class="header"><th>ArtworkID</th>
+<th>Title</th>
+<th>Accession Number</th>
+<th>Department</th>
+<th>Gallery Number</th>
+<th>ArtistID (FK)</th>
+</tr></thead><tbody><tr class="odd"><td>1</td>
+<td>The Artist’s Wife and His Setter Dog</td>
+<td>23.139</td>
+<td>The American Wing</td>
+<td>764</td>
+<td>1</td>
+</tr><tr class="even"><td>2</td>
+<td>The Champion Single Sculls</td>
+<td>34.92</td>
+<td>The American Wing</td>
+<td>763</td>
+<td>1</td>
+</tr><tr class="odd"><td>3</td>
+<td>A Gorge in the Mountains</td>
+<td>15.30.62</td>
+<td>The American Wing</td>
+<td>761</td>
+<td>2</td>
+</tr><tr class="even"><td>4</td>
+<td>Marie Emilie Coignet de Courson</td>
+<td>37.118</td>
+<td>European Paintings</td>
+<td>631</td>
+<td>3</td>
+</tr><tr class="odd"><td>5</td>
+<td>Blue Construction, Orange Figures</td>
+<td>2015.756</td>
+<td>The Met Fifth Avenue</td>
+<td>773</td>
+<td>4</td>
+</tr><tr class="even"><td>6</td>
+<td>Christ Carrying the Cross</td>
+<td>1975.1.119A-B</td>
+<td>Robert Lehman Collection</td>
+<td>953</td>
+<td>5</td>
+</tr></tbody></table><p>Now, the Artists table has a primary key <code>ArtistID</code>, and
 the Artworks table has a primary key <code>ArtworkID</code> and a
 foreign key <code>ArtistID</code> linking to the Artists table. This
 design eliminates the redundancy of artist information. However, we
@@ -675,34 +763,67 @@ on <code>Gallery Number</code> (a non-key attribute) rather than on the
 primary key (<code>ArtworkID</code>).</p>
 <p>To resolve this, we create a separate table for galleries:</p>
 <p><strong>Galleries Table:</strong></p>
-<div class="line-block">GalleryID | Gallery Number | Department |</div>
-<p>|———–|—————-|————————-|</p>
-<div class="line-block">1 | 764 | The American Wing |</div>
-<div class="line-block">2 | 763 | The American Wing |</div>
-<div class="line-block">3 | 761 | The American Wing |</div>
-<div class="line-block">4 | 631 | European Paintings |</div>
-<div class="line-block">5 | 773 | The Met Fifth Avenue |</div>
-<div class="line-block">6 | 953 | Robert Lehman Collection|</div>
-<p>Now, we can replace <code>Department</code> and
+<table class="table"><thead><tr class="header"><th>GalleryID</th>
+<th>Gallery Number</th>
+<th>Department</th>
+</tr></thead><tbody><tr class="odd"><td>1</td>
+<td>764</td>
+<td>The American Wing</td>
+</tr><tr class="even"><td>2</td>
+<td>763</td>
+<td>The American Wing</td>
+</tr><tr class="odd"><td>3</td>
+<td>761</td>
+<td>The American Wing</td>
+</tr><tr class="even"><td>4</td>
+<td>631</td>
+<td>European Paintings</td>
+</tr><tr class="odd"><td>5</td>
+<td>773</td>
+<td>The Met Fifth Avenue</td>
+</tr><tr class="even"><td>6</td>
+<td>953</td>
+<td>Robert Lehman Collection</td>
+</tr></tbody></table><p>Now, we can replace <code>Department</code> and
 <code>Gallery Number</code> in the Artworks table with a foreign key
 <code>GalleryID</code>:</p>
 <p><strong>Artworks Table (3NF):</strong></p>
-<div class="line-block">ArtworkID | Title | Accession Number | GalleryID
-(FK) | ArtistID (FK) |</div>
-<p>|———–|—————————————–|——————|—————-|—————|</p>
-<div class="line-block">1 | The Artist’s Wife and His Setter Dog |
-23.139 | 1 | 1 |</div>
-<div class="line-block">2 | The Champion Single Sculls | 34.92 | 2 | 1
-|</div>
-<div class="line-block">3 | A Gorge in the Mountains | 15.30.62 | 3 | 2
-|</div>
-<div class="line-block">4 | Marie Emilie Coignet de Courson | 37.118 | 4
-| 3 |</div>
-<div class="line-block">5 | Blue Construction, Orange Figures | 2015.756
-| 5 | 4 |</div>
-<div class="line-block">6 | Christ Carrying the Cross | 1975.1.119A-B |
-6 | 5 |</div>
-<p>This design:</p>
+<table class="table"><colgroup><col width="10%"><col width="40%"><col width="17%"><col width="15%"><col width="14%"></colgroup><thead><tr class="header"><th>ArtworkID</th>
+<th>Title</th>
+<th>Accession Number</th>
+<th>GalleryID (FK)</th>
+<th>ArtistID (FK)</th>
+</tr></thead><tbody><tr class="odd"><td>1</td>
+<td>The Artist’s Wife and His Setter Dog</td>
+<td>23.139</td>
+<td>1</td>
+<td>1</td>
+</tr><tr class="even"><td>2</td>
+<td>The Champion Single Sculls</td>
+<td>34.92</td>
+<td>2</td>
+<td>1</td>
+</tr><tr class="odd"><td>3</td>
+<td>A Gorge in the Mountains</td>
+<td>15.30.62</td>
+<td>3</td>
+<td>2</td>
+</tr><tr class="even"><td>4</td>
+<td>Marie Emilie Coignet de Courson</td>
+<td>37.118</td>
+<td>4</td>
+<td>3</td>
+</tr><tr class="odd"><td>5</td>
+<td>Blue Construction, Orange Figures</td>
+<td>2015.756</td>
+<td>5</td>
+<td>4</td>
+</tr><tr class="even"><td>6</td>
+<td>Christ Carrying the Cross</td>
+<td>1975.1.119A-B</td>
+<td>6</td>
+<td>5</td>
+</tr></tbody></table><p>This design:</p>
 <ul><li><p>Removes transitive dependencies (Department depends on Gallery,
 which is now in its own table).</p></li>
 <li><p>Reduces redundancy: The department for gallery 764 is stored only
