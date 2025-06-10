@@ -47,11 +47,8 @@ Now, if we want to store information about artworks created by these artists, we
 **Example: Artworks Table**
 
 | Title                             | Artist (Foreign Key) |
-
 |-----------------------------------|----------------------|
-
 | The Artist's Wife and His Setter Dog | 1                   |
-
 | Blue Construction, Orange Figures | 2                   |
 
 The foreign key in the Artworks table (`Artist`) refers to the primary key (`ID`) in the Artists table. This establishes a relationship between the two tables, allowing us to link each artwork to its artist without duplicating artist information. This separation of data into related tables reduces redundancy and makes the database more efficient and easier to maintain. However, for this to work effectively, we must ensure that:
@@ -107,19 +104,12 @@ The First Normal Form (1NF) is the most basic level of normalization. A table is
 To illustrate, let's consider a table of artworks from the Metropolitan Museum of Art (The MET) in New York. We start with the following unnormalized table:
 
 | Title                                                                                   | Artist                                                        | Accession Number | On View Location                                             |
-
 |-----------------------------------------------------------------------------------------|----------------------------------------------------------------|------------------|----------------------------------------------------------------|
-
 | The Artist's Wife and His Setter Dog                                                    | Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916) | 23.139           | The American Wing, 764                                        |
-
 | The Champion Single Sculls (Max Schmitt in a Single Scull)                              | Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916) | 34.92            | The American Wing, 763                                        |
-
 | A Gorge in the Mountains (Kauterskill Clove)                                            | Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY)         | 15.30.62         | The American Wing, 761                                        |
-
 | Marie Emilie Coignet de Courson (1716–1806) with a Dog                                  | Jean Honoré Fragonard (French, Grasse 1732–1806 Paris)         | 37.118           | European Paintings, 631                                       |
-
 | Blue Construction, Orange Figures                                                       | Bill Traylor                                                  | 2015.756         | The Met Fifth Avenue in Gallery 773                           |
-
 | Christ Carrying the Cross, with the Crucifixion                                         | Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)   | 1975.1.119A-B    | Robert Lehman Collection, 953                                 |
 
 
@@ -134,19 +124,12 @@ These non-atomic values make it difficult to search, sort, or filter by individu
 To convert this table to 1NF, we split the composite fields into atomic values:
 
 | Title                                   | Artist Name       | Artist Nationality | Artist Birthplace        | Artist Birth–Death Years | Accession Number | Department              | Gallery Number |
-
 |-----------------------------------------|-------------------|--------------------|--------------------------|--------------------------|------------------|-------------------------|----------------|
-
 | The Artist's Wife and His Setter Dog    | Thomas Eakins     | American           | Philadelphia, Pennsylvania | 1844–1916               | 23.139           | The American Wing       | 764            |
-
 | The Champion Single Sculls              | Thomas Eakins     | American           | Philadelphia, Pennsylvania | 1844–1916               | 34.92            | The American Wing       | 763            |
-
 | A Gorge in the Mountains                | Sanford R. Gifford| American           | Greenfield, NY          | 1823–1880               | 15.30.62         | The American Wing       | 761            |
-
 | Marie Emilie Coignet de Courson         | Jean H. Fragonard| French             | Grasse                   | 1732–1806               | 37.118           | European Paintings      | 631            |
-
 | Blue Construction, Orange Figures      | Bill Traylor      | American           | Benton, AL               | 1854–1949               | 2015.756         | The Met Fifth Avenue    | 773            |
-
 | Christ Carrying the Cross               | Gerard David      | Netherlandish      | Oudewater                | 1455–1523               | 1975.1.119A-B    | Robert Lehman Collection| 953            |
 
 Now each column holds a single piece of information. This table is in 1NF.
@@ -193,35 +176,22 @@ This partial dependency (non-key attributes depending on only part of the primar
 **Artists Table:**
 
 | ArtistID | Artist Name      | Nationality | Birthplace        | Birth_Death |
-
 |----------|------------------|-------------|-------------------|-------------|
-
 | 1        | Thomas Eakins   | American    | Philadelphia, PA  | 1844–1916   |
-
 | 2        | Sanford R. Gifford| American  | Greenfield, NY    | 1823–1880   |
-
 | 3        | Jean H. Fragonard| French     | Grasse            | 1732–1806   |
-
 | 4        | Bill Traylor    | American    | Benton, AL        | 1854–1949   |
-
 | 5        | Gerard David    | Netherlandish| Oudewater       | 1455–1523   |
 
 **Artworks Table:**
 
 | ArtworkID | Title                                   | Accession Number | Department              | Gallery Number | ArtistID (FK) |
-
 |-----------|-----------------------------------------|------------------|-------------------------|----------------|---------------|
-
 | 1         | The Artist's Wife and His Setter Dog    | 23.139           | The American Wing       | 764            | 1             |
-
 | 2         | The Champion Single Sculls              | 34.92            | The American Wing       | 763            | 1             |
-
 | 3         | A Gorge in the Mountains                | 15.30.62         | The American Wing       | 761            | 2             |
-
 | 4         | Marie Emilie Coignet de Courson         | 37.118           | European Paintings      | 631            | 3             |
-
 | 5         | Blue Construction, Orange Figures       | 2015.756         | The Met Fifth Avenue    | 773            | 4             |
-
 | 6         | Christ Carrying the Cross               | 1975.1.119A-B    | Robert Lehman Collection| 953            | 5             |
 
 Now, the Artists table has a primary key `ArtistID`, and the Artworks table has a primary key `ArtworkID` and a foreign key `ArtistID` linking to the Artists table. This design eliminates the redundancy of artist information. However, we still have an issue: The `Department` and `Gallery Number` in the Artworks table might not be entirely dependent on the artwork. In fact, the same gallery number might appear in multiple departments? Actually, each gallery number is unique to a department? But note: the gallery number 773 is in "The Met Fifth Avenue", while 764 is in "The American Wing". Moreover, if we have multiple artworks in the same gallery, the department-gallery pair would be repeated. This leads us to the Third Normal Form.
@@ -249,19 +219,12 @@ To resolve this, we create a separate table for galleries:
 **Galleries Table:**
 
 | GalleryID | Gallery Number | Department              |
-
 |-----------|----------------|-------------------------|
-
 | 1         | 764            | The American Wing       |
-
 | 2         | 763            | The American Wing       |
-
 | 3         | 761            | The American Wing       |
-
 | 4         | 631            | European Paintings      |
-
 | 5         | 773            | The Met Fifth Avenue    |
-
 | 6         | 953            | Robert Lehman Collection|
 
 Now, we can replace `Department` and `Gallery Number` in the Artworks table with a foreign key `GalleryID`:
@@ -269,19 +232,12 @@ Now, we can replace `Department` and `Gallery Number` in the Artworks table with
 **Artworks Table (3NF):**
 
 | ArtworkID | Title                                   | Accession Number | GalleryID (FK) | ArtistID (FK) |
-
 |-----------|-----------------------------------------|------------------|----------------|---------------|
-
 | 1         | The Artist's Wife and His Setter Dog    | 23.139           | 1              | 1             |
-
 | 2         | The Champion Single Sculls              | 34.92            | 2              | 1             |
-
 | 3         | A Gorge in the Mountains                | 15.30.62         | 3              | 2             |
-
 | 4         | Marie Emilie Coignet de Courson         | 37.118           | 4              | 3             |
-
 | 5         | Blue Construction, Orange Figures       | 2015.756         | 5              | 4             |
-
 | 6         | Christ Carrying the Cross               | 1975.1.119A-B    | 6              | 5             |
 
 This design:
