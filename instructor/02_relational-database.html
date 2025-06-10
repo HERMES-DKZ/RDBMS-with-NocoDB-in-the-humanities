@@ -484,8 +484,6 @@ Second (2NF), and Third (3NF). Each builds on the previous one,
 addressing specific types of problems.</p>
 <div class="section level3">
 <h3 id="first-normal-form-1nf">First Normal Form (1NF)<a class="anchor" aria-label="anchor" href="#first-normal-form-1nf"></a></h3>
-<p>The First Normal Form (1NF) is the most basic level of normalization.
-A table is in 1NF if:</p>
 <div id="callout-1nf" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -493,6 +491,8 @@ A table is in 1NF if:</p>
 <div id="callout-1nf" class="callout-inner">
 <h3 class="callout-title">Callout: 1NF</h3>
 <div class="callout-content">
+<p>The First Normal Form (1NF) is the most basic level of normalization.
+A table is in 1NF if:</p>
 <ol style="list-style-type: decimal"><li>
 <strong>Each column contains atomic values</strong>: There should be
 no repeating groups or arrays within a single cell. Each field must
@@ -616,7 +616,6 @@ remove the only record of an artist.</p></li>
 </div>
 <div class="section level3">
 <h3 id="second-normal-form-2nf">Second Normal Form (2NF)<a class="anchor" aria-label="anchor" href="#second-normal-form-2nf"></a></h3>
-<p>A table is in Second Normal Form (2NF) if:</p>
 <div id="callout-2nf" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -624,6 +623,7 @@ remove the only record of an artist.</p></li>
 <div id="callout-2nf" class="callout-inner">
 <h3 class="callout-title">Callout: 2NF</h3>
 <div class="callout-content">
+<p>A table is in Second Normal Form (2NF) if:</p>
 <ol style="list-style-type: decimal"><li>It is in 1NF.</li>
 <li>It has no partial dependencies; all non-key attributes must depend
 on the entire primary key.</li>
@@ -739,18 +739,21 @@ be repeated. This leads us to the Third Normal Form.</p>
 </div>
 <div class="section level3">
 <h3 id="third-normal-form-3nf">Third Normal Form (3NF)<a class="anchor" aria-label="anchor" href="#third-normal-form-3nf"></a></h3>
-<p>A table is in Third Normal Form (3NF) if:</p>
-<div id="callout-3nf" class="callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="callout-3nf" class="callout-inner">
-<h3 class="callout-title">Callout: 3NF</h3>
+<div class="callout-inner">
+<h3 class="callout-title">Callout</h3>
 <div class="callout-content">
+<p>A table is in Third Normal Form (3NF) if:</p>
+<div class="section level3">
+<h3 id="callout-3nf">Callout: 3NF<a class="anchor" aria-label="anchor" href="#callout-3nf"></a></h3>
 <ol style="list-style-type: decimal"><li>It is in 2NF.</li>
 <li>It has no transitive dependencies: non-key attributes must not
 depend on other non-key attributes.</li>
 </ol></div>
+</div>
 </div>
 </div>
 <p>In the Artworks table, note that: <code>Gallery Number</code>
