@@ -1,11 +1,7 @@
 ---
-
 title: "Relational Databases"
-
 teaching: 10
-
 exercises: 3
-
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions
