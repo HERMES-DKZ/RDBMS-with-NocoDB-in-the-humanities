@@ -21,11 +21,10 @@ exercises: 3
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-NocoDB is not just a user-friendly no-code platform for working with data — it also includes powerful tools for **automation** and **integration**. Two of the most important features in this area are **APIs** and **Webhooks**.
+NocoDB is not just a user-friendly no-code platform for working with data — it also includes powerful tools for **automation** and **integration**. Two of the most important features in this area are **APIs** and **Webhooks**. These tools make it possible to create very extensive and complex applications. We will therefore only briefly mention and understand how they work, as using them would require a separate lesson.
+
 
 ## APIs
-
-
 
 
 An **API** (Application Programming Interface) is a standardized way for different software applications to communicate with each other. You can think of it like a digital menu: One system can ask another system for certain data or tell it to perform an action.
@@ -45,16 +44,17 @@ The built-in API turns NocoDB into far more than just a spreadsheet-style tool. 
 
 This openness and flexibility make NocoDB a powerful backend for both small projects and professional systems. If you use a classic database on your server you need to create the APIs aswell and write code for them. NocoDB creates the APIs automatically for every table and all of your data.
 
----
+
 
 ## Swagger API
+
 Every base (database) and table in NocoDB comes with its own **REST API**. This means external systems can **read**, **create**, **update**, and **delete** records via HTTP — the same protocol that websites use.
 
 Even if you’ve never worked with code before, NocoDB makes it easy to try out these features using a built-in tool called **Swagger UI**.
 
----
 
-## What is Swagger?
+
+### What is Swagger?
 
 **Swagger** (also known as **OpenAPI**) is a framework for documenting and testing APIs. NocoDB includes a Swagger interface that shows you:
 
@@ -63,7 +63,7 @@ Even if you’ve never worked with code before, NocoDB makes it easy to try out 
 - what data you need to send or receive,  
 - and what each request will return.
 
-What makes it really useful: you can **interact with the API directly in your browser** — no setup, no coding required.
+What makes it really useful: you can **interact with the API directly in your browser**, no setup, no coding required.
 
 
 ### Step-by-Step: Exploring the NocoDB API with Swagger
@@ -99,7 +99,7 @@ What makes it really useful: you can **interact with the API directly in your br
 
 ## API Code Snippets
 
-NocoDB also helps you generate **ready-to-use code snippets** for various programming languages. This means you don’t need to write any code yourself — you can just copy and paste.
+NocoDB also helps you generate **ready-to-use code snippets** for various programming languages. This means you don’t need to write any code yourself,  you can just copy and paste. To use these you need an external IDE and know one of the Programming-Languages to use it properly.
 
 ### How to Copy API Snippets
 
