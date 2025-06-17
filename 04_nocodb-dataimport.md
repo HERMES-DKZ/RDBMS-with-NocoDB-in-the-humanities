@@ -67,7 +67,7 @@ Taking time to set this up now will make exploring and further collecting of dat
 
 ## Filtering Data
 
-Filters allow you to narrow down the data in your table so that you only see rows that match certain conditions. This is especially helpful when working with large datasets or when you want to focus on a specific subset of records. It also gives you the opportunity to get a first impression of the data you have.
+Filters allow you to narrow down the data in your table, that you only see rows that match certain conditions. This is especially helpful when working with large datasets or when you want to focus on a specific subset of records. It also gives you the opportunity to get a first impression of the data you have.
 
 #### To apply a filter:
 
@@ -78,6 +78,8 @@ Filters allow you to narrow down the data in your table so that you only see row
 **Example:**  
 Filter by `Year` → *greater than* → `1950`  
 Filter by `Object Name` → *is equal* → `Print`
+
+At this point at the latest, it becomes relevant that the correct data types are assigned to the fields, as these enable different operators for filtering. The operators **greater than** and **is equal**, for example, are only possible for numerical values.
 
 
 ## Grouping Data
@@ -94,7 +96,7 @@ Another useful feature for exploring data in NocoDB is **Grouping**. This allows
    - `Accession Year`
 3. NocoDB will automatically reorganize the view and display your records grouped by the selected field.
 
-Each group can be Collapsed or expanded to hide or show its rows and to se the related entries. In a next step you can create a subgroup by doing the steps again. With this you can get an even better expression of your data and explore for example.
+Each group can be Collapsed or expanded to hide or show its rows and to see the related entries. In a next step you can create a subgroup by doing the steps again. With this you can get an even better expression of your data. It also makes it possible to select only a certain part of the data for further analyses and to view partial data sets.
 
 
 ::::::::::::::::::::::::::::::::::::: callout
@@ -118,6 +120,8 @@ Sorting lets you change the order in which records appear, for example, to view 
    - **Descending** (Z–A or 9–0)
 3. Add multiple sort levels if needed (e.g., by `Year` and then by `Artist`).
 
+
+All in all, it can be said that good preparation of the data and selection of the correct field types is essential in order to be able to process the data efficiently in the next step. Well-prepared data enables efficient and targeted filtering, grouping and sorting of the data. All these functions combined make it possible to gain very detailed insights into large, confusing data.
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
