@@ -86,7 +86,7 @@ In the dialog box that opens, you can:
 - Change the Field Name (for example, rename it to Artwork Title).
 - Select a Field Type from the list (e.g., Single line text, Number, etc.).
 - Optionally, add a default value for the whole column.
-- Optionally, add a Description to explain what this field is for — this is helpful when collaborating with others.
+- Optionally, add a Description to explain what this field is for, helpful when collaborating with others.
 - Click Save to apply your changes.
 
 #### Adding a New Field
@@ -114,11 +114,10 @@ Here are some of the most commonly used field types:
 + Long text: For longer descriptions or notes.
 + Number: For any numerical values. You can define decimal places and minimum/maximum ranges.
 + Date: For calendar dates. You can also include time if needed.
-+ Dropdown: Lets you define a fixed set of options from which users can choose. Useful for categories like Genre, Location, or Status.
++ Single/Multi Select: Lets you define a fixed set of options from which users can choose. Useful for categories like Genre, Location, or Status.
 + Checkbox: A simple yes/no or true/false value.
 + Email / Phone / URL: Special text types that validate the input (e.g., only valid email addresses can be entered).
 + Formula: Calculates values based on other fields, similar to formulas in spreadsheet software.
-+ Relation: Links this table to another table in your Base — useful when working with relational data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -132,12 +131,12 @@ Now that you’ve learned how to create a Base and add tables and fields, it’s
 
 1. Look at the example from the previous episode.
 2. Create a new, empty table for it, either in your existing Base or in a new one.
-3. Choose at least 5 informations and create fields using different field types (e.g. Text, Number, Date, Dropdown, Checkbox).
+3. Choose at least 5 informations and create fields using different field types (e.g. Text, Number, Date, Single select, Checkbox).
 4. Create one field for an image of the artworks
 5. Name your fields based on what kind of data you expect (e.g. Title, Author, Year, etc.).
 6. Try editing a field type or renaming a field.
 7. Explore freely: test options, click around, and get familiar with the interface.
 
-You don’t need to enter data yet — just focus on setting up the table structure.
+You don’t need to enter data yet, just focus on setting up the table structure.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
