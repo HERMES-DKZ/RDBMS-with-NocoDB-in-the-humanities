@@ -541,7 +541,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02_relational-database"><p>Content from <a href="02_relational-database.html">Relational Databases</a></p>
 <hr>
-<p>Last updated on 2025-06-10 |
+<p>Last updated on 2025-06-17 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/02_relational-database.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -585,9 +585,9 @@ structured way. They consist of rows and columns, much like what you’re
 used to seeing in spreadsheet programs like Excel. Each column
 represents a specific attribute or characteristic—such as “Name,” “Date
 of Birth,” or “Email Address.” Each row represents a single data entry,
-showing the actual values for those attributes. More precisely, each row
-represents a person and contains information about that person. This
-concept is transferable to all types of objects.</p>
+showing the actual values for those attributes. More precisely, for
+example, each row represents a person and contains information about
+that person. This concept is transferable to all types of objects.</p>
 <p><strong>Example: Artists Table</strong></p>
 <table class="table">
 <thead><tr class="header">
@@ -1266,7 +1266,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-03_nocodb-introduction"><p>Content from <a href="03_nocodb-introduction.html">NocoDB Introduction</a></p>
 <hr>
-<p>Last updated on 2025-05-19 |
+<p>Last updated on 2025-06-17 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/03_nocodb-introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1293,7 +1293,7 @@ database?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Create a new Base and a table within it</li>
+<li>Create a new Base and a table within NocoDB</li>
 <li>Add, rename, and configure fields (columns) in a table.</li>
 <li>Choose appropriate data types for different kinds of
 information.</li>
@@ -1310,8 +1310,8 @@ platform that combines the ease of use of a spreadsheet with the power
 of a relational database. In simple terms, NocoDB provides a web-based
 interface built on top of a traditional relational database like
 PostgreSQL or MySQL. The great thing about NocoDB is that you don’t need
-to understand the underlying database technology to use it—this is one
-of the key benefits of no-code tools.</p>
+to understand the underlying database technology to use it, one of the
+key benefits of no-code tools.</p>
 <p>With NocoDB, you can create and manage databases through a simple,
 user-friendly interface, bypassing the need for complex programming.
 This means that tasks like organizing data, creating tables, and running
@@ -1332,10 +1332,19 @@ account. Once you’ve registered and logged in, you’ll be taken to the
 features.</p>
 <p>On the left side of the interface, you’ll find the <strong>main
 navigation menu</strong>, which gives you access to several important
-options: - <strong>General settings</strong> to manage your NocoDB
-account - <strong>Team settings</strong> for collaborating with others -
-<strong>Integrations</strong> to connect external databases - The option
-to <strong>create a new Base</strong></p>
+options:</p>
+<ul>
+<li>
+<strong>Overview</strong> of workspaces and tables</li>
+<li>
+<strong>General settings</strong> to manage your NocoDB account</li>
+<li>
+<strong>Team settings</strong> for collaborating with others</li>
+<li>
+<strong>Integrations</strong> to connect external databases</li>
+<li>The option to <strong>create a new Base</strong>
+</li>
+</ul>
 <p>In NocoDB, a <strong>Base</strong> is like a database, it’s a
 container that holds your tables and provides additional features for
 organizing and managing your data.</p>
@@ -1344,14 +1353,12 @@ Base called <strong>Getting Started</strong>. This Base opens by default
 and helps you get familiar with the platform’s core features.</p>
 <p>The central area of the screen is where you’ll do most of your work.
 NocoDB follows a simple structure: at the top level, you create a
-<strong>Base</strong>, and within that Base, you can add one or more
+<strong>Workspace</strong>, inside this Workspace you have
+<strong>Bases</strong> and within a Base, you can add one or more
 <strong>tables</strong>. Tables are where your actual data lives, and
 you can customize them with <strong>Views</strong> to display and filter
 your data in different ways. We’ll dive into Views in more detail
 later.</p>
-<p>The left-hand menu shows you an overview of all your Bases, while the
-central window displays the content or settings for whatever you’re
-currently working on.</p>
 </section><section><h2 class="section-heading" id="creating-a-base">Creating a Base<a class="anchor" aria-label="anchor" href="#creating-a-base"></a>
 </h2>
 <hr class="half-width">
@@ -1361,10 +1368,13 @@ can explore NocoDB’s features from scratch.</p>
 Base a name (e.g., <code>training_base</code>), and click
 <strong>create_base</strong> to confirm. You’ve now created an empty
 Base, ready to be filled with data.</p>
-<p>There are several ways to populate a Base in NocoDB: - <strong>Create
-a new table manually</strong> - <strong>Import data from a file</strong>
-(such as CSV or Excel) - <strong>Connect to an external data
-source</strong></p>
+<p>There are several ways to populate a Base in NocoDB:</p>
+<ul>
+<li><strong>Create a new table manually</strong></li>
+<li>
+<strong>Import data from a file</strong> (such as CSV or Excel)</li>
+<li><strong>Connect to an external data source</strong></li>
+</ul>
 <p>For this exercise, let’s manually create a new table. Click on
 <strong>Create New Table</strong>, give the table a name (e.g.,
 <code>Art_Collection</code>), and you’ll be taken to an empty,
@@ -1389,13 +1399,19 @@ type to make it fit your needs:</p>
 <ol style="list-style-type: decimal">
 <li>Locate the Title column in your table.</li>
 <li>Click on the small arrow next to the field name Title.</li>
-<li>From the dropdown menu, select Edit column.</li>
+<li>From the dropdown menu, select Edit field.</li>
 </ol>
-<p>In the dialog box that opens, you can: + Change the Field Name (for
-example, rename it to Artwork Title) + Select a Field Type from the list
-(e.g., Single line text, Number, etc.) + Optionally, add a Description
-to explain what this field is for — this is helpful when collaborating
-with others. + Click Save to apply your changes.</p>
+<p>In the dialog box that opens, you can:</p>
+<ul>
+<li>Change the Field Name (for example, rename it to Artwork
+Title).</li>
+<li>Select a Field Type from the list (e.g., Single line text, Number,
+etc.).</li>
+<li>Optionally, add a default value for the whole column.</li>
+<li>Optionally, add a Description to explain what this field is for —
+this is helpful when collaborating with others.</li>
+<li>Click Save to apply your changes.</li>
+</ul>
 <div class="section level4">
 <h4 id="adding-a-new-field">Adding a New Field<a class="anchor" aria-label="anchor" href="#adding-a-new-field"></a>
 </h4>
