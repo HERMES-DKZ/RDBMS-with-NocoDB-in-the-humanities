@@ -14,7 +14,7 @@ exercises: 3
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Create a new Base and a table within it
+- Create a new Base and a table within NocoDB
 - Add, rename, and configure fields (columns) in a table.
 - Choose appropriate data types for different kinds of information.
 
@@ -24,7 +24,7 @@ exercises: 3
 ![Image from https://nocodb.com/](fig/nocodb.png)
 
 
-As mentioned earlier, NocoDB is a **no-code database** platform that combines the ease of use of a spreadsheet with the power of a relational database. In simple terms, NocoDB provides a web-based interface built on top of a traditional relational database like PostgreSQL or MySQL. The great thing about NocoDB is that you don’t need to understand the underlying database technology to use it—this is one of the key benefits of no-code tools.
+As mentioned earlier, NocoDB is a **no-code database** platform that combines the ease of use of a spreadsheet with the power of a relational database. In simple terms, NocoDB provides a web-based interface built on top of a traditional relational database like PostgreSQL or MySQL. The great thing about NocoDB is that you don’t need to understand the underlying database technology to use it, one of the key benefits of no-code tools.
 
 With NocoDB, you can create and manage databases through a simple, user-friendly interface, bypassing the need for complex programming. This means that tasks like organizing data, creating tables, and running queries, which would normally require coding, can now be done directly through the web interface. Whether you're building a database from scratch or working with an existing one, NocoDB makes it easy to interact with your data.
 
@@ -36,6 +36,8 @@ In this tutorial, we'll focus on using the online version of NocoDB, which you c
 The first step to getting started with NocoDB is to create an account. Once you’ve registered and logged in, you’ll be taken to the **NocoDB homepage**, where you can begin exploring its features.
 
 On the left side of the interface, you’ll find the **main navigation menu**, which gives you access to several important options:
+
+- **Overview** of workspaces and tables
 - **General settings** to manage your NocoDB account
 - **Team settings** for collaborating with others
 - **Integrations** to connect external databases
@@ -45,9 +47,8 @@ In NocoDB, a **Base** is like a database, it’s a container that holds your tab
 
 When you first sign up, NocoDB will automatically create a sample Base called **Getting Started**. This Base opens by default and helps you get familiar with the platform’s core features.
 
-The central area of the screen is where you’ll do most of your work. NocoDB follows a simple structure: at the top level, you create a **Base**, and within that Base, you can add one or more **tables**. Tables are where your actual data lives, and you can customize them with **Views** to display and filter your data in different ways. We’ll dive into Views in more detail later.
+The central area of the screen is where you’ll do most of your work. NocoDB follows a simple structure: at the top level, you create a **Workspace**, inside this Workspace you have **Bases** and within a Base, you can add one or more **tables**. Tables are where your actual data lives, and you can customize them with **Views** to display and filter your data in different ways. We’ll dive into Views in more detail later.
 
-The left-hand menu shows you an overview of all your Bases, while the central window displays the content or settings for whatever you’re currently working on.
 
 ## Creating a Base
 
@@ -56,6 +57,7 @@ Instead of working with the sample Base, let’s create our own so we can explor
 To get started, click on **Create Base**, give your new Base a name (e.g., `training_base`), and click **create_base** to confirm. You’ve now created an empty Base, ready to be filled with data.
 
 There are several ways to populate a Base in NocoDB:
+
 - **Create a new table manually**
 - **Import data from a file** (such as CSV or Excel)
 - **Connect to an external data source**
@@ -77,13 +79,15 @@ When you first create a table, NocoDB automatically adds a field called Title. T
 
 1. Locate the Title column in your table.
 2. Click on the small arrow next to the field name Title.
-3. From the dropdown menu, select Edit column.
+3. From the dropdown menu, select Edit field.
 
 In the dialog box that opens, you can:
-+ Change the Field Name (for example, rename it to Artwork Title)
-+ Select a Field Type from the list (e.g., Single line text, Number, etc.)
-+ Optionally, add a Description to explain what this field is for — this is helpful when collaborating with others.
-+ Click Save to apply your changes.
+
+- Change the Field Name (for example, rename it to Artwork Title).
+- Select a Field Type from the list (e.g., Single line text, Number, etc.).
+- Optionally, add a default value for the whole column.
+- Optionally, add a Description to explain what this field is for — this is helpful when collaborating with others.
+- Click Save to apply your changes.
 
 #### Adding a New Field
 
