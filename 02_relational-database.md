@@ -26,10 +26,11 @@ In order to approach the topic as a whole, we first want to look at and understa
 
 ## Tables (Relations)
 
-Tables are a fundamental tool for organizing and processing data in a structured way. They consist of rows and columns, much like what you're used to seeing in spreadsheet programs like Excel. Each column represents a specific attribute or characteristic—such as “Name,” “Date of Birth,” or “Email Address.” Each row represents a single data entry, showing the actual values for those attributes. More precisely, each row represents a person and contains information about that person. This concept is transferable to all types of objects.
+Tables are a fundamental tool for organizing and processing data in a structured way. They consist of rows and columns, much like what you're used to seeing in spreadsheet programs like Excel. Each column represents a specific attribute or characteristic—such as “Name,” “Date of Birth,” or “Email Address.” Each row represents a single data entry, showing the actual values for those attributes. More precisely, for example, each row represents a person and contains information about that person. This concept is transferable to all types of objects.
 
 **Example: Artists Table**
 
+ 
 | Name            | Date of Birth | ID (Primary Key) |
 | -----------------|---------------|------------------|
 | Thomas Eakins   | 25.7.1844     | 1                |
