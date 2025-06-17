@@ -339,7 +339,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with data</h1>
-        <p>Last updated on 2025-05-15 |
+        <p>Last updated on 2025-06-17 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/04_nocodb-dataimport.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -428,7 +428,7 @@ number of different entries are limited?</p>
 <p>Taking time to set this up now will make exploring and further
 collecting of data much easier.</p>
 </section><section><h2 class="section-heading" id="filtering-data">Filtering Data<a class="anchor" aria-label="anchor" href="#filtering-data"></a></h2>
-<hr class="half-width"><p>Filters allow you to narrow down the data in your table so that you
+<hr class="half-width"><p>Filters allow you to narrow down the data in your table, that you
 only see rows that match certain conditions. This is especially helpful
 when working with large datasets or when you want to focus on a specific
 subset of records. It also gives you the opportunity to get a first
@@ -449,6 +449,11 @@ Filter by <code>Year</code> → <em>greater than</em> →
 <code>1950</code><br>
 Filter by <code>Object Name</code> → <em>is equal</em> →
 <code>Print</code></p>
+<p>At this point at the latest, it becomes relevant that the correct
+data types are assigned to the fields, as these enable different
+operators for filtering. The operators <strong>greater than</strong> and
+<strong>is equal</strong>, for example, are only possible for numerical
+values.</p>
 </div>
 </section><section><h2 class="section-heading" id="grouping-data">Grouping Data<a class="anchor" aria-label="anchor" href="#grouping-data"></a></h2>
 <hr class="half-width"><p>Another useful feature for exploring data in NocoDB is
@@ -469,9 +474,10 @@ icon.</li>
 <li>NocoDB will automatically reorganize the view and display your
 records grouped by the selected field.</li>
 </ol><p>Each group can be Collapsed or expanded to hide or show its rows and
-to se the related entries. In a next step you can create a subgroup by
+to see the related entries. In a next step you can create a subgroup by
 doing the steps again. With this you can get an even better expression
-of your data and explore for example.</p>
+of your data. It also makes it possible to select only a certain part of
+the data for further analyses and to view partial data sets.</p>
 <div id="callout-field-types-and-grouping" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -503,7 +509,13 @@ together.</p>
 </ul></li>
 <li>Add multiple sort levels if needed (e.g., by <code>Year</code> and
 then by <code>Artist</code>).</li>
-</ol><div id="exercise-exploring-data" class="callout discussion">
+</ol><p>All in all, it can be said that good preparation of the data and
+selection of the correct field types is essential in order to be able to
+process the data efficiently in the next step. Well-prepared data
+enables efficient and targeted filtering, grouping and sorting of the
+data. All these functions combined make it possible to gain very
+detailed insights into large, confusing data.</p>
+<div id="exercise-exploring-data" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
@@ -584,7 +596,7 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/instructor/04_nocodb-dataimport.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/instructor/04_nocodb-dataimport.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2025-05-15",
+  "dateModified": "2025-06-17",
   "datePublished": "2025-06-17"
 }
 
