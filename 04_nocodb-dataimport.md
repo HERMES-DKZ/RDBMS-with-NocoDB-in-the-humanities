@@ -28,7 +28,7 @@ In this episode, we’ll take the first steps toward exploring and analyzing dat
 
 ## Importing a CSV File
 
-We’ll begin by importing a dataset in CSV format. CSV (Comma-Separated Values) is a common file format used to store tabular data. If not already done, please download the data [here]().
+We’ll begin by importing a dataset in CSV format. CSV (Comma-Separated Values) is a common file format used to store tabular data. If not already done, please download the data [here](../data/METObjectsOpenAccess.csv).
 
 1. Open the Base where you want to import the data, in our case it can be the *Sample_base*.  
 
