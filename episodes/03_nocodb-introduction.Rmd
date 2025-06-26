@@ -54,7 +54,7 @@ The central area of the screen is where you’ll do most of your work. NocoDB fo
 
 Instead of working with the sample Base, let’s create our own so we can explore NocoDB’s features from scratch.
 
-To get started, click on **Create Base**, give your new Base a name (e.g., `training_base`), and click **create_base** to confirm. You’ve now created an empty Base, ready to be filled with data.
+To get started, click on **Create Base**, give your new Base a name (e.g., `Sample_base`), and click **create_base** to confirm. You’ve now created an empty Base, ready to be filled with data.
 
 There are several ways to populate a Base in NocoDB:
 
@@ -101,7 +101,6 @@ To add more fields:
 
 You can repeat this process to add as many fields as you need.
 
-
 ::::::::::::::::::::::::::::::::::::: callout
 
 ### Callout: Data Field Types
@@ -122,7 +121,6 @@ Here are some of the most commonly used field types:
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Exercise: Creating your own table
@@ -131,7 +129,7 @@ Now that you’ve learned how to create a Base and add tables and fields, it’s
 
 1. Look at the example from the previous episode.
 2. Create a new, empty table for it, either in your existing Base or in a new one.
-3. Choose at least 5 informations and create fields using different field types (e.g. Text, Number, Date, Single select, Checkbox).
+3. Choose at least 5 informations and create fields using different field types (e.g. Text, Number, Date, Single select, Checkbox). The normal form does not have to be taken into account initially. Simply select the columns you like
 4. Create one field for an image of the artworks
 5. Name your fields based on what kind of data you expect (e.g. Title, Author, Year, etc.).
 6. Try editing a field type or renaming a field.
@@ -140,3 +138,45 @@ Now that you’ve learned how to create a Base and add tables and fields, it’s
 You don’t need to enter data yet, just focus on setting up the table structure.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+#### Adding a New Relation
+
+Until now we used NocoDB only as a spreadsheet tool. To connect tables with each other, we need the field type **Link**. This is useful 
+
+To add a relation:
+
+1. Add a new field by clicking the plus icon (+) in your table header.
+2. In the dialog, select **Links** as the Field Type.
+3. Choose the table you want to link to (for example, linking an Artwork to an Artist).
+4. Set the relation type (see below).
+
+
+::::::::::::::::::::::::::::::::::::: callout
+
+### Callout: Relational Types
+
+- **One to One**: Each record in Table A can be linked to only one record in Table B, and vice versa. Example: Each artwork has exactly one location, and each location is assigned to only one artwork.
+- **Has Many (One to Many)**: Each record in Table A can be linked to multiple records in Table B, but each record in Table B links back to only one record in Table A. Example: One artist can have many artworks, but each artwork has only one artist.
+- **Many to Many**: Records in Table A can be linked to multiple records in Table B, and vice versa. Example: An artwork can be displayed in multiple exhibitions, and each exhibition can include multiple artworks.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+5. Click **Create Column** to add the relation field.
+
+Once created, you can select records from the linked table directly within your table. This makes it easy to reference related data without duplicating information and gives you the opportunity to create a relational database.
+
+
+##### Relation Types
+
+When creating a link, you have to define how records in your tables relate to each other:
+
+Choosing the correct relation type helps you accurately model your data and ensures that NocoDB enforces the right constraints when linking records.
+
+With the Link field and relation types, you can build complex, interconnected databases in NocoDB—without writing
+
+
+
+

@@ -30,7 +30,7 @@ Using views allows you to:
 
 Each view type serves a different purpose and supports different workflows. For example, a **Grid View** is great for editing records directly, while a **Form View** is useful for collecting new entries from external users. A **Gallery View** emphasizes visual content, and a **Kanban View** is ideal for process tracking.
 
-By combining different views, you can adapt the same dataset to a wide range of use cases, from internal team collaboration to public engagement, from raw data entry to polished overviews. All views are created by clicking on the table you want to get a new view of in the left side-bar. There you click on the little arrow, next to ne tables name. If already done, you can see all views you created before. If you want to create a new view click **Create View**. This will open a dropdown where you choose which view type you want to create.
+By combining different views, you can adapt the same dataset to a wide range of use cases, from internal team collaboration to public engagement, from raw data entry to polished overviews. All views are created by clicking on the table you want to get a new view of in the left side-bar. There you click on the little arrow, next to the tables name. If already done, you can see all views you created before. If you want to create a new view click **Create View**. This will open a dropdown where you choose which view type you want to create.
 
 
 ## Grid
@@ -100,7 +100,7 @@ All responses submitted through the form are automatically added as **new rows**
 
 ### Exercise: Creating a form 
 
-In this task we want to create a form for adding data into our example table from Lesson 3. For this, create a form-view for this table and use it zu submit the data from the lesson or search for new data you want to use in the Met-Collection. Search for a few artworks in the Met-Collection and safe the images on your computer, to submit these with the form aswell.
+In this task we want to create a form for adding new data into the table you created in Lesson 3. Create a form-view for this table and use it to submit the data from the lesson or search for new data you want to use in the Met-Collection. Search for a few artworks in the Met-Collection and safe the images on your computer, to submit these with the form aswell.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 

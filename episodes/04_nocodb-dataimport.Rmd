@@ -34,7 +34,7 @@ We’ll begin by importing a dataset in CSV format. CSV (Comma-Separated Values)
 
 2. Inside the Base, click on **Import Data**.
 
-3. In the dialog that appears, select the **CSV** option.
+3. In the dialog that appears, select the **CSV** option. (NocoDB gives you the oppurtunity to use different file formats and adapt these to a spreadsheet)
 
 4. Choose your CSV file by either:
    - Clicking **Upload File** and selecting the file from your computer, or
@@ -51,7 +51,7 @@ Your CSV file is now imported into NocoDB and appears as a new table. You should
 
 ## Adjust Field Types
 
-After importing data, it’s a good idea to review the **field types** for each column. NocoDB gives the Field Type "Single line text" after importing data, but this can lead to different problems and limitations. Choosing the right field type helps NocoDB understand how to handle your data, and unlocks useful features for filtering, sorting, and analysis.
+After importing data, it’s a good idea to review the **field types** for each column. NocoDB gives the Field Type "Single line text" after importing data, but this can lead to different problems and limitations. Choosing the right field type helps NocoDB understand how to handle your data, and unlocks useful features for filtering, sorting, and analysing.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 

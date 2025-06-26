@@ -24,13 +24,13 @@ exercises: 3
 
 NocoDB is not just a tool for individual work, it is also built to support teams and collaborative projects. Whether you're managing a shared research dataset, working on a team-based digital humanities project, or simply co-organizing information with colleagues, NocoDB provides powerful, yet easy-to-use features for collaborating directly within the database environment.
 
-In this section, you will learn how to share access to your projects, manage permissions effectively, and create user-friendly forms to collect data from others — even from those who don’t have access to the database itself.
+In this section, you will learn how to share access to your projects, manage permissions effectively, and create user-friendly forms to collect data from others, even from those who don’t have access to the database itself.
 
 
 
 ## Sharing a Project (Base)
 
-In NocoDB, each project or collection of data is organized in what’s called a **Base** — similar to a standalone database. When working with others, you can choose to share an entire Base with your team members, collaborators, or external partners.
+In NocoDB, each project or collection of data is organized in what’s called a **Base**, similar to a standalone database. When working with others, you can choose to share an entire Base with your team members, collaborators, or external partners.
 
 To begin sharing:
 
@@ -41,7 +41,7 @@ To begin sharing:
 5. You can invite as much users as you want in one step
 6. Additional to inviting you need to define a role
 7. Click **Invite to Base** to finish the process
-This role feature is particularly helpful in academic or institutional settings, where access needs to be granted to different people with varying responsibilities and technical backgrounds.
+The role feature is particularly helpful in academic or institutional settings, where access needs to be granted to different people with varying responsibilities and technical backgrounds.
 
 
 
@@ -83,14 +83,14 @@ To assign or change a user’s role:
 2. Find the user in the list or add them by email.
 3. Choose the appropriate role from the dropdown menu next to their name.
 
-Using these roles effectively helps keep your data safe, your team focused, and your workflow organized.
+Using these roles effectively helps to keep your data safe, your team focused, and your workflow organized.
 
 
 ## Sharing Your Base
 
-In some situations, you may want to share the content of a Base with others — without giving them the ability to edit or change anything. For example, you might want to publish a dataset so that colleagues, students, or the public can explore the information, but not accidentally modify it.
+In some situations, you may want to share the content of a Base with others without giving them the ability to edit or change anything. For example, you might want to publish a dataset so that colleagues, students, or the public can explore the information, but not accidentally modify it.
 
-NocoDB makes this easy by allowing you to generate a **read-only shared link** for any Base. This creates a live, web-based version of your data that anyone can view — no account required. The rights are the same as for the **Viewer**
+NocoDB makes this easy by allowing you to generate a **read-only shared link** for any Base. This creates a live, web-based version of your data that anyone can view without an account. The rights are the same as for the **Viewer**
 
 To share your Base as a read-only view:
 
@@ -118,7 +118,13 @@ However, they **cannot**:
 This option is a great way to promote transparency, enable lightweight collaboration, or simply allow others to explore and work with your data on their own terms. Also it can be used for the publication of a database. 
 
 
+::::::::::::::::::::::::::::::::::::: challenge
 
+### Exercise: Creating a relational database
+
+Get together in groups and create a new base together. Choose one person as admin, who defines roles and invites everyone. You can also pass on the admin role so that everyone can define roles and invite people once. Now create a relational database in the group with the normalised data from Lesson 2. Select suitable field types and relations.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
