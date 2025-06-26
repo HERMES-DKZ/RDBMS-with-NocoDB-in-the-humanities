@@ -166,10 +166,10 @@ A table is in Second Normal Form (2NF) if:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In our example, let's assume we have a composite primary key for the artworks table: `(Title, Artist Name)`. However, note that:
+In our example, let's assume we have a composite primary key for the artworks table: *(Title, Artist Name)*. However, note that:
 
-- `Artist Nationality`, `Artist Birthplace`, and `Artist Birth–Death Years` depend only on `Artist Name`, not on `Title`.
-- `Department` and `Gallery Number` depend only on the artwork, but not in `Artist Name`.
+- *Artist Nationality*, *Artist Birthplace*, and *Artist Birth–Death Years* depend only on *Artist Name*, not on *Title*.
+- *Department* and *Gallery Number* depend only on the artwork, but not on *Artist Name*.
 
 This partial dependency (non-key attributes depending on only part of the primary key) is not allowed in 2NF. To achieve 2NF, we split the table into two or more tables:
 
@@ -197,7 +197,7 @@ This partial dependency (non-key attributes depending on only part of the primar
 | 5         | Blue Construction, Orange Figures       | 2015.756         | The Met Fifth Avenue    | 773            | 4             |
 | 6         | Christ Carrying the Cross               | 1975.1.119A-B    | Robert Lehman Collection| 953            | 5             |
 
-Now, the Artists table has a primary key `ArtistID`, and the Artworks table has a primary key `ArtworkID` and a foreign key `ArtistID` linking to the Artists table. This design eliminates the redundancy of artist information. However, we still have an issue: The `Department` and `Gallery Number` in the Artworks table might not be entirely dependent on the artwork. 
+Now, the Artists table has a primary key *ArtistID*, and the Artworks table has a primary key *ArtworkID* and a foreign key *ArtistID* linking to the Artists table. This design eliminates the redundancy of artist information. However, we still have an issue: The *Department* and *Gallery Number* in the Artworks table might not be entirely dependent on the artwork. 
 
 
 
@@ -214,9 +214,9 @@ A table is in Third Normal Form (3NF) if:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In the Artworks table, we notice that the `Department` uniquely determines the `Gallery Number`. This means that the `Department` does not directly depend on the primary key (`ArtworkID`), but instead depends on another non-key attribute (`Department`). This is a transitive dependency and violates 3NF.
+In the Artworks table, we notice that the *Department* uniquely determines the *Gallery Number*. This means that the *Department* does not directly depend on the primary key (*ArtworkID*), but instead depends on another non-key attribute (*Department*). This is a transitive dependency and violates 3NF.
 
-To resolve this, we move the information about galleries and departments into a separate table called `Galleries`. Each gallery has a unique identifier, its gallery number, and the associated department.
+To resolve this, we move the information about galleries and departments into a separate table called *Galleries*. Each gallery has a unique identifier, its gallery number, and the associated department.
 
 **Galleries Table:**
 
@@ -230,7 +230,7 @@ To resolve this, we move the information about galleries and departments into a 
 | 5         | 773            | The Met Fifth Avenue    |
 | 6         | 953            | Robert Lehman Collection|
 
-Now, in the Artworks table, we replace the `Department` and `Gallery Number` columns with a single foreign key `GalleryID` that references the Galleries table:
+Now, in the Artworks table, we replace the *Department* and *Gallery Number* columns with a single foreign key *GalleryID* that references the Galleries table:
 
 **Artworks Table (3NF):**
 
@@ -259,7 +259,7 @@ At this point, the database is fully normalized up to the Third Normal Form (3NF
 - You want to ensure consistency and avoid typos in department names.
 - You want to easily update department information in one place, even if many galleries belong to the same department.
 
-To achieve this, you can create a `Departments` table and reference it from the `Galleries` table using a foreign key.
+To achieve this, you can create a *Departments* table and reference it from the *Galleries* table using a foreign key.
 
 **Departments Table:**
 
@@ -270,15 +270,3 @@ To achieve this, you can create a `Departments` table and reference it from the 
 | 3            | The Met Fifth Avenue      |
 | 4            | Robert Lehman Collection  |
 
-**Galleries Table (with DepartmentID):**
-
-| GalleryID | Gallery Number | DepartmentID (FK) |
-|-----------|---------------|-------------------|
-| 1         | 764           | 1                 |
-| 2         | 763           | 1                 |
-| 3         | 761           | 1                 |
-| 4         | 631           | 2                 |
-| 5         | 773           | 3                 |
-| 6         | 953           | 4                 |
-
-This structure further reduces redundancy and makes it easier to manage department-related information, especially as your database grows or as you add more features in the future.

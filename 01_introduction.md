@@ -48,14 +48,14 @@ data analysis without programming experience.
 
 In addition to basic operations, modern spreadsheets offer advanced features like pivot tables, conditional 
 formatting, data validation, and even scripting capabilities via VBA or Google Apps Script. These make spreadsheets 
-suitable for a wide range of applications — from budgeting and reporting to data collection and lightweight project management.
+suitable for a wide range of applications, from budgeting and reporting to data collection and lightweight project management.
 
 One of the major strengths of spreadsheets is their **flexibility**. Users can easily add or remove columns, merge 
 cells, manually adjust content, and build structures that match their current needs. In many small or medium-sized 
 projects, this flexibility is not just helpful, it's essential for getting started quickly and without barriers.
 
-However, this flexibility can become a weakness as data grows in complexity. Spreadsheets are inherently **flat** — 
-they’re designed for two-dimensional data. The more users try to represent relationships between different types of 
+However, this flexibility can become a weakness as data grows in complexity. Spreadsheets are inherently **flat** . 
+They’re designed for two-dimensional data. The more users try to represent relationships between different types of 
 data (such as customers and orders, or artworks and artists), the more fragile and error-prone the spreadsheet becomes. 
 Relationships are often created informally, using copy-paste, repeated values, or formulas like `VLOOKUP`, which are 
 not resilient to structural changes or user mistakes.
@@ -65,7 +65,7 @@ As a result, spreadsheets can suffer from:
 - **Inconsistencies** (typos, outdated copies)
 - **scalability issues** (hard to manage as more people work on the same file or as data volume increases).
 
-This is where relational databases come in — not to replace spreadsheets entirely, but to offer a more robust 
+This is where relational databases come in. Not to replace spreadsheets entirely, but to offer a more robust 
 and scalable alternative when the limitations of spreadsheets become apparent.
 
 
@@ -84,7 +84,7 @@ Do you know advantages or disadvantages?
 Relational databases offer a structured and reliable way to manage complex, interrelated data. Unlike 
 spreadsheets, which are flat and often lack enforced structure, relational databases store data in **multiple 
 related tables**, each focusing on one specific type of information (e.g., users, products, orders). These 
-tables are connected using **primary and foreign keys**, which define explicit relationships between them — and 
+tables are connected using **primary and foreign keys**, which define explicit relationships between them and 
 ensure **data integrity**.
 
 In a relational model, information is stored once and referenced when needed. This minimizes redundancy, improves 
