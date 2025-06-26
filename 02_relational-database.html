@@ -629,15 +629,14 @@ on the entire primary key.</li>
 </div>
 </div>
 <p>In our example, let’s assume we have a composite primary key for the
-artworks table: <code>(Title, Artist Name)</code>. However, note
-that:</p>
+artworks table: <em>(Title, Artist Name)</em>. However, note that:</p>
 <ul><li>
-<code>Artist Nationality</code>, <code>Artist Birthplace</code>, and
-<code>Artist Birth–Death Years</code> depend only on
-<code>Artist Name</code>, not on <code>Title</code>.</li>
+<em>Artist Nationality</em>, <em>Artist Birthplace</em>, and
+<em>Artist Birth–Death Years</em> depend only on <em>Artist Name</em>,
+not on <em>Title</em>.</li>
 <li>
-<code>Department</code> and <code>Gallery Number</code> depend only
-on the artwork, but not in <code>Artist Name</code>.</li>
+<em>Department</em> and <em>Gallery Number</em> depend only on the
+artwork, but not on <em>Artist Name</em>.</li>
 </ul><p>This partial dependency (non-key attributes depending on only part of
 the primary key) is not allowed in 2NF. To achieve 2NF, we split the
 table into two or more tables:</p>
@@ -721,13 +720,12 @@ attributes, with a foreign key to the artist.</li>
 <td>Robert Lehman Collection</td>
 <td>953</td>
 <td>5</td>
-</tr></tbody></table><p>Now, the Artists table has a primary key <code>ArtistID</code>, and
-the Artworks table has a primary key <code>ArtworkID</code> and a
-foreign key <code>ArtistID</code> linking to the Artists table. This
-design eliminates the redundancy of artist information. However, we
-still have an issue: The <code>Department</code> and
-<code>Gallery Number</code> in the Artworks table might not be entirely
-dependent on the artwork.</p>
+</tr></tbody></table><p>Now, the Artists table has a primary key <em>ArtistID</em>, and the
+Artworks table has a primary key <em>ArtworkID</em> and a foreign key
+<em>ArtistID</em> linking to the Artists table. This design eliminates
+the redundancy of artist information. However, we still have an issue:
+The <em>Department</em> and <em>Gallery Number</em> in the Artworks
+table might not be entirely dependent on the artwork.</p>
 </div>
 <div class="section level3">
 <h3 id="third-normal-form-3nf">Third Normal Form (3NF)<a class="anchor" aria-label="anchor" href="#third-normal-form-3nf"></a></h3>
@@ -745,14 +743,14 @@ depend on other non-key attributes.</li>
 </ol></div>
 </div>
 </div>
-<p>In the Artworks table, we notice that the <code>Department</code>
-uniquely determines the <code>Gallery Number</code>. This means that the
-<code>Department</code> does not directly depend on the primary key
-(<code>ArtworkID</code>), but instead depends on another non-key
-attribute (<code>Department</code>). This is a transitive dependency and
-violates 3NF.</p>
+<p>In the Artworks table, we notice that the <em>Department</em>
+uniquely determines the <em>Gallery Number</em>. This means that the
+<em>Department</em> does not directly depend on the primary key
+(<em>ArtworkID</em>), but instead depends on another non-key attribute
+(<em>Department</em>). This is a transitive dependency and violates
+3NF.</p>
 <p>To resolve this, we move the information about galleries and
-departments into a separate table called <code>Galleries</code>. Each
+departments into a separate table called <em>Galleries</em>. Each
 gallery has a unique identifier, its gallery number, and the associated
 department.</p>
 <p><strong>Galleries Table:</strong></p>
@@ -777,9 +775,9 @@ department.</p>
 </tr><tr class="even"><td>6</td>
 <td>953</td>
 <td>Robert Lehman Collection</td>
-</tr></tbody></table><p>Now, in the Artworks table, we replace the <code>Department</code>
-and <code>Gallery Number</code> columns with a single foreign key
-<code>GalleryID</code> that references the Galleries table:</p>
+</tr></tbody></table><p>Now, in the Artworks table, we replace the <em>Department</em> and
+<em>Gallery Number</em> columns with a single foreign key
+<em>GalleryID</em> that references the Galleries table:</p>
 <p><strong>Artworks Table (3NF):</strong></p>
 <table class="table"><colgroup><col width="10%"><col width="40%"><col width="17%"><col width="15%"><col width="14%"></colgroup><thead><tr class="header"><th>ArtworkID</th>
 <th>Title</th>
@@ -841,9 +839,8 @@ of department, or contact information).</li>
 names.</li>
 <li>You want to easily update department information in one place, even
 if many galleries belong to the same department.</li>
-</ul><p>To achieve this, you can create a <code>Departments</code> table and
-reference it from the <code>Galleries</code> table using a foreign
-key.</p>
+</ul><p>To achieve this, you can create a <em>Departments</em> table and
+reference it from the <em>Galleries</em> table using a foreign key.</p>
 <p><strong>Departments Table:</strong></p>
 <table class="table"><thead><tr class="header"><th>DepartmentID</th>
 <th>Department Name</th>
@@ -855,36 +852,10 @@ key.</p>
 <td>The Met Fifth Avenue</td>
 </tr><tr class="even"><td>4</td>
 <td>Robert Lehman Collection</td>
-</tr></tbody></table><p><strong>Galleries Table (with DepartmentID):</strong></p>
-<table class="table"><thead><tr class="header"><th>GalleryID</th>
-<th>Gallery Number</th>
-<th>DepartmentID (FK)</th>
-</tr></thead><tbody><tr class="odd"><td>1</td>
-<td>764</td>
-<td>1</td>
-</tr><tr class="even"><td>2</td>
-<td>763</td>
-<td>1</td>
-</tr><tr class="odd"><td>3</td>
-<td>761</td>
-<td>1</td>
-</tr><tr class="even"><td>4</td>
-<td>631</td>
-<td>2</td>
-</tr><tr class="odd"><td>5</td>
-<td>773</td>
-<td>3</td>
-</tr><tr class="even"><td>6</td>
-<td>953</td>
-<td>4</td>
-</tr></tbody></table><p>This structure further reduces redundancy and makes it easier to
-manage department-related information, especially as your database grows
-or as you add more features in the future.</p>
-<!--
+</tr></tbody></table><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</div>
+ --></div>
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">

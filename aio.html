@@ -452,7 +452,7 @@ experience.</p>
 <p>In addition to basic operations, modern spreadsheets offer advanced
 features like pivot tables, conditional formatting, data validation, and
 even scripting capabilities via VBA or Google Apps Script. These make
-spreadsheets suitable for a wide range of applications — from budgeting
+spreadsheets suitable for a wide range of applications, from budgeting
 and reporting to data collection and lightweight project management.</p>
 <p>One of the major strengths of spreadsheets is their
 <strong>flexibility</strong>. Users can easily add or remove columns,
@@ -461,7 +461,7 @@ their current needs. In many small or medium-sized projects, this
 flexibility is not just helpful, it’s essential for getting started
 quickly and without barriers.</p>
 <p>However, this flexibility can become a weakness as data grows in
-complexity. Spreadsheets are inherently <strong>flat</strong> — they’re
+complexity. Spreadsheets are inherently <strong>flat</strong> . They’re
 designed for two-dimensional data. The more users try to represent
 relationships between different types of data (such as customers and
 orders, or artworks and artists), the more fragile and error-prone the
@@ -473,7 +473,7 @@ redundancy</strong> (the same information repeated in multiple places),
 - <strong>Inconsistencies</strong> (typos, outdated copies) -
 <strong>scalability issues</strong> (hard to manage as more people work
 on the same file or as data volume increases).</p>
-<p>This is where relational databases come in — not to replace
+<p>This is where relational databases come in. Not to replace
 spreadsheets entirely, but to offer a more robust and scalable
 alternative when the limitations of spreadsheets become apparent.</p>
 </section><section><h2 class="section-heading" id="relational-databases">Relational Databases<a class="anchor" aria-label="anchor" href="#relational-databases"></a>
@@ -499,7 +499,7 @@ often lack enforced structure, relational databases store data in
 <strong>multiple related tables</strong>, each focusing on one specific
 type of information (e.g., users, products, orders). These tables are
 connected using <strong>primary and foreign keys</strong>, which define
-explicit relationships between them — and ensure <strong>data
+explicit relationships between them and ensure <strong>data
 integrity</strong>.</p>
 <p>In a relational model, information is stored once and referenced when
 needed. This minimizes redundancy, improves clarity, and makes data
@@ -923,16 +923,15 @@ on the entire primary key.</li>
 </div>
 </div>
 <p>In our example, let’s assume we have a composite primary key for the
-artworks table: <code>(Title, Artist Name)</code>. However, note
-that:</p>
+artworks table: <em>(Title, Artist Name)</em>. However, note that:</p>
 <ul>
 <li>
-<code>Artist Nationality</code>, <code>Artist Birthplace</code>, and
-<code>Artist Birth–Death Years</code> depend only on
-<code>Artist Name</code>, not on <code>Title</code>.</li>
+<em>Artist Nationality</em>, <em>Artist Birthplace</em>, and
+<em>Artist Birth–Death Years</em> depend only on <em>Artist Name</em>,
+not on <em>Title</em>.</li>
 <li>
-<code>Department</code> and <code>Gallery Number</code> depend only
-on the artwork, but not in <code>Artist Name</code>.</li>
+<em>Department</em> and <em>Gallery Number</em> depend only on the
+artwork, but not on <em>Artist Name</em>.</li>
 </ul>
 <p>This partial dependency (non-key attributes depending on only part of
 the primary key) is not allowed in 2NF. To achieve 2NF, we split the
@@ -1068,13 +1067,12 @@ attributes, with a foreign key to the artist.</li>
 </tr>
 </tbody>
 </table>
-<p>Now, the Artists table has a primary key <code>ArtistID</code>, and
-the Artworks table has a primary key <code>ArtworkID</code> and a
-foreign key <code>ArtistID</code> linking to the Artists table. This
-design eliminates the redundancy of artist information. However, we
-still have an issue: The <code>Department</code> and
-<code>Gallery Number</code> in the Artworks table might not be entirely
-dependent on the artwork.</p>
+<p>Now, the Artists table has a primary key <em>ArtistID</em>, and the
+Artworks table has a primary key <em>ArtworkID</em> and a foreign key
+<em>ArtistID</em> linking to the Artists table. This design eliminates
+the redundancy of artist information. However, we still have an issue:
+The <em>Department</em> and <em>Gallery Number</em> in the Artworks
+table might not be entirely dependent on the artwork.</p>
 </div>
 <div class="section level3">
 <h3 id="third-normal-form-3nf">Third Normal Form (3NF)<a class="anchor" aria-label="anchor" href="#third-normal-form-3nf"></a>
@@ -1095,14 +1093,14 @@ depend on other non-key attributes.</li>
 </div>
 </div>
 </div>
-<p>In the Artworks table, we notice that the <code>Department</code>
-uniquely determines the <code>Gallery Number</code>. This means that the
-<code>Department</code> does not directly depend on the primary key
-(<code>ArtworkID</code>), but instead depends on another non-key
-attribute (<code>Department</code>). This is a transitive dependency and
-violates 3NF.</p>
+<p>In the Artworks table, we notice that the <em>Department</em>
+uniquely determines the <em>Gallery Number</em>. This means that the
+<em>Department</em> does not directly depend on the primary key
+(<em>ArtworkID</em>), but instead depends on another non-key attribute
+(<em>Department</em>). This is a transitive dependency and violates
+3NF.</p>
 <p>To resolve this, we move the information about galleries and
-departments into a separate table called <code>Galleries</code>. Each
+departments into a separate table called <em>Galleries</em>. Each
 gallery has a unique identifier, its gallery number, and the associated
 department.</p>
 <p><strong>Galleries Table:</strong></p>
@@ -1145,9 +1143,9 @@ department.</p>
 </tr>
 </tbody>
 </table>
-<p>Now, in the Artworks table, we replace the <code>Department</code>
-and <code>Gallery Number</code> columns with a single foreign key
-<code>GalleryID</code> that references the Galleries table:</p>
+<p>Now, in the Artworks table, we replace the <em>Department</em> and
+<em>Gallery Number</em> columns with a single foreign key
+<em>GalleryID</em> that references the Galleries table:</p>
 <p><strong>Artworks Table (3NF):</strong></p>
 <table class="table">
 <colgroup>
@@ -1239,9 +1237,8 @@ names.</li>
 <li>You want to easily update department information in one place, even
 if many galleries belong to the same department.</li>
 </ul>
-<p>To achieve this, you can create a <code>Departments</code> table and
-reference it from the <code>Galleries</code> table using a foreign
-key.</p>
+<p>To achieve this, you can create a <em>Departments</em> table and
+reference it from the <em>Galleries</em> table using a foreign key.</p>
 <p><strong>Departments Table:</strong></p>
 <table class="table">
 <thead><tr class="header">
@@ -1267,49 +1264,6 @@ key.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Galleries Table (with DepartmentID):</strong></p>
-<table class="table">
-<thead><tr class="header">
-<th>GalleryID</th>
-<th>Gallery Number</th>
-<th>DepartmentID (FK)</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>764</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>763</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>761</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>631</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>773</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>953</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-<p>This structure further reduces redundancy and makes it easier to
-manage department-related information, especially as your database grows
-or as you add more features in the future.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
