@@ -638,9 +638,8 @@ that:</p>
 <code>Artist Birth–Death Years</code> depend only on
 <code>Artist Name</code>, not on <code>Title</code>.</li>
 <li>
-<code>Department</code> and <code>Gallery Number</code> might depend
-on the artwork (but note: the same gallery number can appear in
-different departments?).</li>
+<code>Department</code> and <code>Gallery Number</code> depend only
+on the artwork, but not in <code>Artist Name</code>.</li>
 </ul><p>This partial dependency (non-key attributes depending on only part of
 the primary key) is not allowed in 2NF. To achieve 2NF, we split the
 table into two or more tables:</p>
@@ -730,43 +729,34 @@ foreign key <code>ArtistID</code> linking to the Artists table. This
 design eliminates the redundancy of artist information. However, we
 still have an issue: The <code>Department</code> and
 <code>Gallery Number</code> in the Artworks table might not be entirely
-dependent on the artwork. In fact, the same gallery number might appear
-in multiple departments? Actually, each gallery number is unique to a
-department? But note: the gallery number 773 is in “The Met Fifth
-Avenue”, while 764 is in “The American Wing”. Moreover, if we have
-multiple artworks in the same gallery, the department-gallery pair would
-be repeated. This leads us to the Third Normal Form.</p>
+dependent on the artwork.</p>
 </div>
 <div class="section level3">
 <h3 id="third-normal-form-3nf">Third Normal Form (3NF)<a class="anchor" aria-label="anchor" href="#third-normal-form-3nf"></a></h3>
-<div id="callout3" class="callout">
+<div id="callout-3nf" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout</h3>
+<div id="callout-3nf" class="callout-inner">
+<h3 class="callout-title">Callout: 3NF</h3>
 <div class="callout-content">
 <p>A table is in Third Normal Form (3NF) if:</p>
-<div class="section level3">
-<h3 id="callout-3nf">Callout: 3NF<a class="anchor" aria-label="anchor" href="#callout-3nf"></a></h3>
 <ol style="list-style-type: decimal"><li>It is in 2NF.</li>
 <li>It has no transitive dependencies: non-key attributes must not
 depend on other non-key attributes.</li>
 </ol></div>
 </div>
 </div>
-</div>
-<p>In the Artworks table, note that: <code>Gallery Number</code>
-determines the <code>Department</code>? Or is it the other way around?
-Actually, the department is determined by the gallery location. But in
-reality, the gallery number is unique and might already imply the
+<p>In the Artworks table, we notice that the <code>Department</code>
+uniquely determines the <code>Gallery Number</code>. This means that the
+<code>Department</code> does not directly depend on the primary key
+(<code>ArtworkID</code>), but instead depends on another non-key
+attribute (<code>Department</code>). This is a transitive dependency and
+violates 3NF.</p>
+<p>To resolve this, we move the information about galleries and
+departments into a separate table called <code>Galleries</code>. Each
+gallery has a unique identifier, its gallery number, and the associated
 department.</p>
-<p>However, in our table, we have both <code>Department</code> and
-<code>Gallery Number</code>. If the gallery number uniquely determines
-the department, then <code>Department</code> is transitively dependent
-on <code>Gallery Number</code> (a non-key attribute) rather than on the
-primary key (<code>ArtworkID</code>).</p>
-<p>To resolve this, we create a separate table for galleries:</p>
 <p><strong>Galleries Table:</strong></p>
 <table class="table"><thead><tr class="header"><th>GalleryID</th>
 <th>Gallery Number</th>
@@ -789,9 +779,9 @@ primary key (<code>ArtworkID</code>).</p>
 </tr><tr class="even"><td>6</td>
 <td>953</td>
 <td>Robert Lehman Collection</td>
-</tr></tbody></table><p>Now, we can replace <code>Department</code> and
-<code>Gallery Number</code> in the Artworks table with a foreign key
-<code>GalleryID</code>:</p>
+</tr></tbody></table><p>Now, in the Artworks table, we replace the <code>Department</code>
+and <code>Gallery Number</code> columns with a single foreign key
+<code>GalleryID</code> that references the Galleries table:</p>
 <p><strong>Artworks Table (3NF):</strong></p>
 <table class="table"><colgroup><col width="10%"><col width="40%"><col width="17%"><col width="15%"><col width="14%"></colgroup><thead><tr class="header"><th>ArtworkID</th>
 <th>Title</th>
@@ -828,43 +818,75 @@ primary key (<code>ArtworkID</code>).</p>
 <td>1975.1.119A-B</td>
 <td>6</td>
 <td>5</td>
-</tr></tbody></table><p>This design:</p>
-<ul><li><p>Removes transitive dependencies (Department depends on Gallery,
-which is now in its own table).</p></li>
-<li><p>Reduces redundancy: The department for gallery 764 is stored only
-once.</p></li>
-</ul><p>We now have a fully normalized database in 3NF. The advantages
-are:</p>
-<ul><li><p><strong>Reduced redundancy</strong>: Each piece of information is
-stored only once.</p></li>
-<li><p><strong>Improved integrity</strong>: Updates are straightforward
-(e.g., changing a gallery’s department affects all related
-artworks).</p></li>
-<li><p><strong>Flexibility</strong>: We can add new galleries, artists,
-or artworks without anomalies.</p></li>
-</ul><p>In summary, normalization helps us design databases that are
-efficient, consistent, and scalable.</p>
-<div id="keypoints2" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul><li><p><strong>1NF</strong>: Eliminate repeating groups and ensure
-atomicity.</p></li>
-<li><p><strong>2NF</strong>: Remove partial dependencies by splitting
-tables.</p></li>
-<li><p><strong>3NF</strong>: Remove transitive dependencies by moving
-dependent attributes to new tables.</p></li>
-<li><p>Normalization reduces redundancy and prevents anomalies.</p></li>
-</ul></div>
-</div>
-</div>
+</tr></tbody></table><p>This design removes all transitive dependencies. Each non-key
+attribute now depends only on the primary key of its table. The database
+is now in Third Normal Form (3NF):</p>
+<ul><li>
+<strong>No redundancy:</strong> Each piece of information is stored
+only once.</li>
+<li>
+<strong>Data integrity:</strong> Updates to a gallery or department
+are made in one place.</li>
+<li>
+<strong>Flexibility:</strong> New galleries, departments, artists,
+or artworks can be added without causing anomalies.</li>
+</ul><div class="section level4">
+<h4 id="further-normalization-separating-departments">Further Normalization: Separating Departments<a class="anchor" aria-label="anchor" href="#further-normalization-separating-departments"></a></h4>
+<p>At this point, the database is fully normalized up to the Third
+Normal Form (3NF), which is sufficient for most use cases. However, for
+even greater flexibility and extensibility, you might consider
+separating the departments into their own table. This can be useful
+if:</p>
+<ul><li>Departments have additional attributes (such as a description, head
+of department, or contact information).</li>
+<li>You want to ensure consistency and avoid typos in department
+names.</li>
+<li>You want to easily update department information in one place, even
+if many galleries belong to the same department.</li>
+</ul><p>To achieve this, you can create a <code>Departments</code> table and
+reference it from the <code>Galleries</code> table using a foreign
+key.</p>
+<p><strong>Departments Table:</strong></p>
+<table class="table"><thead><tr class="header"><th>DepartmentID</th>
+<th>Department Name</th>
+</tr></thead><tbody><tr class="odd"><td>1</td>
+<td>The American Wing</td>
+</tr><tr class="even"><td>2</td>
+<td>European Paintings</td>
+</tr><tr class="odd"><td>3</td>
+<td>The Met Fifth Avenue</td>
+</tr><tr class="even"><td>4</td>
+<td>Robert Lehman Collection</td>
+</tr></tbody></table><p><strong>Galleries Table (with DepartmentID):</strong></p>
+<table class="table"><thead><tr class="header"><th>GalleryID</th>
+<th>Gallery Number</th>
+<th>DepartmentID (FK)</th>
+</tr></thead><tbody><tr class="odd"><td>1</td>
+<td>764</td>
+<td>1</td>
+</tr><tr class="even"><td>2</td>
+<td>763</td>
+<td>1</td>
+</tr><tr class="odd"><td>3</td>
+<td>761</td>
+<td>1</td>
+</tr><tr class="even"><td>4</td>
+<td>631</td>
+<td>2</td>
+</tr><tr class="odd"><td>5</td>
+<td>773</td>
+<td>3</td>
+</tr><tr class="even"><td>6</td>
+<td>953</td>
+<td>4</td>
+</tr></tbody></table><p>This structure further reduces redundancy and makes it easier to
+manage department-related information, especially as your database grows
+or as you add more features in the future.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
