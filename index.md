@@ -17,7 +17,7 @@ Although the course is primarily aimed at humanities scholars, the principles ar
 
 ### Why NocoDB?
 
-NocoDB is presented as a revolutionary tool that converts traditional databases into a smart spreadsheet interface, merging the robustness of databases with the simplicity and accessibility of spreadsheets. Suitable for developers, data analysts, or the simply curious, NocoDB makes data management accessible and enjoyable.
+NocoDB is presented as a tool that converts a traditional databases into a smart spreadsheet interface, merging the robustness of databases with the simplicity and accessibility of spreadsheets. Suitable for developers, data analysts, or the simply curious, NocoDB makes data management accessible and enjoyable.
 
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
@@ -26,8 +26,7 @@ NocoDB is presented as a revolutionary tool that converts traditional databases 
 
 This course is ideal for students, developers, and any professionals looking to get a basic understanding of relational databases and how to use them with NocoDB. Whether you're a beginner or someone looking to refresh your knowledge, this course offers valuable insights and practical skills. You dont need any prior skills to take part in this lesson. Everything will be learned and explained from scratch. Maybe you should know how to use an internet browser and a computer, but everything else you need you will learn here.
 
-In the end of the lesson, you will find a few episodes, which are more complicated and technical advanced. They are more of a "nice to have" addon and an outlook of possibilities you can do with NocoDB. The features presented there wont teach you exactly how to use them, but will show you what is possible.
-
+In the end of the lesson, you will find an episodes, which is more complicated and technical advanced. This is more of a "nice to have" addon and an outlook of possibilities you can do with NocoDB. The episode presented there wont teach you exactly how to use the tools, but will show you what is possible.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -50,6 +49,5 @@ This lesson is being developed as part of the joint project [HERMES](https://her
 ## Authors
 
 - [Julia Tolksdorf](https://github.com/jutol)
-- Golnaz Sarkar Farshi
 - Robert Zwick
 
