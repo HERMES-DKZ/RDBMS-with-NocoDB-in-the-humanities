@@ -112,3 +112,15 @@ experience. NocoDB also allows us to work collaboratively in a team and even ent
 NocoDB is also open source. This means that we could theoretically set up our own instance and thus create and use our data 
 completely independently of others. It also offers many other options for connecting and utilising our data on the Internet, 
 which we will not go into in this course.
+
+
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Spreadsheets are flexible and easy to use for organizing and analyzing data, but become error-prone and hard to manage as data grows or relationships get complex.
+- Relational databases store data in multiple related tables, reducing redundancy and ensuring data integrity through primary and foreign keys.
+- Databases are better suited for managing complex, interconnected data and support powerful queries using SQL.
+- No-code tools like NocoDB combine the user-friendly interface of spreadsheets with the structure and reliability of relational databases.
+- Choosing the right tool depends on your needs: spreadsheets for simple, flexible tasks; databases for structured, scalable, and collaborative
+  
+::::::::::::::::::::::::::::::::::::::::::::::::

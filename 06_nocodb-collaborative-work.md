@@ -127,4 +127,12 @@ Get together in groups and create a new base together. Choose one person as admi
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+::::::::::::::::::::::::::::::::::::: keypoints
 
+- NocoDB allows you to invite team members and assign different roles (Owner, Creator, Editor, Commenter, Viewer) to control access and permissions.
+- You can share your Base as a read-only link, letting others view and explore data without being able to edit or delete anything.
+- Roles help keep your data secure and your workflow organized by giving each person only the rights they need.
+- Public sharing is useful for publishing datasets or enabling transparent collaboration without requiring user accounts.
+- Collaboration features make it easy to work together on data projects, whether in a team or with the public.
+
+::::::::::::::::::::::::::::::::::::::::::::::::

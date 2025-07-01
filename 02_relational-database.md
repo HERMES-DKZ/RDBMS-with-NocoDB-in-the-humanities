@@ -55,7 +55,7 @@ Now, if we want to store information about artworks created by these artists, we
 The foreign key in the Artworks table (`Artist`) refers to the primary key (`ID`) in the Artists table. This establishes a relationship between the two tables, allowing us to link each artwork to its artist without duplicating artist information. This separation of data into related tables reduces redundancy and makes the database more efficient and easier to maintain. However, for this to work effectively, we must ensure that:
 
 
-::::::::::::::::::::::::::::::::::::: keypoints
+::::::::::::::::::::::::::::::::::::: callout
 
 - The **primary Key** must never be empty and must be unique.
 
@@ -271,3 +271,12 @@ To achieve this, you can create a *Departments* table and reference it from the 
 | 3            | The Met Fifth Avenue      |
 | 4            | Robert Lehman Collection  |
 
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- The **primary key** uniquely identifies each record and must never be empty.
+- A **foreign key** links to an existing primary key in another table, creating relationships between tables.
+- Keys help reduce data redundancy and ensure data integrity by connecting related information.
+- Normalization (1NF, 2NF, 3NF) step-by-step removes redundancy, prevents anomalies, and organizes data efficiently.
+- Splitting data into multiple related tables makes updates, deletions, and extensions safer and easier.
+
+::::::::::::::::::::::::::::::::::::::::::::::::

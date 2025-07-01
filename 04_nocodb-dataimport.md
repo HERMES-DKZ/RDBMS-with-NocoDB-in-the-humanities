@@ -135,3 +135,15 @@ Use the Filter, Sort and Group functionality in NocoDB to answer the following q
 - Do objects exist that contain one of the tags Women, Battles, Cats or Ships and are attributed to the ObjectName Print?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- After importing a CSV file, review and adjust the field types for each column to ensure correct data handling.
+- Use **Filters** to display only records that match specific conditions, making it easier to focus on relevant data.
+- **Grouping** allows you to organize records by a chosen field, helping you spot patterns and compare categories.
+- **Sorting** lets you change the order of records, for example by year or artist, to better analyze your data.
+- Proper field types and data preparation are essential for efficient filtering, grouping, and sorting in NocoDB.
+
+::::::::::::::::::::::::::::::::::::::::::::::::

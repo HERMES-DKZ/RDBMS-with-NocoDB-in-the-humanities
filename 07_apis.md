@@ -167,3 +167,12 @@ The API and Webhooks are powerful tools that allow you to connect NocoDB to the 
 Even if you’re not ready to use these tools now, knowing they exist opens the door to new ideas. And with NocoDB’s beginner-friendly interfaces like Swagger and pre-generated code snippets, it’s easier than ever to try them out — no coding background required.
 
 
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- NocoDB automatically provides a REST API for every table, allowing you to read, create, update, and delete records from external applications.
+- The built-in Swagger UI lets you explore, test, and interact with the API directly in your browser—no coding required.
+- API requests can be filtered and customized using parameters, making it easy to retrieve exactly the data you need.
+- Access to the API is secured with API tokens, ensuring only authorized users can interact with your data.
+- Webhooks let NocoDB actively send data to other apps or services when certain events occur, enabling automation and integration.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
