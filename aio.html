@@ -2318,7 +2318,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07_apis"><p>Content from <a href="07_apis.html">APIs</a></p>
 <hr>
-<p>Last updated on 2025-06-26 |
+<p>Last updated on 2025-07-01 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/07_apis.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2354,7 +2354,7 @@ any links that you are not going to use.
 </div>
 </div>
 <p>NocoDB is not just a user-friendly no-code platform for working with
-data — it also includes powerful tools for <strong>automation</strong>
+data, it also includes powerful tools for <strong>automation</strong>
 and <strong>integration</strong>. Two of the most important features in
 this area are <strong>APIs</strong> and <strong>Webhooks</strong>. These
 tools make it possible to create very extensive and complex
@@ -2365,12 +2365,22 @@ they work, as using them would require a separate lesson.</p>
 <hr class="half-width">
 <p>An <strong>API</strong> (Application Programming Interface) is a
 standardized way for different software applications to communicate with
-each other. You can think of it like a digital menu: One system can ask
-another system for certain data or tell it to perform an action.</p>
-<p>In the case of NocoDB, this means that you (or another application)
-can access your tables from outside the platform, for example, to
-retrieve data for a website, update records from a form, or
-automatically insert new entries from another tool.</p>
+each other. APIs work like a messenger between two programs: one program
+sends a request, and the other sends back a response. The most common
+API methods are GET (to read or fetch data), POST (to add new data), PUT
+(to update existing data), and DELETE (to remove data). You can think of
+them like asking a library: GET is asking for a book, POST is donating a
+new book, PUT is updating a book’s information, and DELETE is removing a
+book from the shelf.</p>
+<p>In the context of NocoDB, this means that you or other
+applications—can access your tables from outside the platform. For
+example, you could retrieve data for a website, update records via a
+form, or automatically add new entries from other tools. Imagine your
+data is stored as a file on a web server: your browser accesses it
+through NocoDB’s API to read or modify information. But it’s not just
+your browser, any program can use the API to interact with your data,
+read it, or make changes. This turns NocoDB into a central hub for data
+exchange between different applications.</p>
 <div class="section level3">
 <h3 id="why-is-the-nocodb-api-such-a-big-deal">Why is the NocoDB API such a big deal?<a class="anchor" aria-label="anchor" href="#why-is-the-nocodb-api-such-a-big-deal"></a>
 </h3>
@@ -2400,8 +2410,7 @@ your data.</p>
 <p>Every base (database) and table in NocoDB comes with its own
 <strong>REST API</strong>. This means external systems can
 <strong>read</strong>, <strong>create</strong>, <strong>update</strong>,
-and <strong>delete</strong> records via HTTP — the same protocol that
-websites use.</p>
+and <strong>delete</strong> records.</p>
 <p>Even if you’ve never worked with code before, NocoDB makes it easy to
 try out these features using a built-in tool called <strong>Swagger
 UI</strong>.</p>
@@ -2421,52 +2430,69 @@ interface that shows you:</p>
 </li>
 <li>and what each request will return.</li>
 </ul>
-<p>What makes it really useful: you can <strong>interact with the API
+<p>What makes it really useful: you can <strong>interact with the APIs
 directly in your browser</strong>, no setup, no coding required.</p>
-</div>
-<div class="section level3">
-<h3 id="step-by-step-exploring-the-nocodb-api-with-swagger">Step-by-Step: Exploring the NocoDB API with Swagger<a class="anchor" aria-label="anchor" href="#step-by-step-exploring-the-nocodb-api-with-swagger"></a>
-</h3>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Open your base</strong> in NocoDB.<br>
-</li>
-<li>Click the <strong>three-dot menu (⋮)</strong> next to the base
-name.<br>
-</li>
-<li>Choose <strong>“API Docs”</strong> — this will open the Swagger
-interface.<br>
-</li>
-<li>You’ll see a list of available endpoints for your base, such as:
-<ul>
-<li>
-<code>GET /Art_Collection</code> – get all records<br>
-</li>
-<li>
-<code>POST /Art_Collection</code> – add a new record<br>
-</li>
-<li>
-<code>DELETE /Art_Collection/{id}</code> – delete a specific
-record</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>📘 This view gives you full documentation and testing access at the
-same time.</p>
-</blockquote>
 </div>
 <div class="section level3">
 <h3 id="example-viewing-data-using-the-api">Example: Viewing data using the API<a class="anchor" aria-label="anchor" href="#example-viewing-data-using-the-api"></a>
 </h3>
+<p>The Swagger API interface in NocoDB shows you a list of all tables in
+your base. For each table, you will see the most common API methods:
+<strong>GET</strong> (read data), <strong>POST</strong> (add new data),
+<strong>PUT</strong> (update data), and <strong>DELETE</strong> (remove
+data). Each method is clearly listed as an endpoint, and you can try
+them out directly in your browser. This means you can test reading,
+creating, updating, or deleting records for any table without writing
+any code—just by clicking and filling out simple forms in the Swagger
+UI.</p>
 <ol style="list-style-type: decimal">
-<li>Scroll to the <code>GET /{table}</code> endpoint (e.g.,
-<code>GET /Art_Collection</code>).<br>
+<li>
+<strong>Open your base</strong> in NocoDB.<br>
 </li>
-<li>Click the section to expand it, then click <strong>“Try it
-out”</strong>.<br>
+<li>Click the the base name in the top left corner.<br>
 </li>
-<li>Click <strong>“Execute”</strong>.<br>
+<li>Choose <strong>“Rest APIs”</strong> — this will open the Swagger
+interface.<br>
+</li>
+<li>You’ll see a list, for each table, of available endpoints for your
+base, such as:
+<ul>
+<li>
+<code>GET</code> – get all records<br>
+</li>
+<li>
+<code>POST</code> – add a new record<br>
+</li>
+<li>
+<code>DELETE</code> – delete a specific record</li>
+</ul>
+</li>
+</ol>
+<p>To access your NocoDB API securely, you need an <strong>API
+Token</strong>. This token acts like a password for your API requests,
+making sure that only authorized users can read or change your data.
+Without a token, most API endpoints will not allow access.</p>
+<p><strong>How to create and use an API Token:</strong></p>
+<ol style="list-style-type: decimal">
+<li>In NocoDB, click on your user profile in the bottom left corner and
+on <strong>Account Settings</strong>.</li>
+<li>Select <strong>“API Tokens”</strong> from the menu on the left.</li>
+<li>Click <strong>“Add new token”</strong> and give it a name (e.g., “My
+Swagger Test”) and click <strong>Save</strong>.</li>
+<li>Copy the generated token.</li>
+</ol>
+<hr>
+<p>The next thing we want to do is to get our data from our MET dataset
+through the API. To do this, look for the right table in the swagger
+API. If you did not delete the example tables from NocoDB you should see
+“Sample Views”, “Keyboard Shortcuts” and “Quick Reference Links”. After
+these your own table should be shown.</p>
+<ol style="list-style-type: decimal">
+<li>Click on the small lock and paste your API-Token and click
+<strong>authorize</strong>.</li>
+<li>Open the methods you got with the small arrow next to the lock.</li>
+<li>Click <strong>Try it out</strong> to activate your API.</li>
+<li>Scroll down and click <strong>Execute</strong>
 </li>
 <li>You’ll see the API’s <strong>response</strong> below, usually in
 JSON format, for example:</li>
@@ -2475,53 +2501,40 @@ JSON format, for example:</li>
 <h3 class="code-label">JSON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode json" tabindex="0"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ot">[</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  <span class="fu">{</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="dt">"Title"</span><span class="fu">:</span> <span class="st">"Sunflowers"</span><span class="fu">,</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="dt">"Artist"</span><span class="fu">:</span> <span class="st">"Vincent van Gogh"</span><span class="fu">,</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="dt">"Year"</span><span class="fu">:</span> <span class="st">"1888"</span><span class="fu">,</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>    <span class="dt">"Medium"</span><span class="fu">:</span> <span class="st">"Oil on canvas"</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="ot">]</span></span></code></pre>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>      <span class="dt">"Id"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>      <span class="dt">"Object ID"</span><span class="fu">:</span> <span class="st">"649082"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>      <span class="dt">"Is Public Domain"</span><span class="fu">:</span> <span class="st">"False"</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>      <span class="dt">"Department"</span><span class="fu">:</span> <span class="st">"Drawings and Prints"</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>      <span class="dt">"AccessionYear"</span><span class="fu">:</span> <span class="st">"1970.0"</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>      <span class="dt">"Object Name"</span><span class="fu">:</span> <span class="st">"Print"</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>      <span class="dt">"Title"</span><span class="fu">:</span> <span class="st">"Birds in the Nest (in Parables from Nature, opp. p. 327)"</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>      <span class="dt">"Culture"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>      <span class="dt">"Artist Display Name"</span><span class="fu">:</span> <span class="st">"Horace Harral; Joseph Wolf"</span><span class="fu">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>      <span class="dt">"Artist Display Bio"</span><span class="fu">:</span> <span class="st">"British, Ipswich 1817–1905 Hastings|German, Moers 1820–1899 London"</span><span class="fu">,</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>      <span class="dt">"Object Date"</span><span class="fu">:</span> <span class="st">"1865"</span><span class="fu">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>      <span class="dt">"Object Begin Date"</span><span class="fu">:</span> <span class="st">"1865"</span><span class="fu">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>      <span class="dt">"Object End Date"</span><span class="fu">:</span> <span class="st">"1865"</span><span class="fu">,</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>      <span class="dt">"Medium"</span><span class="fu">:</span> <span class="st">"Wood engraving"</span><span class="fu">,</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>      <span class="dt">"Dimensions"</span><span class="fu">:</span> <span class="st">"Image: 5 1/16 × 3 3/4 in. (12.9 × 9.6 cm)</span><span class="ch">\r\n</span><span class="st">Sheet: 8 7/16 × 5 1/2 in. (21.5 × 14 cm)"</span><span class="fu">,</span></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>      <span class="dt">"City"</span><span class="fu">:</span> <span class="st">"London"</span><span class="fu">,</span></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>      <span class="dt">"Tags"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>      <span class="dt">"Link Resource"</span><span class="fu">:</span> <span class="st">"http://www.metmuseum.org/art/collection/search/649082"</span><span class="fu">,</span></span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>      <span class="dt">"Object Wikidata URL"</span><span class="fu">:</span> <span class="kw">null</span><span class="fu">,</span></span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>      <span class="dt">"CreatedAt"</span><span class="fu">:</span> <span class="st">"2025-06-26 10:29:21+00:00"</span><span class="fu">,</span></span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>      <span class="dt">"UpdatedAt"</span><span class="fu">:</span> <span class="kw">null</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="ot">]</span></span></code></pre>
 </div>
-</div>
-</section><section><h2 class="section-heading" id="api-code-snippets">API Code Snippets<a class="anchor" aria-label="anchor" href="#api-code-snippets"></a>
-</h2>
-<hr class="half-width">
-<p>NocoDB also helps you generate <strong>ready-to-use code
-snippets</strong> for various programming languages. This means you
-don’t need to write any code yourself, you can just copy and paste. To
-use these you need an external IDE and know one of the
-Programming-Languages to use it properly.</p>
-<div class="section level3">
-<h3 id="how-to-copy-api-snippets">How to Copy API Snippets<a class="anchor" aria-label="anchor" href="#how-to-copy-api-snippets"></a>
-</h3>
-<ol style="list-style-type: decimal">
-<li><p>Open the <strong>API Docs</strong> for your Base (see
-above).</p></li>
-<li><p>Select an API action (e.g., <code>POST /{table}</code> to add a
-new record).</p></li>
-<li><p>Scroll to the bottom of the endpoint description.</p></li>
-<li><p>Click on the <strong>“Code”</strong> tab.</p></li>
-<li>
-<p>Choose a language from the dropdown — options include:</p>
-<ul>
-<li><strong>cURL</strong></li>
-<li><strong>Python</strong></li>
-<li><strong>JavaScript (Fetch API)</strong></li>
-<li><strong>Node.js (Axios)</strong></li>
-<li><strong>Shell</strong></li>
-</ul>
-</li>
-<li>
-<p>Copy the generated snippet and try running it in a simple
-environment like:</p>
-<ul>
-<li>A Python file (<code>python script.py</code>)</li>
-<li>An online code sandbox like Replit or JSFiddle</li>
-<li>Your terminal, for cURL commands</li>
-</ul>
-</li>
-</ol>
+<p>APIs not only allow easy access to individual records, but also
+enable the combination and filtering of data through targeted queries.
+By using different parameters and filters in your API requests, you can
+select, sort, or group very specific datasets. For example, you can
+retrieve only certain entries based on criteria such as date, category,
+or status. This flexibility allows you to perform complex analyses and
+evaluations directly via the API and process the results in other
+applications. The API thus becomes a versatile tool for using data
+efficiently and in a customized way.</p>
 </div>
 </section><section><h2 class="section-heading" id="webhooks-intro-idea">Webhooks (Intro &amp; Idea)<a class="anchor" aria-label="anchor" href="#webhooks-intro-idea"></a>
 </h2>
@@ -2539,19 +2552,17 @@ when something happens.</p>
 <h3 id="how-to-create-a-webhook">How to Create a Webhook<a class="anchor" aria-label="anchor" href="#how-to-create-a-webhook"></a>
 </h3>
 <ol style="list-style-type: decimal">
-<li>Open your Base settings.</li>
-<li>Go to the <strong>“Automations”</strong> section and choose
-<strong>“Webhooks”</strong>.</li>
-<li>Click <strong>“Create Webhook”</strong>.</li>
+<li>Open your Table Details in the top row.</li>
+<li>Go to the <strong>“Webhooks”</strong> section.</li>
+<li>Click <strong>“New Webhook”</strong>.</li>
 <li>Define:
 <ul>
 <li>The <strong>event</strong> (e.g., “Row Created”)</li>
 <li>The <strong>table</strong> it should apply to</li>
-<li>The <strong>URL</strong> that should receive the webhook (you can
+<li>The <strong>URL</strong> that should receive the webhook (you could
 test this with <a href="https://webhook.site" class="external-link">webhook.site</a>)</li>
 </ul>
 </li>
-<li>Save the webhook and test it by adding or updating data.</li>
 </ol>
 <p>The API and Webhooks are powerful tools that allow you to connect
 NocoDB to the wider digital ecosystem. You can:</p>
