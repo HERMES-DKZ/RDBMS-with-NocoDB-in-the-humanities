@@ -379,21 +379,103 @@
         
         
 <section id="01_introduction"><h2 class="section-heading"><a href="01_introduction.html">Introduction</a></h2>
-<hr class="half-width"></section><section id="02_relational-database"><h2 class="section-heading"><a href="02_relational-database.html">Relational Databases</a></h2>
 <hr class="half-width">
 <ul>
-<li><p>The <strong>primary Key</strong> must never be empty and must be
-unique.</p></li>
-<li><p>A <strong>foreign key</strong> must link to an existing
-<strong>Primary Key</strong>.</p></li>
-<li><p>Keys enable relationships between tables and reduce data
-redundancy.</p></li>
+<li>Spreadsheets are flexible and easy to use for organizing and
+analyzing data, but become error-prone and hard to manage as data grows
+or relationships get complex.</li>
+<li>Relational databases store data in multiple related tables, reducing
+redundancy and ensuring data integrity through primary and foreign
+keys.</li>
+<li>Databases are better suited for managing complex, interconnected
+data and support powerful queries using SQL.</li>
+<li>No-code tools like NocoDB combine the user-friendly interface of
+spreadsheets with the structure and reliability of relational
+databases.</li>
+<li>Choosing the right tool depends on your needs: spreadsheets for
+simple, flexible tasks; databases for structured, scalable, and
+collaborative</li>
+</ul></section><section id="02_relational-database"><h2 class="section-heading"><a href="02_relational-database.html">Relational Databases</a></h2>
+<hr class="half-width">
+<ul>
+<li>The <strong>primary key</strong> uniquely identifies each record and
+must never be empty.</li>
+<li>A <strong>foreign key</strong> links to an existing primary key in
+another table, creating relationships between tables.</li>
+<li>Keys help reduce data redundancy and ensure data integrity by
+connecting related information.</li>
+<li>Normalization (1NF, 2NF, 3NF) step-by-step removes redundancy,
+prevents anomalies, and organizes data efficiently.</li>
+<li>Splitting data into multiple related tables makes updates,
+deletions, and extensions safer and easier.</li>
 </ul></section><section id="03_nocodb-introduction"><h2 class="section-heading"><a href="03_nocodb-introduction.html">NocoDB Introduction</a></h2>
-<hr class="half-width"></section><section id="04_nocodb-dataimport"><h2 class="section-heading"><a href="04_nocodb-dataimport.html">Working with data</a></h2>
-<hr class="half-width"></section><section id="05_views-in-nocodb"><h2 class="section-heading"><a href="05_views-in-nocodb.html">Views</a></h2>
-<hr class="half-width"></section><section id="06_nocodb-collaborative-work"><h2 class="section-heading"><a href="06_nocodb-collaborative-work.html">Collaborative Work with NocoDB</a></h2>
-<hr class="half-width"></section><section id="07_apis"><h2 class="section-heading"><a href="07_apis.html">APIs</a></h2>
-<hr class="half-width"></section>
+<hr class="half-width">
+<ul>
+<li>In NocoDB, you create tables and add fields (columns) with different
+data types (e.g., text, number, date).</li>
+<li>Fields of type Link allow you to connect tables and create
+relationships between records.</li>
+<li>When adding a Link field, you can choose the relation type: One to
+One, One to Many (Has Many), or Many to Many.</li>
+</ul></section><section id="04_nocodb-dataimport"><h2 class="section-heading"><a href="04_nocodb-dataimport.html">Working with data</a></h2>
+<hr class="half-width">
+<ul>
+<li>After importing a CSV file, review and adjust the field types for
+each column to ensure correct data handling.</li>
+<li>Use <strong>Filters</strong> to display only records that match
+specific conditions, making it easier to focus on relevant data.</li>
+<li>
+<strong>Grouping</strong> allows you to organize records by a chosen
+field, helping you spot patterns and compare categories.</li>
+<li>
+<strong>Sorting</strong> lets you change the order of records, for
+example by year or artist, to better analyze your data.</li>
+<li>Proper field types and data preparation are essential for efficient
+filtering, grouping, and sorting in NocoDB.</li>
+</ul></section><section id="05_views-in-nocodb"><h2 class="section-heading"><a href="05_views-in-nocodb.html">Views</a></h2>
+<hr class="half-width">
+<ul>
+<li>NocoDB offers different view types (Grid, Form, Gallery, Kanban,
+Calendar) to display and interact with your data in various ways.</li>
+<li>Each view can be customized with its own filters, sorting, and
+visible fields, allowing you to focus on specific aspects of your
+data.</li>
+<li>Views help you collaborate, collect input, and share selected
+information without changing the underlying table structure.</li>
+<li>Specialized views like Kanban and Calendar require specific field
+types (e.g., Single Select for Kanban, Date for Calendar) for optimal
+use.</li>
+<li>Using multiple views makes it easier to adapt the same dataset for
+different tasks and</li>
+</ul></section><section id="06_nocodb-collaborative-work"><h2 class="section-heading"><a href="06_nocodb-collaborative-work.html">Collaborative Work with NocoDB</a></h2>
+<hr class="half-width">
+<ul>
+<li>NocoDB allows you to invite team members and assign different roles
+(Owner, Creator, Editor, Commenter, Viewer) to control access and
+permissions.</li>
+<li>You can share your Base as a read-only link, letting others view and
+explore data without being able to edit or delete anything.</li>
+<li>Roles help keep your data secure and your workflow organized by
+giving each person only the rights they need.</li>
+<li>Public sharing is useful for publishing datasets or enabling
+transparent collaboration without requiring user accounts.</li>
+<li>Collaboration features make it easy to work together on data
+projects, whether in a team or with the public.</li>
+</ul></section><section id="07_apis"><h2 class="section-heading"><a href="07_apis.html">APIs</a></h2>
+<hr class="half-width">
+<ul>
+<li>NocoDB automatically provides a REST API for every table, allowing
+you to read, create, update, and delete records from external
+applications.</li>
+<li>The built-in Swagger UI lets you explore, test, and interact with
+the API directly in your browser—no coding required.</li>
+<li>API requests can be filtered and customized using parameters, making
+it easy to retrieve exactly the data you need.</li>
+<li>Access to the API is secured with API tokens, ensuring only
+authorized users can interact with your data.</li>
+<li>Webhooks let NocoDB actively send data to other apps or services
+when certain events occur, enabling automation and integration.</li>
+</ul></section>
 </div>
     </main>
 </div>
