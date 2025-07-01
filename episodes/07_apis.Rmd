@@ -21,15 +21,15 @@ exercises: 3
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-NocoDB is not just a user-friendly no-code platform for working with data — it also includes powerful tools for **automation** and **integration**. Two of the most important features in this area are **APIs** and **Webhooks**. These tools make it possible to create very extensive and complex applications. We will therefore only briefly mention and understand how they work, as using them would require a separate lesson.
+NocoDB is not just a user-friendly no-code platform for working with data, it also includes powerful tools for **automation** and **integration**. Two of the most important features in this area are **APIs** and **Webhooks**. These tools make it possible to create very extensive and complex applications. We will therefore only briefly mention and understand how they work, as using them would require a separate lesson.
 
 
 ## APIs
 
 
-An **API** (Application Programming Interface) is a standardized way for different software applications to communicate with each other. You can think of it like a digital menu: One system can ask another system for certain data or tell it to perform an action.
+An **API** (Application Programming Interface) is a standardized way for different software applications to communicate with each other. APIs work like a messenger between two programs: one program sends a request, and the other sends back a response. The most common API methods are GET (to read or fetch data), POST (to add new data), PUT (to update existing data), and DELETE (to remove data). You can think of them like asking a library: GET is asking for a book, POST is donating a new book, PUT is updating a book’s information, and DELETE is removing a book from the shelf.
 
-In the case of NocoDB, this means that you (or another application) can access your tables from outside the platform, for example, to retrieve data for a website, update records from a form, or automatically insert new entries from another tool.
+In the context of NocoDB, this means that you or other applications—can access your tables from outside the platform. For example, you could retrieve data for a website, update records via a form, or automatically add new entries from other tools. Imagine your data is stored as a file on a web server: your browser accesses it through NocoDB’s API to read or modify information. But it’s not just your browser, any program can use the API to interact with your data, read it, or make changes. This turns NocoDB into a central hub for data exchange between different applications.
 
 
 
@@ -48,7 +48,7 @@ This openness and flexibility make NocoDB a powerful backend for both small proj
 
 ## Swagger API
 
-Every base (database) and table in NocoDB comes with its own **REST API**. This means external systems can **read**, **create**, **update**, and **delete** records via HTTP — the same protocol that websites use.
+Every base (database) and table in NocoDB comes with its own **REST API**. This means external systems can **read**, **create**, **update**, and **delete** records.
 
 Even if you’ve never worked with code before, NocoDB makes it easy to try out these features using a built-in tool called **Swagger UI**.
 
@@ -63,64 +63,71 @@ Even if you’ve never worked with code before, NocoDB makes it easy to try out 
 - what data you need to send or receive,  
 - and what each request will return.
 
-What makes it really useful: you can **interact with the API directly in your browser**, no setup, no coding required.
-
-
-### Step-by-Step: Exploring the NocoDB API with Swagger
-
-1. **Open your base** in NocoDB.  
-2. Click the **three-dot menu (⋮)** next to the base name.  
-3. Choose **“API Docs”** — this will open the Swagger interface.  
-4. You'll see a list of available endpoints for your base, such as:  
-   - `GET /Art_Collection` – get all records  
-   - `POST /Art_Collection` – add a new record  
-   - `DELETE /Art_Collection/{id}` – delete a specific record
-
-> 📘 This view gives you full documentation and testing access at the same time.
+What makes it really useful: you can **interact with the APIs directly in your browser**, no setup, no coding required.
 
 
 ### Example: Viewing data using the API
 
-1. Scroll to the `GET /{table}` endpoint (e.g., `GET /Art_Collection`).  
-2. Click the section to expand it, then click **“Try it out”**.  
-3. Click **“Execute”**.  
-4. You’ll see the API’s **response** below, usually in JSON format, for example:
+The Swagger API interface in NocoDB shows you a list of all tables in your base. For each table, you will see the most common API methods: **GET** (read data), **POST** (add new data), **PUT** (update data), and **DELETE** (remove data). Each method is clearly listed as an endpoint, and you can try them out directly in your browser. This means you can test reading, creating, updating, or deleting records for any table without writing any code—just by clicking and filling out simple forms in the Swagger UI.
+
+
+1. **Open your base** in NocoDB.  
+2. Click the the base name in the top left corner.  
+3. Choose **“Rest APIs”** — this will open the Swagger interface.  
+4. You'll see a list, for each table, of available endpoints for your base, such as:  
+   - `GET` – get all records  
+   - `POST` – add a new record  
+   - `DELETE` – delete a specific record
+
+To access your NocoDB API securely, you need an **API Token**. This token acts like a password for your API requests, making sure that only authorized users can read or change your data. Without a token, most API endpoints will not allow access.
+
+**How to create and use an API Token:**
+
+1. In NocoDB, click on your user profile in the bottom left corner and on **Account Settings**.
+2. Select **"API Tokens"** from the menu on the left.
+3. Click **"Add new token"** and give it a name (e.g., "My Swagger Test") and click **Save**.
+4. Copy the generated token.
+
+
+--- 
+
+The next thing we want to do is to get our data from our MET dataset through the API. To do this, look for the right table in the swagger API. If you did not delete the example tables from NocoDB you should see "Sample Views", "Keyboard Shortcuts" and "Quick Reference Links". After these your own table should be shown. 
+
+1. Click on the small lock and paste your API-Token and click **authorize**. 
+2. Open the methods you got with the small arrow next to the lock.
+3. Click **Try it out** to activate your API.
+4. Scroll down and click **Execute**
+5. You’ll see the API’s **response** below, usually in JSON format, for example:
 
 ```json
 [
-  {
-    "Title": "Sunflowers",
-    "Artist": "Vincent van Gogh",
-    "Year": "1888",
-    "Medium": "Oil on canvas"
-  },
+    {
+      "Id": 1,
+      "Object ID": "649082",
+      "Is Public Domain": "False",
+      "Department": "Drawings and Prints",
+      "AccessionYear": "1970.0",
+      "Object Name": "Print",
+      "Title": "Birds in the Nest (in Parables from Nature, opp. p. 327)",
+      "Culture": null,
+      "Artist Display Name": "Horace Harral; Joseph Wolf",
+      "Artist Display Bio": "British, Ipswich 1817–1905 Hastings|German, Moers 1820–1899 London",
+      "Object Date": "1865",
+      "Object Begin Date": "1865",
+      "Object End Date": "1865",
+      "Medium": "Wood engraving",
+      "Dimensions": "Image: 5 1/16 × 3 3/4 in. (12.9 × 9.6 cm)\r\nSheet: 8 7/16 × 5 1/2 in. (21.5 × 14 cm)",
+      "City": "London",
+      "Tags": null,
+      "Link Resource": "http://www.metmuseum.org/art/collection/search/649082",
+      "Object Wikidata URL": null,
+      "CreatedAt": "2025-06-26 10:29:21+00:00",
+      "UpdatedAt": null
+    }
 ]
 ```
 
-## API Code Snippets
-
-NocoDB also helps you generate **ready-to-use code snippets** for various programming languages. This means you don’t need to write any code yourself,  you can just copy and paste. To use these you need an external IDE and know one of the Programming-Languages to use it properly.
-
-### How to Copy API Snippets
-
-1. Open the **API Docs** for your Base (see above).
-2. Select an API action (e.g., `POST /{table}` to add a new record).
-3. Scroll to the bottom of the endpoint description.
-4. Click on the **"Code"** tab.
-5. Choose a language from the dropdown — options include:
-
-   - **cURL**
-   - **Python**
-   - **JavaScript (Fetch API)**
-   - **Node.js (Axios)**
-   - **Shell**
-
-6. Copy the generated snippet and try running it in a simple environment like:
-
-   - A Python file (`python script.py`)
-   - An online code sandbox like Replit or JSFiddle
-   - Your terminal, for cURL commands
-
+APIs not only allow easy access to individual records, but also enable the combination and filtering of data through targeted queries. By using different parameters and filters in your API requests, you can select, sort, or group very specific datasets. For example, you can retrieve only certain entries based on criteria such as date, category, or status. This flexibility allows you to perform complex analyses and evaluations directly via the API and process the results in other applications. The API thus becomes a versatile tool for using data efficiently and in a customized way.
 
 
 
@@ -139,15 +146,13 @@ For example you could:
 
 ### How to Create a Webhook
 
-1. Open your Base settings.
-2. Go to the **“Automations”** section and choose **“Webhooks”**.
-3. Click **“Create Webhook”**.
+1. Open your Table Details in the top row.
+2. Go to the **"Webhooks"** section.
+3. Click **“New Webhook”**.
 4. Define:
    - The **event** (e.g., "Row Created")
    - The **table** it should apply to
-   - The **URL** that should receive the webhook (you can test this with [webhook.site](https://webhook.site))
-
-5. Save the webhook and test it by adding or updating data.
+   - The **URL** that should receive the webhook (you could test this with [webhook.site](https://webhook.site))
 
 
 
