@@ -18,7 +18,7 @@ exercises: 3
 
 - Understand the differences of normal forms
 
-- Normalize data in tables
+- implement the third normal form
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -99,6 +99,7 @@ The First Normal Form (1NF) is the most basic level of normalization. A table is
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 
