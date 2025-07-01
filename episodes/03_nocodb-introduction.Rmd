@@ -178,5 +178,11 @@ Choosing the correct relation type helps you accurately model your data and ensu
 With the Link field and relation types, you can build complex, interconnected databases in NocoDB—without writing
 
 
+::::::::::::::::::::::::::::::::::::: keypoints
 
++ In NocoDB, you create tables and add fields (columns) with different data types (e.g., text, number, date).
++ Fields of type Link allow you to connect tables and create relationships between records.
++ When adding a Link field, you can choose the relation type: One to One, One to Many (Has Many), or Many to Many.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 

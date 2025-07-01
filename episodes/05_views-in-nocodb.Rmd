@@ -179,3 +179,13 @@ For creating a Calendar View, it is recommended to have a **Date field**. The ca
 - **Drag & drop events**: Update the date or time of an event by dragging it to a new date.  
 - **Add new events**: Create new events directly on the calendar via a double-blick on one day.  
 - **Filter & sort**: Narrow down events by artist, location, or other fields.
+
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- NocoDB offers different view types (Grid, Form, Gallery, Kanban, Calendar) to display and interact with your data in various ways.
+- Each view can be customized with its own filters, sorting, and visible fields, allowing you to focus on specific aspects of your data.
+- Views help you collaborate, collect input, and share selected information without changing the underlying table structure.
+- Specialized views like Kanban and Calendar require specific field types (e.g., Single Select for Kanban, Date for Calendar) for optimal use.
+- Using multiple views makes it easier to adapt the same dataset for different tasks and
+::::::::::::::::::::::::::::::::::::::::::::::::
