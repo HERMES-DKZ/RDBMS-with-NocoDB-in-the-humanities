@@ -64,6 +64,8 @@ Change the field types of our table according to the data in each column. Which 
 
 Taking time to set this up now will make exploring and further collecting of data much easier.
 
+![](fig/nocodb_layout_table.png.png)
+
 
 ## Filtering Data
 

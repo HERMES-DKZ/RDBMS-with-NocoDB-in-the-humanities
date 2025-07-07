@@ -40,7 +40,7 @@ On the left side of the interface, you’ll find the **main navigation menu**, w
 - **Overview** of workspaces and tables
 - **General settings** to manage your NocoDB account
 - **Team settings** for collaborating with others
-- **Integrations** to connect external databases
+- **Automations** to automate different tasks
 - The option to **create a new Base**
 
 In NocoDB, a **Base** is like a database, it’s a container that holds your tables and provides additional features for organizing and managing your data. 
@@ -48,6 +48,10 @@ In NocoDB, a **Base** is like a database, it’s a container that holds your tab
 When you first sign up, NocoDB will automatically create a sample Base called **Getting Started**. This Base opens by default and helps you get familiar with the platform’s core features.
 
 The central area of the screen is where you’ll do most of your work. NocoDB follows a simple structure: at the top level, you create a **Workspace**, inside this Workspace you have **Bases** and within a Base, you can add one or more **tables**. Tables are where your actual data lives, and you can customize them with **Views** to display and filter your data in different ways. We’ll dive into Views in more detail later.
+
+
+![NocoDB Layout](fig/nocodb_layout.png)
+
 
 
 ## Creating a Base
@@ -88,6 +92,7 @@ In the dialog box that opens, you can:
 - Optionally, add a default value for the whole column.
 - Optionally, add a Description to explain what this field is for, helpful when collaborating with others.
 - Click Save to apply your changes.
+
 
 #### Adding a New Field
 
