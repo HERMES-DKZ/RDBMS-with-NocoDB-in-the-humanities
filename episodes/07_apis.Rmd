@@ -70,6 +70,9 @@ What makes it really useful: you can **interact with the APIs directly in your b
 
 The Swagger API interface in NocoDB shows you a list of all tables in your base. For each table, you will see the most common API methods: **GET** (read data), **POST** (add new data), **PUT** (update data), and **DELETE** (remove data). Each method is clearly listed as an endpoint, and you can try them out directly in your browser. This means you can test reading, creating, updating, or deleting records for any table without writing any code—just by clicking and filling out simple forms in the Swagger UI.
 
+![](fig/nocodb_layout_api.png)
+
+
 
 1. **Open your base** in NocoDB.  
 2. Click the the base name in the top left corner.  
@@ -91,13 +94,14 @@ To access your NocoDB API securely, you need an **API Token**. This token acts l
 
 --- 
 
-The next thing we want to do is to get our data from our MET dataset through the API. To do this, look for the right table in the swagger API. If you did not delete the example tables from NocoDB you should see "Sample Views", "Keyboard Shortcuts" and "Quick Reference Links". After these your own table should be shown. 
+The next thing we want to do is to get our data from our MET dataset through the API. To do this, we need to paste our API-Key and then choose a method and a table we want to use.
 
-1. Click on the small lock and paste your API-Token and click **authorize**. 
-2. Open the methods you got with the small arrow next to the lock.
-3. Click **Try it out** to activate your API.
-4. Scroll down and click **Execute**
-5. You’ll see the API’s **response** below, usually in JSON format, for example:
+1. Click on the **Authorize** button in the top right and paste your API-Token and click **authorize**. 
+2. Look for the table you want to get data from. If you did not delete the example tables from NocoDB you should see "Sample Views", "Keyboard Shortcuts" and "Quick Reference Links" and then your own table. 
+3. Open the **get-method** you got with the small arrow next to the lock.
+4. Click **Try it out** to activate your API.
+5. Scroll down and click **Execute**
+6. You’ll see the API’s **response** below, usually in JSON format, for example:
 
 ```json
 [

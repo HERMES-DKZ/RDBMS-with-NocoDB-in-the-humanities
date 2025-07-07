@@ -33,6 +33,9 @@ Each view type serves a different purpose and supports different workflows. For 
 By combining different views, you can adapt the same dataset to a wide range of use cases, from internal team collaboration to public engagement, from raw data entry to polished overviews. All views are created by clicking on the table you want to get a new view of in the left side-bar. There you click on the little arrow, next to the tables name. If already done, you can see all views you created before. If you want to create a new view click **Create View**. This will open a dropdown where you choose which view type you want to create.
 
 
+![](fig/nocodb_layout_views.png)
+
+
 ## Grid
 
 The first view we want to look at, is the **Grid**. This view is the standard view in NocoDB you see every time you create a new table. It can be very helpful to create new views for this. Each Grid View can have its own filtering, sorting, and column visibility settings. 
