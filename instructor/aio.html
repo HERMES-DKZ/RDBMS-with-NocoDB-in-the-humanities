@@ -1322,7 +1322,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-03_nocodb-introduction"><p>Content from <a href="03_nocodb-introduction.html">NocoDB Introduction</a></p>
 <hr>
-<p>Last updated on 2025-07-01 |
+<p>Last updated on 2025-07-07 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/03_nocodb-introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -1398,7 +1398,7 @@ options:</p>
 <li>
 <strong>Team settings</strong> for collaborating with others</li>
 <li>
-<strong>Integrations</strong> to connect external databases</li>
+<strong>Automations</strong> to automate different tasks</li>
 <li>The option to <strong>create a new Base</strong>
 </li>
 </ul>
@@ -1416,7 +1416,8 @@ NocoDB follows a simple structure: at the top level, you create a
 you can customize them with <strong>Views</strong> to display and filter
 your data in different ways. We’ll dive into Views in more detail
 later.</p>
-</section><section><h2 class="section-heading" id="creating-a-base">Creating a Base<a class="anchor" aria-label="anchor" href="#creating-a-base"></a>
+<figure><img src="../fig/nocodb_layout.png" alt="NocoDB Layout" class="figure mx-auto d-block"><div class="figcaption">NocoDB Layout</div>
+</figure></section><section><h2 class="section-heading" id="creating-a-base">Creating a Base<a class="anchor" aria-label="anchor" href="#creating-a-base"></a>
 </h2>
 <hr class="half-width">
 <p>Instead of working with the sample Base, let’s create our own so we
@@ -1627,7 +1628,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-04_nocodb-dataimport"><p>Content from <a href="04_nocodb-dataimport.html">Working with data</a></p>
 <hr>
-<p>Last updated on 2025-07-01 |
+<p>Last updated on 2025-07-07 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/04_nocodb-dataimport.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -1721,7 +1722,7 @@ number of different entries are limited?</p>
 </div>
 <p>Taking time to set this up now will make exploring and further
 collecting of data much easier.</p>
-</section><section><h2 class="section-heading" id="filtering-data">Filtering Data<a class="anchor" aria-label="anchor" href="#filtering-data"></a>
+<figure><img src="../fig/nocodb_layout_table.png.png" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="filtering-data">Filtering Data<a class="anchor" aria-label="anchor" href="#filtering-data"></a>
 </h2>
 <hr class="half-width">
 <p>Filters allow you to narrow down the data in your table, that you
@@ -1879,7 +1880,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-05_views-in-nocodb"><p>Content from <a href="05_views-in-nocodb.html">Views</a></p>
 <hr>
-<p>Last updated on 2025-07-01 |
+<p>Last updated on 2025-07-07 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/05_views-in-nocodb.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -1943,7 +1944,7 @@ left side-bar. There you click on the little arrow, next to the tables
 name. If already done, you can see all views you created before. If you
 want to create a new view click <strong>Create View</strong>. This will
 open a dropdown where you choose which view type you want to create.</p>
-<section><h2 class="section-heading" id="grid">Grid<a class="anchor" aria-label="anchor" href="#grid"></a>
+<figure><img src="../fig/nocodb_layout_views.png" class="figure mx-auto d-block"></figure><section><h2 class="section-heading" id="grid">Grid<a class="anchor" aria-label="anchor" href="#grid"></a>
 </h2>
 <hr class="half-width">
 <p>The first view we want to look at, is the <strong>Grid</strong>. This
@@ -2461,7 +2462,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07_apis"><p>Content from <a href="07_apis.html">APIs</a></p>
 <hr>
-<p>Last updated on 2025-07-01 |
+<p>Last updated on 2025-07-07 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/07_apis.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 13 minutes</p>
@@ -2589,7 +2590,7 @@ them out directly in your browser. This means you can test reading,
 creating, updating, or deleting records for any table without writing
 any code—just by clicking and filling out simple forms in the Swagger
 UI.</p>
-<ol style="list-style-type: decimal">
+<figure><img src="../fig/nocodb_layout_api.png" class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal">
 <li>
 <strong>Open your base</strong> in NocoDB.<br>
 </li>
@@ -2627,14 +2628,16 @@ Swagger Test”) and click <strong>Save</strong>.</li>
 </ol>
 <hr>
 <p>The next thing we want to do is to get our data from our MET dataset
-through the API. To do this, look for the right table in the swagger
-API. If you did not delete the example tables from NocoDB you should see
-“Sample Views”, “Keyboard Shortcuts” and “Quick Reference Links”. After
-these your own table should be shown.</p>
+through the API. To do this, we need to paste our API-Key and then
+choose a method and a table we want to use.</p>
 <ol style="list-style-type: decimal">
-<li>Click on the small lock and paste your API-Token and click
-<strong>authorize</strong>.</li>
-<li>Open the methods you got with the small arrow next to the lock.</li>
+<li>Click on the <strong>Authorize</strong> button in the top right and
+paste your API-Token and click <strong>authorize</strong>.</li>
+<li>Look for the table you want to get data from. If you did not delete
+the example tables from NocoDB you should see “Sample Views”, “Keyboard
+Shortcuts” and “Quick Reference Links” and then your own table.</li>
+<li>Open the <strong>get-method</strong> you got with the small arrow
+next to the lock.</li>
 <li>Click <strong>Try it out</strong> to activate your API.</li>
 <li>Scroll down and click <strong>Execute</strong>
 </li>
@@ -2797,8 +2800,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/instructor/aio.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2025-07-01",
-  "datePublished": "2025-07-01"
+  "dateModified": "2025-07-07",
+  "datePublished": "2025-07-07"
 }
 
   </script><script>
