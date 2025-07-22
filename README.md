@@ -20,6 +20,12 @@ The course is structured into modules, each focusing on different aspects. Hands
 We're excited to have you join us on this journey to mastering relational databases. Dive into the modules, experiment with NocoDB, and transform the way you work with data!
 
 
+## Acknowledgements
+
+This lesson utilizes slightly modified sample from:
+
++ Metropolitan Museum of Art's Open Access Initiative dataset. The original dataset is available as an Open Access CSV and is provided under the Creative Commons Zero license.
++ The Museum of Modern Art (MoMA) Collection datasets. The original datasets are also available under the CCO licence.
 
 ## About
 
