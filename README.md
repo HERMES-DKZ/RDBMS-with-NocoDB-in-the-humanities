@@ -28,6 +28,5 @@ This lesson is being developed as part of the joint project [HERMES](https://her
 
 ## Authors
 
+- [Robert Zwick](https://github.com/robertzwick)
 - [Julia Tolksdorf](https://github.com/jutol)
-- Golnaz Sarkar Farshi
-- Robert Zwick
