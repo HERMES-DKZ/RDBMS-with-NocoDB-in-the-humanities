@@ -121,6 +121,6 @@ which we will not go into in this course.
 - Relational databases store data in multiple related tables, reducing redundancy and ensuring data integrity through primary and foreign keys.
 - Databases are better suited for managing complex, interconnected data and support powerful queries using SQL.
 - No-code tools like NocoDB combine the user-friendly interface of spreadsheets with the structure and reliability of relational databases.
-- Choosing the right tool depends on your needs: spreadsheets for simple, flexible tasks; databases for structured, scalable, and collaborative
+- Choosing the right tool depends on your needs: spreadsheets for simpler, flexible tasks; databases for structured, scalable, and collaborative work
   
 ::::::::::::::::::::::::::::::::::::::::::::::::
