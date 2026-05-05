@@ -616,18 +616,18 @@ example, each row represents a person and contains information about
 that person. This concept is transferable to all types of objects.</p>
 <p><strong>Example: Artists Table</strong></p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>Name</th>
 <th>Date of Birth</th>
 <th>ID (Primary Key)</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Thomas Eakins</td>
 <td>25.7.1844</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Bill Traylor</td>
 <td>1.4.1854</td>
 <td>2</td>
@@ -665,16 +665,16 @@ reference. This reference, in the artwork table is called a
 <strong>Foreign Key</strong>.</p>
 <p><strong>Example: Artworks Table</strong></p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>Title</th>
 <th>Artist (Foreign Key)</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>The Artist’s Wife and His Setter Dog</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Blue Construction, Orange Figures</td>
 <td>2</td>
 </tr>
@@ -773,44 +773,44 @@ following unnormalized table:</p>
 <col width="7%">
 <col width="27%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Title</th>
 <th>Artist</th>
 <th>Accession Number</th>
 <th>On View Location</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>The Artist’s Wife and His Setter Dog</td>
 <td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
 <td>23.139</td>
 <td>The American Wing, 764</td>
 </tr>
-<tr class="even">
+<tr>
 <td>The Champion Single Sculls (Max Schmitt in a Single Scull)</td>
 <td>Thomas Eakins (American, Philadelphia, Pennsylvania 1844–1916)</td>
 <td>34.92</td>
 <td>The American Wing, 763</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>A Gorge in the Mountains (Kauterskill Clove)</td>
 <td>Sanford Robinson Gifford (Greenfield, NY 1823–1880 NY)</td>
 <td>15.30.62</td>
 <td>The American Wing, 761</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Marie Emilie Coignet de Courson (1716–1806) with a Dog</td>
 <td>Jean Honoré Fragonard (French, Grasse 1732–1806 Paris)</td>
 <td>37.118</td>
 <td>European Paintings, 631</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Blue Construction, Orange Figures</td>
 <td>Bill Traylor</td>
 <td>2015.756</td>
 <td>The Met Fifth Avenue in Gallery 773</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Christ Carrying the Cross, with the Crucifixion</td>
 <td>Gerard David (Netherlandish, Oudewater ca. 1455–1523 Bruges)</td>
 <td>1975.1.119A-B</td>
@@ -841,7 +841,7 @@ atomic values:</p>
 <col width="13%">
 <col width="8%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Title</th>
 <th>Artist Name</th>
 <th>Artist Nationality</th>
@@ -852,7 +852,7 @@ atomic values:</p>
 <th>Gallery Number</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>The Artist’s Wife and His Setter Dog</td>
 <td>Thomas Eakins</td>
 <td>American</td>
@@ -862,7 +862,7 @@ atomic values:</p>
 <td>The American Wing</td>
 <td>764</td>
 </tr>
-<tr class="even">
+<tr>
 <td>The Champion Single Sculls</td>
 <td>Thomas Eakins</td>
 <td>American</td>
@@ -872,7 +872,7 @@ atomic values:</p>
 <td>The American Wing</td>
 <td>763</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>A Gorge in the Mountains</td>
 <td>Sanford R. Gifford</td>
 <td>American</td>
@@ -882,7 +882,7 @@ atomic values:</p>
 <td>The American Wing</td>
 <td>761</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Marie Emilie Coignet de Courson</td>
 <td>Jean H. Fragonard</td>
 <td>French</td>
@@ -892,7 +892,7 @@ atomic values:</p>
 <td>European Paintings</td>
 <td>631</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Blue Construction, Orange Figures</td>
 <td>Bill Traylor</td>
 <td>American</td>
@@ -902,7 +902,7 @@ atomic values:</p>
 <td>The Met Fifth Avenue</td>
 <td>773</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Christ Carrying the Cross</td>
 <td>Gerard David</td>
 <td>Netherlandish</td>
@@ -981,7 +981,7 @@ attributes, with a foreign key to the artist.</li>
 <col width="26%">
 <col width="17%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>ArtistID</th>
 <th>Artist Name</th>
 <th>Nationality</th>
@@ -989,35 +989,35 @@ attributes, with a foreign key to the artist.</li>
 <th>Birth_Death</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>Thomas Eakins</td>
 <td>American</td>
 <td>Philadelphia, PA</td>
 <td>1844–1916</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>Sanford R. Gifford</td>
 <td>American</td>
 <td>Greenfield, NY</td>
 <td>1823–1880</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>Jean H. Fragonard</td>
 <td>French</td>
 <td>Grasse</td>
 <td>1732–1806</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>Bill Traylor</td>
 <td>American</td>
 <td>Benton, AL</td>
 <td>1854–1949</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>Gerard David</td>
 <td>Netherlandish</td>
@@ -1036,7 +1036,7 @@ attributes, with a foreign key to the artist.</li>
 <col width="12%">
 <col width="11%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>ArtworkID</th>
 <th>Title</th>
 <th>Accession Number</th>
@@ -1045,7 +1045,7 @@ attributes, with a foreign key to the artist.</li>
 <th>ArtistID (FK)</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>The Artist’s Wife and His Setter Dog</td>
 <td>23.139</td>
@@ -1053,7 +1053,7 @@ attributes, with a foreign key to the artist.</li>
 <td>764</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>The Champion Single Sculls</td>
 <td>34.92</td>
@@ -1061,7 +1061,7 @@ attributes, with a foreign key to the artist.</li>
 <td>763</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>A Gorge in the Mountains</td>
 <td>15.30.62</td>
@@ -1069,7 +1069,7 @@ attributes, with a foreign key to the artist.</li>
 <td>761</td>
 <td>2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>Marie Emilie Coignet de Courson</td>
 <td>37.118</td>
@@ -1077,7 +1077,7 @@ attributes, with a foreign key to the artist.</li>
 <td>631</td>
 <td>3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>Blue Construction, Orange Figures</td>
 <td>2015.756</td>
@@ -1085,7 +1085,7 @@ attributes, with a foreign key to the artist.</li>
 <td>773</td>
 <td>4</td>
 </tr>
-<tr class="even">
+<tr>
 <td>6</td>
 <td>Christ Carrying the Cross</td>
 <td>1975.1.119A-B</td>
@@ -1134,38 +1134,38 @@ gallery has a unique identifier, its gallery number, and the associated
 department.</p>
 <p><strong>Galleries Table:</strong></p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>GalleryID</th>
 <th>Gallery Number</th>
 <th>Department</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>764</td>
 <td>The American Wing</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>763</td>
 <td>The American Wing</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>761</td>
 <td>The American Wing</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>631</td>
 <td>European Paintings</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>773</td>
 <td>The Met Fifth Avenue</td>
 </tr>
-<tr class="even">
+<tr>
 <td>6</td>
 <td>953</td>
 <td>Robert Lehman Collection</td>
@@ -1184,7 +1184,7 @@ department.</p>
 <col width="15%">
 <col width="14%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>ArtworkID</th>
 <th>Title</th>
 <th>Accession Number</th>
@@ -1192,42 +1192,42 @@ department.</p>
 <th>ArtistID (FK)</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>The Artist’s Wife and His Setter Dog</td>
 <td>23.139</td>
 <td>1</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>The Champion Single Sculls</td>
 <td>34.92</td>
 <td>2</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>A Gorge in the Mountains</td>
 <td>15.30.62</td>
 <td>3</td>
 <td>2</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>Marie Emilie Coignet de Courson</td>
 <td>37.118</td>
 <td>4</td>
 <td>3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>5</td>
 <td>Blue Construction, Orange Figures</td>
 <td>2015.756</td>
 <td>5</td>
 <td>4</td>
 </tr>
-<tr class="even">
+<tr>
 <td>6</td>
 <td>Christ Carrying the Cross</td>
 <td>1975.1.119A-B</td>
@@ -1270,24 +1270,24 @@ if many galleries belong to the same department.</li>
 reference it from the <em>Galleries</em> table using a foreign key.</p>
 <p><strong>Departments Table:</strong></p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>DepartmentID</th>
 <th>Department Name</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>The American Wing</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>European Paintings</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>3</td>
 <td>The Met Fifth Avenue</td>
 </tr>
-<tr class="even">
+<tr>
 <td>4</td>
 <td>Robert Lehman Collection</td>
 </tr>
@@ -2814,8 +2814,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/instructor/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/instructor/aio.html",
   "dateCreated": "2024-04-26",
-  "dateModified": "2026-04-28",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-05-05",
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
